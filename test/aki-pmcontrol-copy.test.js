@@ -1,29 +1,54 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import os from 'node:os';
+import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const mcpRoot = path.join(repoRoot, 'scripts/aki-pmcontrol');
-const labRoot = path.resolve(repoRoot, '../aiobox/labs/aki-pmcontrol');
-const COPIED = [
-  'index.js',
-  'scripts/cdp-autoclicker.js',
-  'scripts/cdp-usage.js',
-  'scripts/daemon-pid.js',
-  'scripts/postman-paths.js',
-  'scripts/postman-session.js',
-  'scripts/update-check.js',
-  'data/aki-postman-instruction.md',
-];
-if (existsSync(labRoot)) {
-  for (const rel of COPIED) {
-    const mcpSrc = readFileSync(path.join(mcpRoot, rel), 'utf8');
-    const labSrc = readFileSync(path.join(labRoot, rel), 'utf8');
-    assert.equal(mcpSrc, labSrc, `${rel} must stay byte-identical (lab origin)`);
-  }
+const require = createRequire(import.meta.url);
+const { loadInstruction, saveInstruction, copyDefaultIfMissing } = require('../scripts/aki-pmcontrol/scripts/instruction-store.js');
+const defaultPromptPath = path.join(mcpRoot, 'assets/prompts/postman.md');
+const sharedPromptDefaultPath = path.join(mcpRoot, 'assets/prompts/aki-prompt-sum-to-new-chat.md');
+
+const defaultInstruction = loadInstruction([
+  path.join(mcpRoot, 'missing-user-instruction.md'),
+  path.join(mcpRoot, 'missing-legacy-instruction.md'),
+  defaultPromptPath,
+]);
+assert.ok(defaultInstruction.trim(), 'a fresh clone must load a non-empty bundled prompt');
+assert.ok(readFileSync(sharedPromptDefaultPath, 'utf8').trim(), 'shared summarize-to-new-chat prompt must be bundled');
+
+const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'aki-pmcontrol-instruction-'));
+try {
+  const userPath = path.join(tempRoot, 'missing', 'nested', 'postman.md');
+  saveInstruction(userPath, 'saved user instruction');
+  assert.equal(readFileSync(userPath, 'utf8'), 'saved user instruction');
+  assert.equal(loadInstruction([userPath, defaultPromptPath]), 'saved user instruction');
+
+  const freshCopyPath = path.join(tempRoot, 'prompts', 'aki-prompt-sum-to-new-chat.md');
+  copyDefaultIfMissing(freshCopyPath, sharedPromptDefaultPath);
+  assert.equal(readFileSync(freshCopyPath, 'utf8'), readFileSync(sharedPromptDefaultPath, 'utf8'));
+
+  const editedUserPath = path.join(tempRoot, 'prompts', 'postman.md');
+  saveInstruction(editedUserPath, 'user-edited, must survive');
+  copyDefaultIfMissing(editedUserPath, defaultPromptPath);
+  assert.equal(readFileSync(editedUserPath, 'utf8'), 'user-edited, must survive', 'copyDefaultIfMissing must never overwrite a non-empty user file');
+} finally {
+  rmSync(tempRoot, { recursive: true, force: true });
 }
+
+const indexSrc = readFileSync(path.join(mcpRoot, 'index.js'), 'utf8');
+assert.match(indexSrc, /const AKI_DATA_DIR = process\.env\.AKI_DATA_DIR \|\| path\.join\(os\.homedir\(\), '\.aki', 'mcpsv'\)/);
+assert.match(indexSrc, /const PROMPTS_DIR = path\.join\(AKI_DATA_DIR, 'prompts'\)/);
+assert.match(indexSrc, /const PROVIDER = 'postman'/);
+assert.match(indexSrc, /function init\(\)/);
+assert.match(indexSrc, /copyDefaultIfMissing/);
+assert.match(indexSrc, /__cdpSendToChat/);
+assert.doesNotMatch(indexSrc, /writeFileSync\([^;]*__dirname[^;]*'data'/);
+assert.doesNotMatch(indexSrc, /writeFileSync\([^;]*__dirname[^;]*'assets'/);
 
 const mcpSrc = readFileSync(path.join(mcpRoot, 'scripts/cdp-autoclicker.js'), 'utf8');
 
@@ -63,5 +88,11 @@ assert.doesNotMatch(mcpSrc, /\/browser\/i/);
 assert.doesNotMatch(mcpSrc, /rejectAllToolCall/);
 assert.doesNotMatch(mcpSrc, /MCP_POSTMAN_CDP/);
 assert.doesNotMatch(mcpSrc, /Input\.dispatchKeyEvent/);
+
+assert.match(mcpSrc, /function typeAndSubmitChat/);
+assert.match(mcpSrc, /function sendSharedPrompt/);
+assert.match(mcpSrc, /aki-btn-send-to-chat/);
+assert.match(mcpSrc, /window\.__cdpSendToChat/);
+assert.match(mcpSrc, /window\.__pmDeliverSharedPrompt/);
 
 console.log('aki-pmcontrol-copy.test.js: ok');

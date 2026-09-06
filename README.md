@@ -197,8 +197,11 @@ Your data lives outside the repo, at `~/.aki/mcpsv/` (the same convention CLIs l
 ├── oauth-client.json     # pre-issued client ID + secret, for Claude (0600)
 ├── oauth-dcr-clients.json # clients that self-registered via /register, one per ChatGPT connector (0600)
 ├── passphrase.txt        # passphrase for the /authorize consent screen (0600)
-└── tokens.json           # access/refresh tokens (0600)
+├── tokens.json           # access/refresh tokens (0600)
+└── prompts/              # per-provider chat prompts (aki-pmcontrol), seeded from scripts/aki-pmcontrol/assets/prompts/
 ```
+
+`scripts/aki-pmcontrol/assets/prompts/` in the repo is the bundled **default, read-only** source for those prompts — the daemon copies a file from there into `~/.aki/mcpsv/prompts/` on first launch only, and never writes back into the repo.
 
 A clone stays exactly as checked out: editing folders/allowlist from the panel never produces a diff in the repo.
 

@@ -10,6 +10,7 @@ const os = require('os');
 const { execFile } = require('child_process');
 const { fetchAllUsage } = require('./scripts/cdp-usage');
 const { PostmanSession } = require('./scripts/postman-session');
+const { loadInstruction, saveInstruction, copyDefaultIfMissing } = require('./scripts/instruction-store');
 const daemonPid = require('./scripts/daemon-pid');
 const {
   checkForUpdate,
@@ -19,9 +20,26 @@ const {
   RULES_DIR,
 } = require('./scripts/update-check');
 
-const AKI_DATA_DIR = path.join(os.homedir(), '.aki', 'cdp-postman');
-const DATA_JSON_PATH = path.join(AKI_DATA_DIR, 'data.json');
-const INSTRUCTION_PATH = path.join(__dirname, 'data', 'aki-postman-instruction.md');
+// Writable runtime/user data — global SSoT shared with the main server's scripts/userdata.js
+// (USER_DIR = ~/.aki/mcpsv). The daemon is CommonJS and cannot import that ESM module, so it
+// redefines the same directory here to stay consistent.
+const AKI_DATA_DIR = process.env.AKI_DATA_DIR || path.join(os.homedir(), '.aki', 'mcpsv');
+const PROMPTS_DIR = path.join(AKI_DATA_DIR, 'prompts');
+const ASSETS_PROMPTS_DIR = path.join(__dirname, 'assets', 'prompts');
+const PROVIDER = 'postman';
+const SUM_PROMPT_NAME = 'aki-prompt-sum-to-new-chat.md';
+const USER_PROMPT_PATH = path.join(PROMPTS_DIR, `${PROVIDER}.md`);
+const DEFAULT_PROMPT_PATH = path.join(ASSETS_PROMPTS_DIR, `${PROVIDER}.md`);
+const SHARED_PROMPT_USER_PATH = path.join(PROMPTS_DIR, SUM_PROMPT_NAME);
+const SHARED_PROMPT_DEFAULT_PATH = path.join(ASSETS_PROMPTS_DIR, SUM_PROMPT_NAME);
+
+// Pre-refactor writable dir — data.json/daemon.pid/new-window.flag/cdp-usage stay here (out of
+// scope, see docs/plan/done/instructions-prompts-refactor.md § No action); only the prompt file
+// migrates to AKI_DATA_DIR, so this is read-only for prompts (legacy fallback).
+const LEGACY_CDP_DIR = path.join(os.homedir(), '.aki', 'cdp-postman');
+const DATA_JSON_PATH = path.join(LEGACY_CDP_DIR, 'data.json');
+const LEGACY_INSTRUCTION_PATH = path.join(LEGACY_CDP_DIR, 'aki-postman-instruction.md');
+const LEGACY_REPO_INSTRUCTION_PATH = path.join(__dirname, 'data', 'aki-postman-instruction.md');
 const RULES_SOURCE_FILE = path.join(RULES_DIR, '.source-repo');
 const RULES_CLONE_DIR = path.join(os.homedir(), '.aki', 'akidevrule-src');
 const RULES_REPO_URL = 'https://github.com/lacvietanh/akidevrule.git';
@@ -143,7 +161,7 @@ const FORCED_ON_KEYS = ['autoApprove', 'autoContinue', 'autoRun', 'autoRetry', '
 // POST /api/postman-new-window, via postman-mcp.js's requestNewWindow): a flag file next to
 // data.json is the smallest transport that works — the panel is the only writer, this is the
 // only reader/deleter, and it rides discover()'s existing 1s tick instead of a new interval.
-const NEW_WINDOW_FLAG_PATH = path.join(AKI_DATA_DIR, 'new-window.flag');
+const NEW_WINDOW_FLAG_PATH = path.join(LEGACY_CDP_DIR, 'new-window.flag');
 
 function consumePendingNewWindow() {
   if (!fs.existsSync(NEW_WINDOW_FLAG_PATH)) return;
@@ -174,26 +192,38 @@ function loadAkiData() {
 }
 
 function loadInstructionFile() {
-  if (!fs.existsSync(INSTRUCTION_PATH)) return '';
-  try {
-    return fs.readFileSync(INSTRUCTION_PATH, 'utf8');
-  } catch (e) {
-    return '';
-  }
+  return loadInstruction([
+    USER_PROMPT_PATH,
+    LEGACY_INSTRUCTION_PATH,
+    LEGACY_REPO_INSTRUCTION_PATH,
+    DEFAULT_PROMPT_PATH,
+  ]);
 }
 
 function saveInstructionFile(text) {
   try {
-    fs.writeFileSync(INSTRUCTION_PATH, String(text));
+    saveInstruction(USER_PROMPT_PATH, text);
   } catch (e) {
-    console.error('❌ Lỗi ghi file aki-postman-instruction.md:', e.message);
+    console.error('❌ Lỗi ghi file prompts/postman.md:', e.message);
   }
+}
+
+function loadSharedPromptFile() {
+  return loadInstruction([SHARED_PROMPT_USER_PATH, SHARED_PROMPT_DEFAULT_PATH]);
+}
+
+// Centralizes mkdir + default-copy so both live only here instead of scattered across
+// saveInstruction/saveAkiData/installAkiRule (docs/plan/done/instructions-prompts-refactor.md §2).
+function init() {
+  fs.mkdirSync(PROMPTS_DIR, { recursive: true });
+  copyDefaultIfMissing(USER_PROMPT_PATH, DEFAULT_PROMPT_PATH);
+  copyDefaultIfMissing(SHARED_PROMPT_USER_PATH, SHARED_PROMPT_DEFAULT_PATH);
 }
 
 function saveAkiData(data) {
   try {
-    if (!fs.existsSync(AKI_DATA_DIR)) {
-      fs.mkdirSync(AKI_DATA_DIR, { recursive: true });
+    if (!fs.existsSync(LEGACY_CDP_DIR)) {
+      fs.mkdirSync(LEGACY_CDP_DIR, { recursive: true });
     }
     let existing = {};
     if (fs.existsSync(DATA_JSON_PATH)) {
@@ -304,9 +334,14 @@ async function setupCDP(target, port) {
       await client.Runtime.addBinding({ name: '__cdpInstallAkiRule' });
     } catch (e) {}
 
-    // 3c. Binding save instruction text (textarea → data/aki-postman-instruction.md)
+    // 3c. Binding save instruction text (textarea → $AKI_DATA_DIR/prompts/postman.md)
     try {
       await client.Runtime.addBinding({ name: '__cdpSaveInstruction' });
+    } catch (e) {}
+
+    // 3d. Binding "Send to chat" — daemon reads the shared prompt file and delivers it to the page
+    try {
+      await client.Runtime.addBinding({ name: '__cdpSendToChat' });
     } catch (e) {}
 
     client.Runtime.bindingCalled(async (event) => {
@@ -338,6 +373,11 @@ async function setupCDP(target, port) {
         pushUsageToPage(client);
       } else if (event.name === '__cdpSaveInstruction') {
         saveInstructionFile(event.payload);
+      } else if (event.name === '__cdpSendToChat') {
+        const sharedPrompt = loadSharedPromptFile();
+        client.Runtime.evaluate({
+          expression: `if (typeof window.__pmDeliverSharedPrompt === 'function') window.__pmDeliverSharedPrompt(${JSON.stringify(sharedPrompt)});`
+        }).catch(() => {});
       }
     });
 
@@ -437,6 +477,7 @@ async function main() {
   daemonPid.claim();
   console.log('⚡ Postman CDP Daemon — non-invasive, native gateway');
 
+  init();
   loadAkiData();
   logRuleUpdate(cachedUpdateInfo);
   checkForUpdate().then((info) => {

@@ -34,6 +34,8 @@
 - [plan/manus-connect.md](plan/manus-connect.md) — Manus "Import by JSON" has no OAuth step; JSON template + manual PKCE token-mint recipe (365-day token) to paste into `headers.Authorization`; unverified, no live test yet (design only, not started)
 - [plan/done/remove-package-to-simple-repo.md](plan/done/remove-package-to-simple-repo.md) — dropped Node-less launcher/payload delivery; install is git clone + npm start; GitHub Releases are CHANGELOG notes only
 - [plan/done/standalone-newbie-ux-followups.md](plan/done/standalone-newbie-ux-followups.md) — newbie flow follow-ups: README restructure shipped 2026-08-16, claude.ai desync filed as known platform limitation
+- [plan/done/instructions-prompts-refactor.md](plan/done/instructions-prompts-refactor.md) — refactor Postman CDP daemon prompts into directory-based `~/.aki/mcpsv/prompts/<provider>.md`, bundled read-only default assets, and added SEND TO CHAT button; implemented 2026-09-06
+- [plan/unify-datadir-drop-legacy.md](plan/unify-datadir-drop-legacy.md) — zero-legacy plan: consolidate all daemon data (`data.json`, `daemon.pid`, `new-window.flag`) into `~/.aki/mcpsv/` and drop legacy fallback paths
 - [ref/chatgpt-connector.md](ref/chatgpt-connector.md) — ChatGPT install: Developer mode (Settings → Security and login) → create connector (icon, name, description, MCP URL) → passphrase; DCR auto-registers, no Client ID/Secret to paste
 - [ref/claude-connector.md](ref/claude-connector.md) — the real fields on claude.ai's "Add custom connector" dialog
 - [ref/security-model.md](ref/security-model.md) — the current OAuth 2.1 security model (Claude pre-registered client; ChatGPT self-registers via RFC 7591 DCR, live)

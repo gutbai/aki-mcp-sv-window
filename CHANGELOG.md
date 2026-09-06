@@ -2,6 +2,16 @@
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versioning per [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **SEND TO CHAT in Postman control panel**: injects a button into the Postman web/desktop chat UI that delivers a shared summarize-and-handoff prompt (`aki-prompt-sum-to-new-chat.md`) into the input area.
+- **Instruction store helper (`scripts/aki-pmcontrol/scripts/instruction-store.js`)**: modular handler for ordered prompt resolution (`loadInstruction`), directory-safe persistence (`saveInstruction`), and non-destructive default template copying (`copyDefaultIfMissing`).
+- **Bundled default prompt assets**: `scripts/aki-pmcontrol/assets/prompts/` contains `postman.md` and `aki-prompt-sum-to-new-chat.md` as read-only seeds.
+
+### Changed
+- **Directory-based prompt storage for Postman control**: provider chat instructions moved to `$AKI_DATA_DIR/prompts/<provider>.md` (default `~/.aki/mcpsv/prompts/postman.md`), sharing the `$AKI_DATA_DIR` single source of truth with the main MCP server.
+
 ## [1.14.0] - 2026-09-05
 
 ### Added

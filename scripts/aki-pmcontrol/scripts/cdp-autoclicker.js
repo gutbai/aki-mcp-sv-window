@@ -1241,6 +1241,10 @@
             </label>
           </div>
           <textarea id="aki-instruction-textarea" class="aki-textarea">${escapeHtml(config.instruction)}</textarea>
+          <div class="aki-row">
+            <span class="aki-section-label">SEND TO CHAT<span class="aki-help" title="Pastes a shared summarize-and-handoff prompt into this chat and sends it, so you can carry the context into a new chat elsewhere.">?</span></span>
+            <button type="button" id="aki-btn-send-to-chat" class="aki-btn">SEND TO CHAT</button>
+          </div>
         </div>
       `;
 
@@ -1334,6 +1338,15 @@
       };
     }
 
+    const sendToChatBtn = panel.querySelector('#aki-btn-send-to-chat');
+    if (sendToChatBtn && !window.__pmSendInFlight) {
+      sendToChatBtn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof window.__cdpSendToChat === 'function') window.__cdpSendToChat('');
+      };
+    }
+
     const installBtn = panel.querySelector('#aki-btn-install-rule');
     if (installBtn) {
       installBtn.onclick = (e) => {
@@ -1392,32 +1405,45 @@
     status.classList.add('aki-err');
   };
 
-  async function sendAiPrompt(text) {
+  // Lexical editor (contenteditable, not textarea/input): a synthetic InputEvent
+  // ('beforeinput') is ignored by Lexical's own handler (no getTargetRanges()); the
+  // browser's native execCommand pipeline is what Lexical actually listens to. Lexical's
+  // DOM reconciliation after execCommand is not synchronous with this script tick — a
+  // double rAF wait (live-confirmed) is needed before the button reads the typed state.
+  async function typeAndSubmitChat(input, text) {
+    input.focus();
+    document.execCommand('selectAll', false, null);
+    document.execCommand('insertText', false, text);
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    submitChatInput(input);
+  }
+
+  async function sendChatPrompt(text, btnId) {
     if (window.__pmSendInFlight || !text || !text.trim()) return false;
     const input = findChatInput();
     if (!input) return false;
     window.__pmSendInFlight = true;
-    const btn = document.getElementById('aki-btn-send-instruction');
+    const btn = btnId && document.getElementById(btnId);
     const oldLabel = btn ? btn.textContent : null;
     if (btn) { btn.disabled = true; btn.textContent = 'SENDING…'; }
     try {
-      const full = instructionPrefix() + '\n\n' + text;
-      // Lexical editor (contenteditable, not textarea/input): a synthetic InputEvent
-      // ('beforeinput') is ignored by Lexical's own handler (no getTargetRanges()); the
-      // browser's native execCommand pipeline is what Lexical actually listens to. Lexical's
-      // DOM reconciliation after execCommand is not synchronous with this script tick — a
-      // double rAF wait (live-confirmed) is needed before the button reads the typed state.
-      input.focus();
-      document.execCommand('selectAll', false, null);
-      document.execCommand('insertText', false, full);
-      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-      submitChatInput(input);
+      await typeAndSubmitChat(input, text);
       return true;
     } finally {
       window.__pmSendInFlight = false;
       if (btn) { btn.disabled = false; btn.textContent = oldLabel; }
     }
   }
+
+  function sendAiPrompt(text) {
+    return sendChatPrompt(instructionPrefix() + '\n\n' + text, 'aki-btn-send-instruction');
+  }
+
+  function sendSharedPrompt(text) {
+    return sendChatPrompt(text, 'aki-btn-send-to-chat');
+  }
+
+  window.__pmDeliverSharedPrompt = function (text) { sendSharedPrompt(text); };
 
   let armedForNewChat = false;
   function checkAndInjectInstruction() {
