@@ -51,6 +51,15 @@ let akiConfig = null;
 let loggedMissingRule = false;
 const CHAT_URL_RE = /gateway\.postman\.com\/chat/i;
 
+// --- Per-turn usage instrumentation (validating the delta-token signal) ---
+// The chat SSE only carries the weekly team-pool `usage` (millicredits) — never a per-chat
+// token count. To test whether the per-turn *delta* tracks a single conversation's context
+// growth, append one JSONL row per captured turn, keyed by conversationId + model. Lives next
+// to data.json (see LEGACY_CDP_DIR note). Best-effort; read/analyzed offline after a live run.
+const TURN_LOG_PATH = path.join(LEGACY_CDP_DIR, 'usage-turns.jsonl');
+const convoState = new Map(); // conversationId -> { turns, startUsage, lastUsage }
+let lastGlobalUsageMilli = null;
+
 async function refreshUsageData(customToken = null) {
   cachedUsageData = await fetchAllUsage(customToken);
   return cachedUsageData;
@@ -104,43 +113,67 @@ function logRuleUpdate(info) {
 // Mỗi lượt chat trả về SSE có event `usage` (docs/research/chat-gateway.md). Bắt thẳng tại
 // Network.loadingFinished của CDP thay vì polling định kỳ hay patch window.fetch trong trang.
 function hookChatUsageCapture(client) {
-  const pendingTeamId = new Map();
+  const pending = new Map();
 
-  client.Network.requestWillBeSent((params) => {
+  client.Network.requestWillBeSent(async (params) => {
     const req = params.request || {};
     if (req.method !== 'POST' || !CHAT_URL_RE.test(req.url || '')) return;
     const referer = (req.headers && (req.headers.Referer || req.headers.referer)) || '';
     let teamId = null;
     try { teamId = new URL(referer).searchParams.get('teamId'); } catch (e) {}
-    pendingTeamId.set(params.requestId, teamId);
+
+    // conversationId + model come straight from the request body: authoritative for follow-up
+    // turns (turn 1 sends conversationId=null, so the response `conversation` event fills it in).
+    let reqConvoId = null;
+    let reqModel = null;
+    try {
+      let post = req.postData;
+      if (!post && req.hasPostData) {
+        const r = await client.Network.getRequestPostData({ requestId: params.requestId }).catch(() => null);
+        post = r && r.postData;
+      }
+      if (post) {
+        const body = JSON.parse(post);
+        reqConvoId = (body.input && body.input.conversationId) || null;
+        reqModel = (body.devModeOptions && body.devModeOptions.selectedModel) || null;
+      }
+    } catch (e) {}
+
+    pending.set(params.requestId, { teamId, reqConvoId, reqModel });
   });
 
   client.Network.loadingFinished(async (params) => {
-    if (!pendingTeamId.has(params.requestId)) return;
-    const teamId = pendingTeamId.get(params.requestId);
-    pendingTeamId.delete(params.requestId);
+    if (!pending.has(params.requestId)) return;
+    const ctx = pending.get(params.requestId);
+    pending.delete(params.requestId);
     try {
       const { body, base64Encoded } = await client.Network.getResponseBody({ requestId: params.requestId });
-      applyChatUsageFromSSE(client, base64Encoded ? Buffer.from(body, 'base64').toString('utf8') : body, teamId);
+      applyChatUsageFromSSE(client, base64Encoded ? Buffer.from(body, 'base64').toString('utf8') : body, ctx);
     } catch (e) {}
   });
 
-  client.Network.loadingFailed((params) => pendingTeamId.delete(params.requestId));
+  client.Network.loadingFailed((params) => pending.delete(params.requestId));
 }
 
-function applyChatUsageFromSSE(client, sseText, teamId) {
-  if (!cachedUsageData || !Array.isArray(cachedUsageData.teams) || !cachedUsageData.teams.length) return;
+function applyChatUsageFromSSE(client, sseText, ctx) {
+  const teamId = ctx && ctx.teamId;
 
   let latest = null;
+  let convo = null;
   for (const line of sseText.split('\n')) {
     if (!line.startsWith('data:')) continue;
     try {
       const evt = JSON.parse(line.slice(5).trim());
       if (evt.eventType === 'usage' && evt.data && typeof evt.data.limit === 'number') latest = evt.data;
+      else if (evt.eventType === 'conversation' && evt.data && evt.data.id) convo = evt.data;
     } catch (e) {}
   }
   if (!latest) return;
 
+  // Log the turn even before the REST usage snapshot has loaded — validation must not miss turns.
+  logUsageTurn(ctx, latest, convo);
+
+  if (!cachedUsageData || !Array.isArray(cachedUsageData.teams) || !cachedUsageData.teams.length) return;
   const team = cachedUsageData.teams.find((t) => String(t.team_id) === String(teamId)) || cachedUsageData.teams[0];
   team.quota = {
     used: Math.ceil((latest.usage || 0) / 1000),
@@ -150,6 +183,48 @@ function applyChatUsageFromSSE(client, sseText, teamId) {
   };
   cachedUsageData.updatedAt = new Date().toLocaleTimeString();
   pushUsageToPage(client);
+}
+
+// Appends one JSONL row per captured chat turn so a live multi-turn run can be analyzed
+// offline (see docs/research/postman-gateway-limits.md). delta = usageMilli minus the previous
+// reading for the SAME conversation (falls back to the last global reading when the id is
+// unknown), so a positive monotonic delta over a fresh chat is the signal we're validating.
+// isTeamPooled=true means the pool is shared, so concurrent activity can inflate a delta.
+function logUsageTurn(ctx, latest, convo) {
+  try {
+    const usageMilli = latest.usage || 0;
+    const convoId = (convo && convo.id) || (ctx && ctx.reqConvoId) || null;
+    const model = (ctx && ctx.reqModel) || (convo && convo.modelKey) || null;
+
+    let st = convoId ? convoState.get(convoId) : null;
+    let prevUsage;
+    if (convoId) {
+      if (!st) { st = { turns: 0, startUsage: usageMilli, lastUsage: usageMilli }; convoState.set(convoId, st); }
+      prevUsage = st.lastUsage;
+    } else {
+      prevUsage = (lastGlobalUsageMilli == null) ? usageMilli : lastGlobalUsageMilli;
+    }
+    const deltaMilli = usageMilli - prevUsage;
+    if (st) { st.turns += 1; st.lastUsage = usageMilli; }
+    lastGlobalUsageMilli = usageMilli;
+
+    const rec = {
+      ts: new Date().toISOString(),
+      teamId: (ctx && ctx.teamId) || null,
+      conversationId: convoId,
+      model,
+      turn: st ? st.turns : null,
+      usageMilli,
+      limitMilli: latest.limit || 0,
+      deltaMilli,
+      cumulativeMilli: st ? (usageMilli - st.startUsage) : null,
+      isTeamPooled: !!latest.isTeamPooled
+    };
+    fs.appendFileSync(TURN_LOG_PATH, JSON.stringify(rec) + '\n', 'utf8');
+    const turnStr = rec.turn == null ? '?' : rec.turn;
+    const cumStr = rec.cumulativeMilli == null ? 'n/a' : (rec.cumulativeMilli / 1000).toFixed(2) + 'cr';
+    console.log(`[usage] turn=${turnStr} convo=${convoId ? convoId.slice(0, 8) : 'n/a'} model=${model || '?'} Δ=${(deltaMilli / 1000).toFixed(2)}cr cum=${cumStr}`);
+  } catch (e) {}
 }
 
 // The daemon's automation contract — auto-click + panel-stays-open must hold on every start
