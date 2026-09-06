@@ -145,7 +145,8 @@ function applyChatUsageFromSSE(client, sseText, teamId) {
   team.quota = {
     used: Math.ceil((latest.usage || 0) / 1000),
     limit: Math.floor((latest.limit || 0) / 1000),
-    percent: latest.limit > 0 ? Math.round(((latest.usage || 0) / latest.limit) * 100) : 0
+    percent: latest.limit > 0 ? Math.round(((latest.usage || 0) / latest.limit) * 100) : 0,
+    resetAt: (latest.usageCycle && latest.usageCycle.end) || null
   };
   cachedUsageData.updatedAt = new Date().toLocaleTimeString();
   pushUsageToPage(client);

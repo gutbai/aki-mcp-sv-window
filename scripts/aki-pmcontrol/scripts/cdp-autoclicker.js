@@ -572,6 +572,18 @@
     return data.teams.find(t => String(t.team_id) === String(currentTeamId)) || data.teams[0];
   }
 
+  function formatCreditReset(iso) {
+    if (!iso) return '';
+    const ms = new Date(iso).getTime() - Date.now();
+    if (!isFinite(ms)) return '';
+    if (ms <= 0) return 'Resets now';
+    const totalH = Math.floor(ms / 3600000);
+    const d = Math.floor(totalH / 24);
+    if (d >= 1) return `Resets in ${d}d ${totalH % 24}h`;
+    const m = Math.floor((ms % 3600000) / 60000);
+    return `Resets in ${totalH}h ${m}m`;
+  }
+
   function renderStatusBarUsage() {
     const el = document.getElementById('aki-status-bar-usage');
     if (!el) return;
@@ -588,7 +600,7 @@
     el.innerHTML = `
       <span class="aki-sb-team">${team.name || team.slug || 'Team'}</span>
       <span class="aki-sb-bar"><span class="aki-sb-fill ${quotaFillClass(pct)}" style="width: ${pct}%;"></span></span>
-      <span class="aki-sb-credits">${team.quota.used.toLocaleString()} / ${team.quota.limit.toLocaleString()}</span>
+      <span class="aki-sb-credits" title="${formatCreditReset(team.quota.resetAt)}">${team.quota.used.toLocaleString()} / ${team.quota.limit.toLocaleString()}</span>
     `;
   }
 
@@ -639,6 +651,7 @@
     }
 
     const actPct = quotaPct(activeTeam.quota);
+    const resetStr = formatCreditReset(activeTeam.quota && activeTeam.quota.resetAt);
 
     box.innerHTML = `
       <div>
@@ -657,7 +670,7 @@
           <button id="aki-toggle-all-teams" class="aki-text-btn">
             ${config.showAllTeams ? 'Collapse' : `View all ${data.teams.length} teams`}
           </button>
-          <span class="aki-muted">${data.updatedAt || ''}</span>
+          <span class="aki-muted">${resetStr ? resetStr + ' · ' : ''}${data.updatedAt || ''}</span>
         </div>
         ${allTeamsHTML}
       </div>
