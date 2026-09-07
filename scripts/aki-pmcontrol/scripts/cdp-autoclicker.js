@@ -260,11 +260,14 @@
     creditArm();
 
     permissionCards().forEach((card) => {
+      // A press is async, so a card can survive several 400ms ticks before leaving the DOM; without a per-card marker the loop re-presses it every tick, and that double-press is what freezes the chat session — mark it once pressed and skip anything already marked (flow.B6).
+      if (card.dataset.akiPressed === '1') return;
       const copy = cardCopy(card);
       const folderIntent = cfg[AUTO_REJECT_PICK_FOLDER.configKey] && copy.toLowerCase().includes(AUTO_REJECT_PICK_FOLDER.bodyNeedle);
       if (folderIntent) {
         const decline = slotButton(card, 'decline');
         if (!decline) return;
+        card.dataset.akiPressed = '1';
         window.__pmArmedCard = { kind: 'folder', copy, label: buttonLabel(decline), el: card };
         press(decline);
         if (!card.isConnected) creditArm();
@@ -277,6 +280,7 @@
       const row = autoClicker.matchPrimary(label);
       const allowed = row ? cfg[row.configKey] : (card.matches(PERMISSION_CARD_ROOT) && cfg.autoApprove);
       if (!allowed) return;
+      card.dataset.akiPressed = '1';
       window.__pmArmedCard = { kind: 'confirm', copy, label, el: card };
       press(confirm);
       if (!card.isConnected) creditArm();
@@ -427,10 +431,13 @@
     return !list.textContent || !list.textContent.trim();
   }
 
+  // The send button is only present/enabled (React onClick attached) while the input has text and nothing is streaming (confirmed live on 12.26.5); returns whether it actually got pressed so the caller can retry a tick-too-early miss.
   function submitChatInput(inputEl) {
     const chat = inputEl.closest('[data-testid="ai-chat-container"]');
     const sendBtn = chat && chat.querySelector('.ai-chat-input-send-button');
-    if (sendBtn) press(sendBtn);
+    if (!sendBtn || sendBtn.disabled || sendBtn.getAttribute('aria-disabled') === 'true') return false;
+    press(sendBtn);
+    return true;
   }
 
   function agentSwitchItem(kind) {
@@ -1418,17 +1425,17 @@
     status.classList.add('aki-err');
   };
 
-  // Lexical editor (contenteditable, not textarea/input): a synthetic InputEvent
-  // ('beforeinput') is ignored by Lexical's own handler (no getTargetRanges()); the
-  // browser's native execCommand pipeline is what Lexical actually listens to. Lexical's
-  // DOM reconciliation after execCommand is not synchronous with this script tick — a
-  // double rAF wait (live-confirmed) is needed before the button reads the typed state.
+  // Lexical editor (contenteditable): a synthetic 'beforeinput' event is ignored (no getTargetRanges()), so this drives it via the native execCommand pipeline instead, then double-rAF-waits for Lexical's DOM reconciliation (not synchronous with this tick) before the button reads the typed state.
   async function typeAndSubmitChat(input, text) {
     input.focus();
     document.execCommand('selectAll', false, null);
     document.execCommand('insertText', false, text);
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    submitChatInput(input);
+    // The send button attaches its handler a render after the text lands, so retry across a few rAF frames instead of depending on one fixed delay being long enough.
+    for (let attempt = 0; attempt < 5; attempt++) {
+      if (submitChatInput(input)) return;
+      await new Promise((r) => requestAnimationFrame(r));
+    }
   }
 
   async function sendChatPrompt(text, btnId) {
