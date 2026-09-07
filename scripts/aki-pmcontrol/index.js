@@ -20,9 +20,7 @@ const {
   RULES_DIR,
 } = require('./scripts/update-check');
 
-// Writable runtime/user data — global SSoT shared with the main server's scripts/userdata.js
-// (USER_DIR = ~/.aki/mcpsv). The daemon is CommonJS and cannot import that ESM module, so it
-// redefines the same directory here to stay consistent.
+// Writable runtime/user data, shared SSoT with the main server's scripts/userdata.js (USER_DIR = ~/.aki/mcpsv); redefined here since this CommonJS daemon can't import that ESM module.
 const AKI_DATA_DIR = process.env.AKI_DATA_DIR || path.join(os.homedir(), '.aki', 'mcpsv');
 const PROMPTS_DIR = path.join(AKI_DATA_DIR, 'prompts');
 const ASSETS_PROMPTS_DIR = path.join(__dirname, 'assets', 'prompts');
@@ -33,9 +31,7 @@ const DEFAULT_PROMPT_PATH = path.join(ASSETS_PROMPTS_DIR, `${PROVIDER}.md`);
 const SHARED_PROMPT_USER_PATH = path.join(PROMPTS_DIR, SUM_PROMPT_NAME);
 const SHARED_PROMPT_DEFAULT_PATH = path.join(ASSETS_PROMPTS_DIR, SUM_PROMPT_NAME);
 
-// Pre-refactor writable dir — data.json/daemon.pid/new-window.flag/cdp-usage stay here (out of
-// scope, see docs/plan/done/instructions-prompts-refactor.md § No action); only the prompt file
-// migrates to AKI_DATA_DIR, so this is read-only for prompts (legacy fallback).
+// Pre-refactor writable dir (data.json/daemon.pid/new-window.flag/cdp-usage) — out of scope per docs/plan/done/instructions-prompts-refactor.md § No action; only the prompt file migrates to AKI_DATA_DIR, so this stays read-only for prompts (legacy fallback).
 const LEGACY_CDP_DIR = path.join(os.homedir(), '.aki', 'cdp-postman');
 const DATA_JSON_PATH = path.join(LEGACY_CDP_DIR, 'data.json');
 const LEGACY_INSTRUCTION_PATH = path.join(LEGACY_CDP_DIR, 'aki-postman-instruction.md');
@@ -51,11 +47,7 @@ let akiConfig = null;
 let loggedMissingRule = false;
 const CHAT_URL_RE = /gateway\.postman\.com\/chat/i;
 
-// --- Per-turn usage instrumentation (validating the delta-token signal) ---
-// The chat SSE only carries the weekly team-pool `usage` (millicredits) — never a per-chat
-// token count. To test whether the per-turn *delta* tracks a single conversation's context
-// growth, append one JSONL row per captured turn, keyed by conversationId + model. Lives next
-// to data.json (see LEGACY_CDP_DIR note). Best-effort; read/analyzed offline after a live run.
+// Per-turn usage instrumentation: the chat SSE only carries the weekly team-pool `usage` (millicredits), never a per-chat token count, so this logs one JSONL row per turn (keyed by conversationId+model, next to data.json) to test whether the delta tracks a single conversation's context growth. Best-effort; analyzed offline after a live run.
 const TURN_LOG_PATH = path.join(LEGACY_CDP_DIR, 'usage-turns.jsonl');
 const convoState = new Map(); // conversationId -> { turns, startUsage, lastUsage }
 let lastGlobalUsageMilli = null;
@@ -110,7 +102,7 @@ function logRuleUpdate(info) {
   }
 }
 
-// Mỗi lượt chat trả về SSE có event `usage` (docs/research/chat-gateway.md). Bắt thẳng tại
+// Mỗi lượt chat trả về SSE có event `usage` (docs/research/session-context-capture.md). Bắt thẳng tại
 // Network.loadingFinished của CDP thay vì polling định kỳ hay patch window.fetch trong trang.
 function hookChatUsageCapture(client) {
   const pending = new Map();
@@ -122,8 +114,7 @@ function hookChatUsageCapture(client) {
     let teamId = null;
     try { teamId = new URL(referer).searchParams.get('teamId'); } catch (e) {}
 
-    // conversationId + model come straight from the request body: authoritative for follow-up
-    // turns (turn 1 sends conversationId=null, so the response `conversation` event fills it in).
+    // conversationId + model come straight from the request body: authoritative for follow-up turns (turn 1 sends conversationId=null, so the response `conversation` event fills it in).
     let reqConvoId = null;
     let reqModel = null;
     try {
@@ -185,11 +176,7 @@ function applyChatUsageFromSSE(client, sseText, ctx) {
   pushUsageToPage(client);
 }
 
-// Appends one JSONL row per captured chat turn so a live multi-turn run can be analyzed
-// offline (see docs/research/postman-gateway-limits.md). delta = usageMilli minus the previous
-// reading for the SAME conversation (falls back to the last global reading when the id is
-// unknown), so a positive monotonic delta over a fresh chat is the signal we're validating.
-// isTeamPooled=true means the pool is shared, so concurrent activity can inflate a delta.
+// Appends one JSONL row per turn for offline validation (docs/research/session-context-capture.md); delta = usageMilli minus the previous same-conversation reading (falls back to the last global reading), so a positive monotonic delta signals context growth — noisy when isTeamPooled (shared pool).
 function logUsageTurn(ctx, latest, convo) {
   try {
     const usageMilli = latest.usage || 0;
