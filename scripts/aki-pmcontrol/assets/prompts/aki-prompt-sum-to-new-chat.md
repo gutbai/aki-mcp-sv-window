@@ -5,3 +5,4 @@ Include: the original goal, key decisions made and why, the current state, what 
 Do not restate the full conversation — only the facts a new session needs to continue correctly.
 Keep it dense: no filler, no pleasantries, no meta-commentary about this being a summary.
 Output only the handoff message itself, ready to paste as-is into the new chat.
+Wrap the entire handoff message in one fenced code block using four backticks (````) as the fence, so it can be copied in one click and any triple-backtick code blocks inside it stay intact.

@@ -284,12 +284,11 @@ function saveInstructionFile(text) {
   }
 }
 
-function loadSharedPromptFile() {
+function loadSummarizePromptFile() {
   return loadInstruction([SHARED_PROMPT_USER_PATH, SHARED_PROMPT_DEFAULT_PATH]);
 }
 
-// Centralizes mkdir + default-copy so both live only here instead of scattered across
-// saveInstruction/saveAkiData/installAkiRule (docs/plan/done/instructions-prompts-refactor.md §2).
+// Centralizes mkdir + default-copy so both live only here instead of scattered across saveInstruction/saveAkiData/installAkiRule (docs/plan/done/instructions-prompts-refactor.md §2).
 function init() {
   fs.mkdirSync(PROMPTS_DIR, { recursive: true });
   copyDefaultIfMissing(USER_PROMPT_PATH, DEFAULT_PROMPT_PATH);
@@ -415,9 +414,9 @@ async function setupCDP(target, port) {
       await client.Runtime.addBinding({ name: '__cdpSaveInstruction' });
     } catch (e) {}
 
-    // 3d. Binding "Send to chat" — daemon reads the shared prompt file and delivers it to the page
+    // 3d. Binding "Summarize for handoff" — daemon reads the summarize prompt file and delivers it to the page
     try {
-      await client.Runtime.addBinding({ name: '__cdpSendToChat' });
+      await client.Runtime.addBinding({ name: '__cdpRequestSummarize' });
     } catch (e) {}
 
     client.Runtime.bindingCalled(async (event) => {
@@ -449,10 +448,10 @@ async function setupCDP(target, port) {
         pushUsageToPage(client);
       } else if (event.name === '__cdpSaveInstruction') {
         saveInstructionFile(event.payload);
-      } else if (event.name === '__cdpSendToChat') {
-        const sharedPrompt = loadSharedPromptFile();
+      } else if (event.name === '__cdpRequestSummarize') {
+        const summarizePrompt = loadSummarizePromptFile();
         client.Runtime.evaluate({
-          expression: `if (typeof window.__pmDeliverSharedPrompt === 'function') window.__pmDeliverSharedPrompt(${JSON.stringify(sharedPrompt)});`
+          expression: `if (typeof window.__pmDeliverSummarizePrompt === 'function') window.__pmDeliverSummarizePrompt(${JSON.stringify(summarizePrompt)});`
         }).catch(() => {});
       }
     });

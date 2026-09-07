@@ -754,7 +754,7 @@
   const PANEL_WIDTH = 350;
   const ANCHOR_GAP = 4;
   const VIEWPORT_PAD = 8;
-  const AKI_UI_V = 'aether14';
+  const AKI_UI_V = 'aether19';
 
   function togglePanel(forcedState) {
     const panel = document.getElementById('aki-control-panel');
@@ -1312,8 +1312,8 @@
           </div>
           <textarea id="aki-instruction-textarea" class="aki-textarea">${escapeHtml(config.instruction)}</textarea>
           <div class="aki-row">
-            <span class="aki-section-label">SEND TO CHAT<span class="aki-help" title="Pastes a shared summarize-and-handoff prompt into this chat and sends it, so you can carry the context into a new chat elsewhere.">?</span></span>
-            <button type="button" id="aki-btn-send-to-chat" class="aki-btn">SEND TO CHAT</button>
+            <span class="aki-section-label">SUMMARIZE FOR HANDOFF<span class="aki-help" title="Sends a summarize prompt into this chat so the model writes a handoff summary you can paste into a new chat, keeping the context when this one gets long.">?</span></span>
+            <button type="button" id="aki-btn-summarize-chat" class="aki-btn">SUMMARIZE THIS CHAT</button>
           </div>
         </div>
       `;
@@ -1408,12 +1408,12 @@
       };
     }
 
-    const sendToChatBtn = panel.querySelector('#aki-btn-send-to-chat');
-    if (sendToChatBtn && !window.__pmSendInFlight) {
-      sendToChatBtn.onclick = (e) => {
+    const summarizeChatBtn = panel.querySelector('#aki-btn-summarize-chat');
+    if (summarizeChatBtn && !window.__pmSendInFlight) {
+      summarizeChatBtn.onclick = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (typeof window.__cdpSendToChat === 'function') window.__cdpSendToChat('');
+        if (typeof window.__cdpRequestSummarize === 'function') window.__cdpRequestSummarize('');
       };
     }
 
@@ -1509,11 +1509,11 @@
     return sendChatPrompt(instructionPrefix() + '\n\n' + text, 'aki-btn-send-instruction');
   }
 
-  function sendSharedPrompt(text) {
-    return sendChatPrompt(text, 'aki-btn-send-to-chat');
+  function sendSummarizePrompt(text) {
+    return sendChatPrompt(text, 'aki-btn-summarize-chat');
   }
 
-  window.__pmDeliverSharedPrompt = function (text) { sendSharedPrompt(text); };
+  window.__pmDeliverSummarizePrompt = function (text) { sendSummarizePrompt(text); };
 
   let armedForNewChat = false;
   function checkAndInjectInstruction() {

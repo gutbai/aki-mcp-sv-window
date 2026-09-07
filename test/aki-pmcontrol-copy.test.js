@@ -46,7 +46,7 @@ assert.match(indexSrc, /const PROMPTS_DIR = path\.join\(AKI_DATA_DIR, 'prompts'\
 assert.match(indexSrc, /const PROVIDER = 'postman'/);
 assert.match(indexSrc, /function init\(\)/);
 assert.match(indexSrc, /copyDefaultIfMissing/);
-assert.match(indexSrc, /__cdpSendToChat/);
+assert.match(indexSrc, /__cdpRequestSummarize/);
 assert.doesNotMatch(indexSrc, /writeFileSync\([^;]*__dirname[^;]*'data'/);
 assert.doesNotMatch(indexSrc, /writeFileSync\([^;]*__dirname[^;]*'assets'/);
 
@@ -90,9 +90,9 @@ assert.doesNotMatch(mcpSrc, /MCP_POSTMAN_CDP/);
 assert.doesNotMatch(mcpSrc, /Input\.dispatchKeyEvent/);
 
 assert.match(mcpSrc, /function typeAndSubmitChat/);
-assert.match(mcpSrc, /function sendSharedPrompt/);
-assert.match(mcpSrc, /aki-btn-send-to-chat/);
-assert.match(mcpSrc, /window\.__cdpSendToChat/);
-assert.match(mcpSrc, /window\.__pmDeliverSharedPrompt/);
+assert.match(mcpSrc, /function sendSummarizePrompt/);
+assert.match(mcpSrc, /aki-btn-summarize-chat/);
+assert.match(mcpSrc, /window\.__cdpRequestSummarize/);
+assert.match(mcpSrc, /window\.__pmDeliverSummarizePrompt/);
 
 console.log('aki-pmcontrol-copy.test.js: ok');
