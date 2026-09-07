@@ -60,13 +60,6 @@ const TURN_LOG_PATH = path.join(LEGACY_CDP_DIR, 'usage-turns.jsonl');
 const convoState = new Map(); // conversationId -> { turns, startUsage, lastUsage }
 let lastGlobalUsageMilli = null;
 
-// One-shot raw diagnostic: prove empirically whether the gateway EVER exposes a real token
-// count — in the response headers (e.g. Bedrock x-amzn-bedrock-*-token-count) or anywhere in
-// the SSE body — instead of only the credit `usage`. Dumps the first N turns then stops.
-const RAW_DEBUG_PATH = path.join(LEGACY_CDP_DIR, 'usage-raw-debug.jsonl');
-const RAW_DUMP_MAX = 12;
-let rawDumpCount = 0;
-
 async function refreshUsageData(customToken = null) {
   cachedUsageData = await fetchAllUsage(customToken);
   return cachedUsageData;
@@ -149,15 +142,6 @@ function hookChatUsageCapture(client) {
     pending.set(params.requestId, { teamId, reqConvoId, reqModel });
   });
 
-  // Response headers are where a passthrough token count would live (e.g. Bedrock's
-  // x-amzn-bedrock-*-token-count) — stash them for the raw diagnostic dump.
-  client.Network.responseReceived((params) => {
-    const ctx = pending.get(params.requestId);
-    if (!ctx) return;
-    ctx.status = params.response && params.response.status;
-    ctx.headers = (params.response && params.response.headers) || null;
-  });
-
   client.Network.loadingFinished(async (params) => {
     if (!pending.has(params.requestId)) return;
     const ctx = pending.get(params.requestId);
@@ -188,7 +172,6 @@ function applyChatUsageFromSSE(client, sseText, ctx) {
 
   // Log the turn even before the REST usage snapshot has loaded — validation must not miss turns.
   logUsageTurn(ctx, latest, convo);
-  dumpRawTurnDebug(ctx, sseText);
 
   if (!cachedUsageData || !Array.isArray(cachedUsageData.teams) || !cachedUsageData.teams.length) return;
   const team = cachedUsageData.teams.find((t) => String(t.team_id) === String(teamId)) || cachedUsageData.teams[0];
@@ -241,62 +224,6 @@ function logUsageTurn(ctx, latest, convo) {
     const turnStr = rec.turn == null ? '?' : rec.turn;
     const cumStr = rec.cumulativeMilli == null ? 'n/a' : (rec.cumulativeMilli / 1000).toFixed(2) + 'cr';
     console.log(`[usage] turn=${turnStr} convo=${convoId ? convoId.slice(0, 8) : 'n/a'} model=${model || '?'} Δ=${(deltaMilli / 1000).toFixed(2)}cr cum=${cumStr}`);
-  } catch (e) {}
-}
-
-// Deep-scan any object for keys whose name contains "token"; collect {path, value} hits.
-function scanForToken(obj, pathStr, out, depth) {
-  depth = depth || 0;
-  if (depth > 6 || out.length >= 20 || obj == null || typeof obj !== 'object') return;
-  for (const k of Object.keys(obj)) {
-    const v = obj[k];
-    if (/token/i.test(k)) {
-      out.push({ path: `${pathStr}.${k}`, value: (typeof v === 'object' ? JSON.stringify(v).slice(0, 160) : String(v).slice(0, 160)) });
-    }
-    if (v && typeof v === 'object') scanForToken(v, `${pathStr}.${k}`, out, depth + 1);
-  }
-}
-
-// Writes the first RAW_DUMP_MAX turns to usage-raw-debug.jsonl: response status + ALL header
-// keys + any header whose name contains "token" + the count of each SSE eventType + the raw
-// `usage` event object + any body field named like a token. If both header/body token hits are
-// empty across turns, that's the empirical proof the gateway exposes no real token count.
-function dumpRawTurnDebug(ctx, sseText) {
-  try {
-    if (rawDumpCount >= RAW_DUMP_MAX) return;
-    const eventTypes = {};
-    const bodyTokenHits = [];
-    let usageEventRaw = null;
-    for (const line of sseText.split('\n')) {
-      if (!line.startsWith('data:')) continue;
-      const payload = line.slice(5).trim();
-      if (payload === '[DONE]') { eventTypes['[DONE]'] = (eventTypes['[DONE]'] || 0) + 1; continue; }
-      let evt;
-      try { evt = JSON.parse(payload); } catch (e) { continue; }
-      const et = evt.eventType || '(none)';
-      eventTypes[et] = (eventTypes[et] || 0) + 1;
-      if (evt.eventType === 'usage') usageEventRaw = evt.data;
-      scanForToken(evt, et, bodyTokenHits);
-    }
-    const headerTokenHits = {};
-    const headers = (ctx && ctx.headers) || null;
-    if (headers) {
-      for (const k of Object.keys(headers)) {
-        if (/token/i.test(k)) headerTokenHits[k] = headers[k];
-      }
-    }
-    const rec = {
-      ts: new Date().toISOString(),
-      status: (ctx && ctx.status) || null,
-      headerKeys: headers ? Object.keys(headers) : null,
-      headerTokenHits,
-      eventTypes,
-      usageEventRaw,
-      bodyTokenHits: bodyTokenHits.slice(0, 20)
-    };
-    fs.appendFileSync(RAW_DEBUG_PATH, JSON.stringify(rec) + '\n', 'utf8');
-    rawDumpCount += 1;
-    console.log(`[usage-raw] dumped ${rawDumpCount}/${RAW_DUMP_MAX} → ${RAW_DEBUG_PATH} | events: ${Object.keys(eventTypes).join(',')} | header token hits: ${Object.keys(headerTokenHits).join(',') || 'NONE'} | body token hits: ${bodyTokenHits.length}`);
   } catch (e) {}
 }
 
