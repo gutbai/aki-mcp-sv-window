@@ -5,12 +5,20 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 ## [Unreleased]
 
 ### Added
-- **SEND TO CHAT in Postman control panel**: injects a button into the Postman web/desktop chat UI that delivers a shared summarize-and-handoff prompt (`aki-prompt-sum-to-new-chat.md`) into the input area.
+- **Context-length indicator in the Postman chat footer**: a colored bar (green/amber/red) showing conversation size in KB/characters, signaling when a chat has grown long enough to start a new one. Thresholds (`ctxCharAmber`/`ctxCharRed`, default 80K/150K chars) are configurable in code — no panel control to edit them yet.
+- **Weekly AI credit reset countdown**: the panel usage footer and status-bar credits tooltip now show "Resets in Xd Yh" alongside the used/limit numbers.
+- **Per-turn AI usage delta logged to JSONL** (`~/.aki/cdp-postman/usage-turns.jsonl`): one row per chat turn (conversation id, model, usage delta), for offline validation of the usage-tracking signal.
+- **Summarize-for-handoff button in Postman control panel**: a panel button ("Summarize this chat") sends a shared summarize prompt (`aki-prompt-sum-to-new-chat.md`) into the chat, so the model writes a handoff summary you can carry into a new chat, wrapped in a 4-backtick fenced code block so it copies cleanly in one click.
 - **Instruction store helper (`scripts/aki-pmcontrol/scripts/instruction-store.js`)**: modular handler for ordered prompt resolution (`loadInstruction`), directory-safe persistence (`saveInstruction`), and non-destructive default template copying (`copyDefaultIfMissing`).
 - **Bundled default prompt assets**: `scripts/aki-pmcontrol/assets/prompts/` contains `postman.md` and `aki-prompt-sum-to-new-chat.md` as read-only seeds.
 
 ### Changed
 - **Directory-based prompt storage for Postman control**: provider chat instructions moved to `$AKI_DATA_DIR/prompts/<provider>.md` (default `~/.aki/mcpsv/prompts/postman.md`), sharing the `$AKI_DATA_DIR` single source of truth with the main MCP server.
+- Panel's "updated" timestamp now shown in 24-hour time.
+
+### Fixed
+- **Auto-click double-press could freeze the chat session**: a permission card surviving several polling ticks before leaving the DOM was being re-pressed every tick; cards are now marked once pressed and skipped afterward.
+- **Chat-prompt send could silently miss**: the send button's handler attaches a render after the text lands, so one early press could hit a not-yet-wired button; sending now retries across a few frames instead of firing once.
 
 ## [1.14.0] - 2026-09-05
 
