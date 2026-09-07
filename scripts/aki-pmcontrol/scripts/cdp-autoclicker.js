@@ -342,7 +342,9 @@
       autoRejectPickFolder: true,
       autoInjectInstruction: true,
       showAllTeams: false,
-      isPinned: true
+      isPinned: true,
+      ctxCharAmber: 80000,
+      ctxCharRed: 150000
     };
 
     if (window.__pmInitialConfig && typeof window.__pmInitialConfig === 'object') {
@@ -362,6 +364,8 @@
       autoRejectPickFolder: config.autoRejectPickFolder,
       autoInjectInstruction: config.autoInjectInstruction,
       isPinned: config.isPinned,
+      ctxCharAmber: config.ctxCharAmber,
+      ctxCharRed: config.ctxCharRed,
       ...extra
     };
 
@@ -591,7 +595,53 @@
     return `Resets in ${totalH}h ${m}m`;
   }
 
+  function readConversationChars() {
+    try {
+      const container = document.querySelector('[data-testid="ai-chat-container"] [data-testid="ai-chat-conversation-container"]');
+      return container ? (container.innerText || '').length : 0;
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  // "4:38:35 PM" (daemon locale time string) → "16:38:35"; passes anything already 24h through.
+  function to24h(t) {
+    const m = t && /^(\d{1,2}):(\d{2}):(\d{2})\s*(AM|PM)$/i.exec(t.trim());
+    if (!m) return t || '';
+    let h = parseInt(m[1], 10) % 12;
+    if (/PM/i.test(m[4])) h += 12;
+    return String(h).padStart(2, '0') + ':' + m[2] + ':' + m[3];
+  }
+
+  // Horizontal context-length bar mounted at the bottom of .ai-chat-footer, right under the chat input, so the "time to start a new chat" signal sits at the edge of where the user types; fill width is chars/red capped at 100%, color crosses green→amber→red at the thresholds.
+  function renderContextBar() {
+    const footer = document.querySelector('[data-testid="ai-chat-container"] .ai-chat-footer');
+    const host = footer && footer.querySelector('.ai-chat-center-content');
+    if (!host) return;
+    const chars = readConversationChars();
+    const amber = config.ctxCharAmber || 80000;
+    const red = config.ctxCharRed || 150000;
+    const pct = Math.max(2, Math.min(100, Math.round((chars / red) * 100)));
+    const color = chars >= red
+      ? 'var(--content-color-error)'
+      : chars >= amber
+        ? 'var(--content-color-warning, #f5a623)'
+        : 'var(--content-color-success)';
+    const kb = chars > 0 ? Math.round(chars / 1000) + 'K' : '0';
+    let bar = document.getElementById('aki-ctx-bar');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'aki-ctx-bar';
+    }
+    bar.style.cssText = 'display:flex;align-items:center;gap:6px;padding:2px 12px 4px;font-size:10px;opacity:.85';
+    // Mount inside the footer's center-content, not the footer itself — appending to the footer pushed the bar past .ai-chat-container's overflow:hidden clip edge, making it invisible.
+    if (host.lastElementChild !== bar) host.appendChild(bar);
+    bar.title = `Chat context — ${chars.toLocaleString()} characters (${kb})\nHow long this conversation has grown. Longer chats can make the assistant's answers drift, so this is your cue to reset.\nGreen: healthy · Amber ≥ ${Math.round(amber / 1000)}K · Red ≥ ${Math.round(red / 1000)}K → start a new chat.`;
+    bar.innerHTML = `<span style="color:var(--content-color-secondary,#8b8b8b);white-space:nowrap">Context</span><div style="flex:1;height:4px;border-radius:2px;background:var(--background-color-tertiary,rgba(128,128,128,.25));overflow:hidden"><div style="width:${pct}%;height:100%;background:${color};transition:width .3s"></div></div><span style="color:${color};font-variant-numeric:tabular-nums;white-space:nowrap">${kb}</span>`;
+  }
+
   function renderStatusBarUsage() {
+    renderContextBar();
     const el = document.getElementById('aki-status-bar-usage');
     if (!el) return;
 
@@ -677,7 +727,7 @@
           <button id="aki-toggle-all-teams" class="aki-text-btn">
             ${config.showAllTeams ? 'Collapse' : `View all ${data.teams.length} teams`}
           </button>
-          <span class="aki-muted">${resetStr ? resetStr + ' · ' : ''}${data.updatedAt || ''}</span>
+          <span class="aki-muted">${resetStr ? resetStr + ' · ' : ''}${data.updatedAt ? 'updated ' + to24h(data.updatedAt) : ''}</span>
         </div>
         ${allTeamsHTML}
       </div>
