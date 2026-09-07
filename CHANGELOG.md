@@ -4,6 +4,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 
 ## [Unreleased]
 
+## [1.15.0] - 2026-09-07
+
 ### Added
 - **Context-length indicator in the Postman chat footer**: a colored bar (green/amber/red) showing conversation size in KB/characters, signaling when a chat has grown long enough to start a new one. Thresholds (`ctxCharAmber`/`ctxCharRed`, default 80K/150K chars) are configurable in code — no panel control to edit them yet.
 - **Weekly AI credit reset countdown**: the panel usage footer and status-bar credits tooltip now show "Resets in Xd Yh" alongside the used/limit numbers.
