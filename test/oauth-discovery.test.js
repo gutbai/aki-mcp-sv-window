@@ -25,13 +25,18 @@ try {
   assert.equal(mcp.resource, origin + '/mcp');
   assert.deepEqual(mcp.authorization_servers, [origin]);
 
-  const asRes = await fetch(base + '/.well-known/oauth-authorization-server');
-  assert.equal(asRes.status, 200);
-  const as = await asRes.json();
-  assert.equal(as.issuer, origin);
-  assert.equal(as.registration_endpoint, origin + '/register');
-  assert.equal(as.token_endpoint, origin + '/token');
-  assert.ok(as.code_challenge_methods_supported.includes('S256'));
+  for (const discoveryPath of ['/.well-known/oauth-authorization-server', '/.well-known/openid-configuration']) {
+    const asRes = await fetch(base + discoveryPath);
+    assert.equal(asRes.status, 200, discoveryPath);
+    assert.match(asRes.headers.get('content-type') || '', /^application\/json/);
+    const as = await asRes.json();
+    assert.equal(as.issuer, origin);
+    assert.equal(as.authorization_endpoint, origin + '/authorize');
+    assert.equal(as.registration_endpoint, origin + '/register');
+    assert.equal(as.token_endpoint, origin + '/token');
+    assert.ok(as.code_challenge_methods_supported.includes('S256'));
+    assert.ok(as.token_endpoint_auth_methods_supported.includes('none'));
+  }
 
   const badAlias = await fetch(base + '/.well-known/oauth-authorization-server/mcp');
   assert.equal(badAlias.status, 404);
@@ -43,7 +48,7 @@ try {
     `Bearer resource_metadata="${origin}/.well-known/oauth-protected-resource/mcp"`,
   );
 
-  console.log('PASS: OAuth discovery metadata is RFC 9728-consistent for root and /mcp resources');
+  console.log('PASS: OAuth discovery metadata responds directly and is RFC 9728-consistent');
 } finally {
   server.close();
   await once(server, 'close');

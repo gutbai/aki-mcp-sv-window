@@ -1,22 +1,64 @@
 // Public entry: OAuth AS (Claude pre-registered + ChatGPT DCR) + Streamable HTTP /mcp via streamable-bridge.
 // Runs in-process inside start.js (docs/plan/done/consolidate-mcp-tool-processes.md, Part B): startGatekeeper() returns the http.Server so the orchestrator can close it on shutdown.
 import http from 'node:http';
-import { loadOrCreatePassphrase, metadataHandlers, handleAuthorize, handleToken, handleRegister, verifyBearer } from './oauth.js';
+import { loadOrCreatePassphrase, handleAuthorize, handleToken, handleRegister, verifyBearer } from './oauth.js';
 import { handleStreamableMcp, terminateSession } from './streamable-bridge.js';
 import { log, logErr, audit, nextRequestId } from './log.js';
 import { serveStatic } from './http.js';
 
 const STATIC_ALIASES = { '/favicon.ico': '/favicon/favicon.ico' };
 
-function protectedResourceMetadata(res, resource, authorizationServer) {
+function sendJson(res, body) {
   res.writeHead(200, {
     'Content-Type': 'application/json',
     'Cache-Control': 'no-store',
   });
-  res.end(JSON.stringify({
+  res.end(JSON.stringify(body));
+}
+
+function protectedResourceMetadata(res, resource, authorizationServer) {
+  return sendJson(res, {
     resource,
     authorization_servers: [authorizationServer],
-  }));
+  });
+}
+
+function authorizationServerMetadata(res, origin) {
+  // Keep discovery completely local to the gatekeeper request handler. This intentionally avoids
+  // the shared oauth.js metadata wrapper: on Windows we observed both RFC 8414 and OIDC discovery
+  // requests connect successfully but never receive a byte, while the adjacent PRMD handler works.
+  return sendJson(res, {
+    issuer: origin,
+    authorization_endpoint: `${origin}/authorize`,
+    token_endpoint: `${origin}/token`,
+    registration_endpoint: `${origin}/register`,
+    code_challenge_methods_supported: ['S256'],
+    token_endpoint_auth_methods_supported: ['none', 'client_secret_post'],
+    response_types_supported: ['code'],
+    grant_types_supported: ['authorization_code', 'refresh_token'],
+  });
+}
+
+function selfCheckDiscovery(port) {
+  const paths = [
+    '/.well-known/oauth-protected-resource/mcp',
+    '/.well-known/oauth-authorization-server',
+    '/.well-known/openid-configuration',
+  ];
+  for (const path of paths) {
+    const req = http.get({ host: '127.0.0.1', port, path, timeout: 2500 }, (res) => {
+      res.resume();
+      res.on('end', () => {
+        if (res.statusCode === 200) log(`[oauth] discovery self-check OK ${path}`);
+        else logErr(`[oauth] discovery self-check FAILED ${path}: HTTP ${res.statusCode}`);
+      });
+    });
+    req.on('timeout', () => {
+      req.destroy();
+      logErr(`[oauth] discovery self-check FAILED ${path}: timeout`);
+    });
+    req.on('error', (e) => logErr(`[oauth] discovery self-check FAILED ${path}: ${e.message}`));
+  }
 }
 
 // origin: the public https origin (Tailscale MagicDNS). onFatal: called if the listen socket errors, so the orchestrator tears the whole stack down instead of leaking an orphaned hub.
@@ -25,7 +67,6 @@ export function startGatekeeper(origin, onFatal) {
 
   const port = Number(process.env.GATEKEEPER_PORT || 9999);
   const passphrase = loadOrCreatePassphrase();
-  const meta = metadataHandlers(origin);
 
   const server = http.createServer(async (req, res) => {
     const path = (req.url || '').split('?')[0];
@@ -75,10 +116,11 @@ export function startGatekeeper(origin, onFatal) {
       return protectedResourceMetadata(res, `${origin}/mcp`, origin);
     }
 
-    // The authorization server issuer is `origin`, so only the root RFC 8414/OIDC discovery
-    // documents are authoritative. Serving a `/mcp` AS metadata alias with issuer=`origin` makes
-    // strict clients reject the document for issuer mismatch.
-    if ((path === '/.well-known/oauth-authorization-server' || path === '/.well-known/openid-configuration') && req.method === 'GET') return meta.authorizationServer(req, res);
+    // The authorization server issuer is `origin`, so the root RFC 8414 and OIDC discovery
+    // documents return the same authoritative metadata.
+    if ((path === '/.well-known/oauth-authorization-server' || path === '/.well-known/openid-configuration') && req.method === 'GET') {
+      return authorizationServerMetadata(res, origin);
+    }
     if (path === '/register' && req.method === 'POST') return handleRegister(req, res);
     if (path === '/authorize' && (req.method === 'GET' || req.method === 'POST')) return handleAuthorize(req, res, passphrase, origin);
     if (path === '/token' && req.method === 'POST') return handleToken(req, res);
@@ -116,6 +158,7 @@ export function startGatekeeper(origin, onFatal) {
   });
   server.listen(port, () => {
     log(`[gatekeeper] listening on :${port} (OAuth-protected /mcp)`);
+    selfCheckDiscovery(port);
   });
 
   return server;
