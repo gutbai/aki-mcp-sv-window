@@ -11,6 +11,10 @@ const SOURCE_REPO_FILE = path.join(RULES_DIR, '.source-repo');
 const RULES_CLONE_DIR = path.join(os.homedir(), '.aki', 'akidevrule-src');
 const RULES_REPO_URL = 'https://github.com/lacvietanh/akidevrule.git';
 
+export function looksLikeMissingPython(output = '') {
+  return /python (?:was )?not found|python 3(?:\.\d+)? is required|microsoft store:\/\/|ms-windows-store:\/\//i.test(output);
+}
+
 function run(command, args, cwd) {
   return new Promise((resolve, reject) => {
     const started = Date.now();
@@ -48,19 +52,18 @@ async function ensureRepo() {
 async function runPowerShell(repo) {
   const script = path.join(repo, 'install.ps1');
   if (!existsSync(script)) return null;
-  let missing = null;
   for (const command of ['powershell.exe', 'pwsh.exe']) {
     try {
-      return await run(command, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', script], repo);
+      const output = await run(command, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', script], repo);
+      // Windows' python.exe App Execution Alias can print the Store message and still make the wrapper exit 0.
+      // Treat that as "interpreter unavailable" so the direct candidates below get a chance instead of returning false success.
+      if (looksLikeMissingPython(output)) return null;
+      return output;
     } catch (e) {
-      if (e.code === 'ENOENT') {
-        missing = e;
-        continue;
-      }
+      if (e.code === 'ENOENT') continue;
       throw e;
     }
   }
-  if (missing) return null;
   return null;
 }
 
@@ -74,7 +77,9 @@ async function runPython(repo) {
   ];
   for (const [command, args] of candidates) {
     try {
-      return await run(command, args, repo);
+      const output = await run(command, args, repo);
+      if (looksLikeMissingPython(output)) continue;
+      return output;
     } catch (e) {
       if (e.code === 'ENOENT') continue;
       throw e;
@@ -87,7 +92,7 @@ export async function installRulesWindows() {
   const repo = await ensureRepo();
   const output = await runPowerShell(repo) ?? await runPython(repo);
   if (output == null) {
-    throw new Error('PowerShell/Python 3 not found. Windows install does not require bash; install Python 3 or enable Windows PowerShell, then retry.');
+    throw new Error('Python 3 was not found. Windows install no longer requires bash; install Python 3 (or enable the py launcher) and retry.');
   }
   const lastLine = output.trim().split(/\r?\n/).filter(Boolean).pop() || 'installed';
   return `${lastLine} (source: ${repo})`;
