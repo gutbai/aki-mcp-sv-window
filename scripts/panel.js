@@ -14,6 +14,7 @@ import { SETTINGS_PATH, USER_DIR, INGRESS_CONFIG_PATH, CLOUDFLARED_CRED_PATH, re
 import { readBody, json, serveStatic } from './http.js';
 import { getLocalVersions, cmpSemver, writeStatusFile } from './update-check.js';
 import { getDaemonStatus, launchPostmanDaemon, killPostmanDaemon, requestNewWindow } from './postman-mcp.js';
+import { installRulesWindows } from './windows-rule-installer.js';
 
 const IS_WIN = process.platform === 'win32';
 const REPO_ROOT = process.cwd();
@@ -126,6 +127,8 @@ function run(command, args, cwd) {
 
 // Three states, one button: already cloned locally, cloned by us before, or never seen on this machine.
 async function installRules() {
+  if (IS_WIN) return installRulesWindows();
+
   const recorded = existsSync(SOURCE_REPO_FILE) ? readFileSync(SOURCE_REPO_FILE, 'utf8').trim() : null;
   let repo = recorded && existsSync(path.join(recorded, 'install.sh')) ? recorded : null;
 
@@ -138,16 +141,8 @@ async function installRules() {
     }
     repo = RULES_CLONE_DIR;
   }
-  const bash = IS_WIN ? 'bash.exe' : 'bash';
-  try {
-    const log = await run(bash, [path.join(repo, 'install.sh')], repo);
-    return `${log.trim().split('\n').pop()} (source: ${repo})`;
-  } catch (e) {
-    if (IS_WIN && /ENOENT|not found|not recognized/i.test(e.message)) {
-      throw new Error('bash not found — install Git for Windows (includes bash) or run the install command from the panel manually');
-    }
-    throw e;
-  }
+  const output = await run('bash', [path.join(repo, 'install.sh')], repo);
+  return `${output.trim().split('\n').pop()} (source: ${repo})`;
 }
 
 // Pull this repo, but only when the tree is clean — an unattended pull over local edits can conflict or lose work (agent.B3). Checked at click-time, not page-load, since the tree can change in between.

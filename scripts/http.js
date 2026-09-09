@@ -1,6 +1,7 @@
 // Shared plumbing for the two HTTP front-ends; the static server is a security boundary, kept single-copy so its path-traversal guard can't diverge.
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize, sep } from 'node:path';
+import { audit } from './log.js';
 
 const PUBLIC_DIR = join(process.cwd(), 'public');
 const MIME = {
@@ -13,12 +14,22 @@ export function readBody(req) {
   return new Promise((resolve, reject) => {
     const chunks = [];
     req.on('data', (c) => chunks.push(c));
-    req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
+    req.on('end', () => {
+      const body = Buffer.concat(chunks).toString('utf8');
+      audit('http.body.in', {
+        requestId: req.akiRequestId || null,
+        method: req.method,
+        url: req.url,
+        body,
+      });
+      resolve(body);
+    });
     req.on('error', reject);
   });
 }
 
 export function json(res, status, body, headers) {
+  audit('http.body.out', { requestId: res.akiRequestId || null, status, body });
   res.writeHead(status, { 'Content-Type': 'application/json', ...headers });
   res.end(JSON.stringify(body));
 }
