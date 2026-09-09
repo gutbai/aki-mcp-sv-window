@@ -21,7 +21,8 @@ const REDACT_KEY = /authorization|cookie|set-cookie|client[_-]?secret|access[_-]
 function redactString(value) {
   return value
     .replace(/(Bearer\s+)[A-Za-z0-9._~+/=-]+/gi, '$1[REDACTED]')
-    .replace(/(^|[?&])((?:passphrase|client_secret|access_token|refresh_token|code_verifier|x-panel-token|token|password|code|t)=)[^&\s"']+/gi, '$1$2[REDACTED]');
+    .replace(/(^|[?&])((?:passphrase|client_secret|access_token|refresh_token|code_verifier|x-panel-token|token|password|code|t)=)[^&\s"']+/gi, '$1$2[REDACTED]')
+    .replace(/((?:oauth\s+client\s+secret|client\s+secret|access\s+token|refresh\s+token|passphrase|password)\s*:\s*)\S+/gi, '$1[REDACTED]');
 }
 
 function sanitize(value, seen = new WeakSet(), key = '') {
