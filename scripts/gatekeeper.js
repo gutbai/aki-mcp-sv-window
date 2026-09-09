@@ -8,6 +8,17 @@ import { serveStatic } from './http.js';
 
 const STATIC_ALIASES = { '/favicon.ico': '/favicon/favicon.ico' };
 
+function protectedResourceMetadata(res, resource, authorizationServer) {
+  res.writeHead(200, {
+    'Content-Type': 'application/json',
+    'Cache-Control': 'no-store',
+  });
+  res.end(JSON.stringify({
+    resource,
+    authorization_servers: [authorizationServer],
+  }));
+}
+
 // origin: the public https origin (Tailscale MagicDNS). onFatal: called if the listen socket errors, so the orchestrator tears the whole stack down instead of leaking an orphaned hub.
 export function startGatekeeper(origin, onFatal) {
   if (!origin) throw new Error('PUBLIC_ORIGIN (Tailscale origin) is not set');
@@ -54,8 +65,20 @@ export function startGatekeeper(origin, onFatal) {
       return;
     }
 
-    if ((path === '/.well-known/oauth-protected-resource' || path === '/.well-known/oauth-protected-resource/mcp') && req.method === 'GET') return meta.protectedResource(req, res);
-    if ((path === '/.well-known/oauth-authorization-server' || path === '/.well-known/oauth-authorization-server/mcp' || path === '/.well-known/openid-configuration') && req.method === 'GET') return meta.authorizationServer(req, res);
+    // RFC 9728 validation is strict: the returned `resource` must match the resource identifier
+    // from which the exact well-known URL was derived. Root metadata therefore identifies `origin`,
+    // while the path-specific metadata for the MCP endpoint identifies `origin/mcp`.
+    if (path === '/.well-known/oauth-protected-resource' && req.method === 'GET') {
+      return protectedResourceMetadata(res, origin, origin);
+    }
+    if (path === '/.well-known/oauth-protected-resource/mcp' && req.method === 'GET') {
+      return protectedResourceMetadata(res, `${origin}/mcp`, origin);
+    }
+
+    // The authorization server issuer is `origin`, so only the root RFC 8414/OIDC discovery
+    // documents are authoritative. Serving a `/mcp` AS metadata alias with issuer=`origin` makes
+    // strict clients reject the document for issuer mismatch.
+    if ((path === '/.well-known/oauth-authorization-server' || path === '/.well-known/openid-configuration') && req.method === 'GET') return meta.authorizationServer(req, res);
     if (path === '/register' && req.method === 'POST') return handleRegister(req, res);
     if (path === '/authorize' && (req.method === 'GET' || req.method === 'POST')) return handleAuthorize(req, res, passphrase, origin);
     if (path === '/token' && req.method === 'POST') return handleToken(req, res);
