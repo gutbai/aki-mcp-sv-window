@@ -1,37 +1,45 @@
-# ChatGPT — Add custom connector (real install flow)
+# ChatGPT — Add custom connector
 
-OpenAI requires **Developer mode** before you can create custom MCP apps ([docs](https://developers.openai.com/api/docs/guides/developer-mode)). Registration URL and Advanced OAuth stay unused: ChatGPT auto-discovers those from `/.well-known/openid-configuration`.
+OpenAI requires **Developer mode** before creating custom MCP plugins. Registration URL and advanced OAuth values stay unused: ChatGPT discovers OAuth from the server metadata.
 
 ## Install steps
 
-1. Enable **Developer mode**: ChatGPT → Settings → Security and login ([open ↗](https://chatgpt.com/#settings/Security)).
-2. Open [Create a connector ↗](https://chatgpt.com/plugins#settings/Connectors?create-connector=true&redirectAfter=%2Fplugins) (ChatGPT → Settings → Connectors → New connector).
-3. **Icon** (optional). Use `<repo>/public/favicon/icon-48.png` or any image.
-4. **Name**: your choice (e.g. `Aki MCP Server`).
-5. **Description**: your choice (e.g. `Local file and shell access via MCP`).
-6. **Connection → Server URL**: paste the **MCP URL** from the panel (e.g. `https://aki-mba16.tailf23d51.ts.net/mcp`).
-7. Tick **I understand and want to continue**, then **Create**.
-8. On connect, the browser opens the auth page. Enter the **Passphrase** shown in the panel.
+1. Enable **Developer mode**: ChatGPT → Settings → Security and login.
+2. Open ChatGPT → Settings → Connectors → New connector.
+3. **Icon** (optional): use `<repo>/public/favicon/icon-48.png` or any image.
+4. Choose a **Name** and **Description**.
+5. **Connection → Server URL**: paste the MCP URL from the Aki panel, e.g. `https://host.ts.net/mcp`.
+6. Tick **I understand and want to continue**, then **Create**.
+7. On connect, enter the **Passphrase** shown by Aki.
 
-That's it. ChatGPT self-registers as an OAuth client via DCR (RFC 7591, PKCE, no secret) using the `registration_endpoint` it reads from `/.well-known/openid-configuration`. No Client ID or Secret to paste.
+ChatGPT normally self-registers via DCR (RFC 7591) and uses PKCE with no client secret. Do not paste Claude's Client ID/Secret into ChatGPT.
 
-## What ChatGPT does under the hood
+## Current redirect behavior
 
-- Reads `/.well-known/openid-configuration` → gets `authorization_endpoint`, `token_endpoint`, `registration_endpoint`.
-- Calls `POST /register` with its own `redirect_uri` (`chatgpt.com/connector/oauth/…`) → server issues a fresh `client_id`.
-- Runs a standard PKCE authorization-code flow → user enters Passphrase on the server's confirm page → tokens issued.
+Current OpenAI documentation says new connections use an MCP-specific callback:
 
-## Notes
+`https://chatgpt.com/connector/oauth/{callback_id}`
 
-- **Do not paste Claude's Client ID or Secret here.** Claude uses a pre-registered confidential client; ChatGPT uses DCR and gets its own client.
-- **Write tools may be limited** depending on OpenAI's current policy for custom connectors.
-- Requires a ChatGPT paid plan (Plus / Pro / Team / Enterprise).
+The older stable callback:
 
-## Cross-references
+`https://chatgpt.com/connector_platform_oauth_redirect`
 
-- `scripts/config-page.js` — panel ChatGPT tab (section 1)
-- `scripts/oauth.js` — `handleRegister` (DCR endpoint), `metadataHandlers` (well-known)
-- `scripts/gatekeeper.js` — routes `/.well-known/openid-configuration` → `authorizationServer`
-- `docs/ref/security-model.md` — OAuth model (Claude pre-registered; ChatGPT DCR)
-- `docs/plan/done/audit-1.1.0-todo.md` §A1–A2 — original DCR blocker and fix
-- `docs/plan/done/merge-pr1-windows-chatgpt.md` — how ChatGPT DCR was merged
+is legacy compatibility for already-published apps. Aki still accepts it so old connections are not broken, but a newly-created personal connector should normally register the callback-id form.
+
+If Aki logs `authorize approved -> code issued` followed by **no `POST /token`**, and the authorize URL contains the legacy stable callback, reset the stale DCR client:
+
+1. Stop Aki.
+2. Double-click `reset-chatgpt-oauth.bat` in the repo.
+3. Delete the existing Aki connector in ChatGPT.
+4. Start Aki again and create a brand-new connector from the MCP URL.
+5. Reconnect and inspect `view-logs.bat`; a healthy flow proceeds `/authorize` → `/token` → `/mcp`.
+
+The reset removes ChatGPT DCR registrations and revokes current access tokens. Other clients may need to refresh/reconnect afterward.
+
+## Troubleshooting evidence
+
+- `GET/POST /authorize` + `302`, then no `/token`: failure is between ChatGPT callback handling and token exchange.
+- `/token -> 200`, then no `/mcp`: OAuth completed; failure is later in ChatGPT/plugin binding or MCP discovery.
+- `/mcp` arrives but returns 401/4xx: inspect bearer/session/protocol handling server-side.
+
+Persistent logs are under `%USERPROFILE%\.aki\mcpsv\logs\` on Windows. Double-click `view-logs.bat` to tail the newest file.
