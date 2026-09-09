@@ -9,6 +9,7 @@ import { register as registerKiro } from './kiro-mcp.js';
 import { register as registerSearch } from './search-mcp.js';
 import { register as registerFilesystem } from './filesystem-mcp.js';
 import { register as registerPostman } from './postman-mcp.js';
+import { audit } from './log.js';
 
 // mcp-hub used to prefix every tool from this server's config entry (key "local") with
 // `local__` when aggregating backends. Now that the bridge talks to this server directly, that
@@ -19,7 +20,26 @@ function prefixedServer(server, prefix) {
   return new Proxy(server, {
     get(target, prop, receiver) {
       if (prop !== 'registerTool') return Reflect.get(target, prop, receiver);
-      return (name, ...rest) => target.registerTool(`${prefix}${name}`, ...rest);
+      return (name, ...rest) => {
+        const fullName = `${prefix}${name}`;
+        const handlerIndex = rest.findLastIndex((value) => typeof value === 'function');
+        if (handlerIndex !== -1) {
+          const handler = rest[handlerIndex];
+          rest[handlerIndex] = async (...args) => {
+            const started = Date.now();
+            audit('tool.in', { tool: fullName, arguments: args[0] ?? null });
+            try {
+              const result = await handler(...args);
+              audit('tool.out', { tool: fullName, durationMs: Date.now() - started, result });
+              return result;
+            } catch (error) {
+              audit('tool.error', { tool: fullName, durationMs: Date.now() - started, error });
+              throw error;
+            }
+          };
+        }
+        return target.registerTool(fullName, ...rest);
+      };
     },
   });
 }
