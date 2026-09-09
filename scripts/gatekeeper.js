@@ -3,7 +3,7 @@
 import http from 'node:http';
 import { loadOrCreatePassphrase, metadataHandlers, handleAuthorize, handleToken, handleRegister, verifyBearer } from './oauth.js';
 import { handleStreamableMcp, terminateSession } from './streamable-bridge.js';
-import { log, logErr } from './log.js';
+import { log, logErr, audit, nextRequestId } from './log.js';
 import { serveStatic } from './http.js';
 
 const STATIC_ALIASES = { '/favicon.ico': '/favicon/favicon.ico' };
@@ -19,7 +19,30 @@ export function startGatekeeper(origin, onFatal) {
   const server = http.createServer(async (req, res) => {
     const path = (req.url || '').split('?')[0];
     const t0 = Date.now();
-    res.on('finish', () => log(`[gatekeeper] ${req.method} ${req.url} -> ${res.statusCode} ${Date.now() - t0}ms`));
+    const requestId = nextRequestId('http');
+    req.akiRequestId = requestId;
+    res.akiRequestId = requestId;
+    audit('http.in', {
+      requestId,
+      surface: 'gatekeeper',
+      method: req.method,
+      url: req.url,
+      headers: req.headers,
+      remoteAddress: req.socket?.remoteAddress || null,
+    });
+    res.on('finish', () => {
+      const durationMs = Date.now() - t0;
+      log(`[gatekeeper] ${req.method} ${req.url} -> ${res.statusCode} ${durationMs}ms`);
+      audit('http.out', {
+        requestId,
+        surface: 'gatekeeper',
+        method: req.method,
+        url: req.url,
+        status: res.statusCode,
+        headers: res.getHeaders(),
+        durationMs,
+      });
+    });
 
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -65,6 +88,7 @@ export function startGatekeeper(origin, onFatal) {
 
   server.on('error', (e) => {
     logErr(`[gatekeeper] failed to listen on :${port}: ${e.message}`);
+    audit('server.error', { surface: 'gatekeeper', error: e });
     onFatal?.();
   });
   server.listen(port, () => {
