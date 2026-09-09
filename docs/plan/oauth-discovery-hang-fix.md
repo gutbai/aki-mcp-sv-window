@@ -16,7 +16,8 @@ Because the failure reproduces on loopback, Tailscale/Funnel is not the cause. T
 - [x] Keep protected-resource metadata behavior from PR #3 unchanged.
 - [x] Add startup loopback discovery self-checks with a 2.5s timeout.
 - [x] Extend regression coverage to both RFC 8414 and OIDC discovery URLs.
-- [ ] Merge and retest on the Windows machine.
+- [x] Merge PR #4 into `main`.
+- [ ] Retest on the Windows machine.
 
 ## Expected result
 Both local commands must return immediately with HTTP 200 JSON:
