@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 // Minimal OAuth 2.1 authorization server.
-// Claude: pre-registered confidential client (paste Client ID/Secret), or DCR if it self-registers.
-// ChatGPT: RFC 7591 DCR + public client (token_endpoint_auth_method: none) + chatgpt.com redirect URIs.
+// Claude: pre-registered confidential client. ChatGPT/Grok: DCR public clients + PKCE.
 import { randomBytes, createHash, timingSafeEqual } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
@@ -11,30 +10,33 @@ import {
   PASSPHRASE_PATH as PASSPHRASE_FILE,
   TOKENS_PATH as TOKENS_FILE,
 } from './userdata.js';
-import { log } from './log.js';
+import { log, audit } from './log.js';
 import { readBody, json as httpJson } from './http.js';
 import { esc } from './html.js';
 
 const CLAUDE_CALLBACK = 'https://claude.ai/api/mcp/auth_callback';
 const CHATGPT_LEGACY_CALLBACK = 'https://chatgpt.com/connector_platform_oauth_redirect';
 const CHATGPT_CALLBACK_PREFIX = 'https://chatgpt.com/connector/oauth/';
-// Gemini custom connected apps redirect through Google's OAuth proxy, not a gemini.google.com path — observed live 2026-08-09:
-// redirect_uri=https://oauth-redirect.googleusercontent.com/r/user_bound_custom-mcp-<numeric>-<host-with-underscores>
 const GEMINI_CALLBACK_PREFIX = 'https://oauth-redirect.googleusercontent.com/r/';
-// Grok self-registers (DCR) with this callback — observed live 2026-08-09 from the register-REJECTED log:
-// redirect_uris=["https://grok.com/connectors-oauth-exchange-code/"]. Note: NOT a /connector/oauth/ path.
 const GROK_CALLBACK_PREFIX = 'https://grok.com/connectors-oauth-exchange-code/';
 const CODE_TTL_MS = 5 * 60 * 1000;
 const ACCESS_TTL_S = 365 * 24 * 3600;
-// no 0/o/1/l/i — avoid visual ambiguity when typing; 32 chars = power of 2, unbiased byte%32
 const PASSPHRASE_ALPHABET = 'abcdefghjkmnpqrstuvwxyz23456789';
-const PASSPHRASE_LENGTH = 10; // 32^10 = 2^50 — brute-force still infeasible over network
-// Display-only, to avoid leaking the OS username on a page reachable pre-passphrase; the file read below still uses PASSPHRASE_FILE.
+const PASSPHRASE_LENGTH = 10;
 const PASSPHRASE_DISPLAY_PATH = PASSPHRASE_FILE.replace(os.homedir(), '~');
 
 const authCodes = new Map();
 const accessTokens = new Map();
 const refreshTokens = new Map();
+
+function redirectKind(uri) {
+  if (uri === CHATGPT_LEGACY_CALLBACK) return 'chatgpt-legacy-stable';
+  if (uri?.startsWith(CHATGPT_CALLBACK_PREFIX)) return 'chatgpt-callback-id';
+  if (uri === CLAUDE_CALLBACK) return 'claude';
+  if (uri?.startsWith(GROK_CALLBACK_PREFIX)) return 'grok';
+  if (uri?.startsWith(GEMINI_CALLBACK_PREFIX)) return 'gemini';
+  return 'other';
+}
 
 function isAllowedRedirect(uri) {
   if (typeof uri !== 'string' || !uri) return false;
@@ -44,8 +46,6 @@ function isAllowedRedirect(uri) {
     || uri.startsWith(GEMINI_CALLBACK_PREFIX);
 }
 
-// Tokens survive restarts: the connector is a long-lived file-access grant, and losing it on every
-// `npm start` forces a full re-authorize (passphrase) instead of the silent refresh the flow supports.
 function loadTokens() {
   if (!existsSync(TOKENS_FILE)) return;
   try {
@@ -87,25 +87,61 @@ function saveDcrClients(map) {
   writeFileSync(DCR_FILE, JSON.stringify(map, null, 2), { mode: 0o600 });
 }
 
-/** Static Claude client + any clients ChatGPT (or Claude) registered via /register. */
 function resolveClient(clientId) {
   if (!clientId) return null;
   const staticClient = loadOrCreateClient();
   if (clientId === staticClient.clientId) {
-    // The confidential client's ID/secret are deliberately pasted into more than one provider (Claude,
-    // and Gemini which reuses the same paste flow). Each provider sends its own redirect_uri, so this
-    // client accepts any allowlisted callback (isStatic below), not just CLAUDE_CALLBACK — the allowlist
-    // (isAllowedRedirect) is the security boundary, the same one /register enforces for public clients.
     return {
       clientId: staticClient.clientId,
       clientSecret: staticClient.clientSecret,
       redirectUris: [CLAUDE_CALLBACK],
       isStatic: true,
       tokenEndpointAuthMethod: 'client_secret_post',
+      clientName: 'Pre-registered MCP client',
     };
   }
-  const dcr = loadDcrClients()[clientId];
-  return dcr || null;
+  return loadDcrClients()[clientId] || null;
+}
+
+export function getOAuthDiagnostics() {
+  const clients = Object.values(loadDcrClients()).map((entry) => ({
+    clientId: entry.clientId,
+    clientName: entry.clientName || 'MCP client',
+    redirectUris: entry.redirectUris || [],
+    redirectKinds: (entry.redirectUris || []).map(redirectKind),
+    tokenEndpointAuthMethod: entry.tokenEndpointAuthMethod || 'none',
+  }));
+  const legacyChatgpt = clients.filter((c) => c.redirectKinds.includes('chatgpt-legacy-stable'));
+  const callbackIdChatgpt = clients.filter((c) => c.redirectKinds.includes('chatgpt-callback-id'));
+  return {
+    clients,
+    legacyChatgptCount: legacyChatgpt.length,
+    callbackIdChatgptCount: callbackIdChatgpt.length,
+    recommendation: legacyChatgpt.length
+      ? 'A legacy ChatGPT DCR client is cached. Reset ChatGPT OAuth, delete/recreate the ChatGPT connector, then reconnect so ChatGPT can register its current callback-id redirect.'
+      : 'No cached legacy ChatGPT DCR client detected.',
+  };
+}
+
+export function resetChatGptOAuth() {
+  const map = loadDcrClients();
+  const removedIds = new Set();
+  for (const [clientId, entry] of Object.entries(map)) {
+    if ((entry.redirectUris || []).some((uri) => uri === CHATGPT_LEGACY_CALLBACK || uri.startsWith(CHATGPT_CALLBACK_PREFIX))) {
+      removedIds.add(clientId);
+      delete map[clientId];
+    }
+  }
+  saveDcrClients(map);
+  for (const [code, entry] of authCodes) if (removedIds.has(entry.clientId)) authCodes.delete(code);
+  for (const [token, entry] of refreshTokens) if (removedIds.has(entry.clientId)) refreshTokens.delete(token);
+  // Old access-token records created before clientId was persisted cannot be attributed safely. Clearing access
+  // tokens guarantees the reset actually invalidates stale ChatGPT grants; other clients can refresh/reconnect.
+  const revokedAccess = accessTokens.size;
+  accessTokens.clear();
+  saveTokens();
+  audit('oauth.reset.chatgpt', { removedDcrClients: removedIds.size, revokedAccess });
+  return { removedDcrClients: removedIds.size, revokedAccess };
 }
 
 export function loadOrCreatePassphrase() {
@@ -139,13 +175,11 @@ export function metadataHandlers(origin) {
         token_endpoint_auth_methods_supported: ['none', 'client_secret_post'],
         response_types_supported: ['code'],
         grant_types_supported: ['authorization_code', 'refresh_token'],
-        authorization_response_iss_parameter_supported: true,
       });
     },
   };
 }
 
-// RFC 7591 — ChatGPT calls this once per connector instance. Only Claude/ChatGPT redirect URIs are accepted.
 export async function handleRegister(req, res) {
   let body;
   try {
@@ -155,7 +189,6 @@ export async function handleRegister(req, res) {
   }
   const redirectUris = body.redirect_uris;
   if (!Array.isArray(redirectUris) || !redirectUris.length || !redirectUris.every(isAllowedRedirect)) {
-    // Log the rejected value so an unknown client's real redirect_uri (e.g. Grok) can be read off and allowlisted.
     log(`[oauth] register REJECTED (redirect_uri not allowlisted): ${JSON.stringify(redirectUris)}`);
     return json(res, 400, { error: 'invalid_redirect_uri' });
   }
@@ -177,6 +210,12 @@ export async function handleRegister(req, res) {
   map[clientId] = entry;
   saveDcrClients(map);
 
+  const kinds = redirectUris.map(redirectKind);
+  audit('oauth.register', { clientId, clientName: entry.clientName, redirectKinds: kinds, authMethod });
+  if (kinds.includes('chatgpt-legacy-stable')) {
+    log('[oauth] WARNING: ChatGPT registered legacy connector_platform_oauth_redirect; current OpenAI docs use connector/oauth/{callback_id} for new connections');
+  }
+
   const resp = {
     client_id: clientId,
     client_name: entry.clientName,
@@ -189,7 +228,6 @@ export async function handleRegister(req, res) {
   return json(res, 201, resp);
 }
 
-// Shared by the confirm page (.card is the <form>) and both error pages (.card is a <div>) — one style block, one look.
 const PAGE_STYLE = `
 :root { color-scheme: light dark; --bg:#faf9f7; --card:#fff; --line:#e5e2dc; --fg:#1a1a1a; --muted:#6b6b6b; --accent:#ff4800; }
 @media (prefers-color-scheme: dark) { :root { --bg:#1a1817; --card:#232120; --line:#38352f; --fg:#ececec; --muted:#9a948c; } }
@@ -224,10 +262,19 @@ export async function handleAuthorize(req, res, passphrase, origin) {
   const codeChallenge = q.get('code_challenge');
   const codeChallengeMethod = q.get('code_challenge_method');
   const state = q.get('state') || '';
+  const resource = q.get('resource') || '';
   const client = resolveClient(clientId);
-  // DCR clients are pinned to the exact redirect_uri they registered; the shared confidential client (isStatic)
-  // accepts any allowlisted callback, since it is pasted into several providers each with its own redirect.
   const redirectOk = !!client && (client.redirectUris.includes(redirectUri) || (client.isStatic && isAllowedRedirect(redirectUri)));
+  const kind = redirectKind(redirectUri);
+
+  audit('oauth.authorize', {
+    phase: req.method,
+    clientId,
+    clientType: client?.isStatic ? 'static' : client ? 'dcr' : 'unknown',
+    redirectKind: kind,
+    hasState: !!state,
+    hasResource: !!resource,
+  });
 
   if (!redirectOk || codeChallengeMethod !== 'S256' || !codeChallenge) {
     log(`[oauth] authorize REJECTED (${req.method}): client_ok=${!!client} redirect_ok=${redirectOk} method=${codeChallengeMethod} hasChallenge=${!!codeChallenge}`);
@@ -250,6 +297,7 @@ export async function handleAuthorize(req, res, passphrase, origin) {
 <input type="hidden" name="code_challenge" value="${esc(codeChallenge)}">
 <input type="hidden" name="code_challenge_method" value="${esc(codeChallengeMethod)}">
 <input type="hidden" name="state" value="${esc(state)}">
+<input type="hidden" name="resource" value="${esc(resource)}">
 <input type="password" name="passphrase" placeholder="Passphrase" autofocus autocomplete="current-password">
 <button type="submit" name="btn">Approve</button>
 </form>
@@ -264,11 +312,13 @@ export async function handleAuthorize(req, res, passphrase, origin) {
     return;
   }
   const code = randomBytes(24).toString('hex');
-  authCodes.set(code, { clientId, redirectUri, codeChallenge, expires: Date.now() + CODE_TTL_MS });
-  log(`[oauth] authorize approved -> code issued (state=${state ? 'yes' : 'no'}), redirecting to ${new URL(redirectUri).host}`);
+  authCodes.set(code, { clientId, redirectUri, codeChallenge, resource, expires: Date.now() + CODE_TTL_MS });
+  log(`[oauth] authorize approved -> code issued (state=${state ? 'yes' : 'no'}, redirect=${kind}), redirecting to ${new URL(redirectUri).host}`);
   const redirect = new URL(redirectUri);
   redirect.searchParams.set('code', code);
-  redirect.searchParams.set('iss', origin);
+  // Current ChatGPT callback-id redirects do not need AS issuer multiplexing. Keep `iss` only for the
+  // legacy stable callback because old/published connector flows may still rely on it.
+  if (redirectUri === CHATGPT_LEGACY_CALLBACK) redirect.searchParams.set('iss', origin);
   if (state) redirect.searchParams.set('state', state);
   res.writeHead(302, { Location: redirect.toString() });
   res.end();
@@ -286,7 +336,9 @@ export async function handleToken(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   const body = new URLSearchParams(await readBody(req));
   const grantType = body.get('grant_type');
+  const resource = body.get('resource') || '';
   log(`[oauth] token request: grant_type=${grantType}`);
+  audit('oauth.token', { phase: 'request', grantType, clientId: body.get('client_id'), hasResource: !!resource });
 
   const client = authenticateClient(body);
   if (!client) {
@@ -309,6 +361,10 @@ export async function handleToken(req, res) {
     if (entry.redirectUri !== body.get('redirect_uri')) {
       log('[oauth] token FAILED: invalid_grant (redirect_uri mismatch)');
       return json(res, 400, { error: 'invalid_grant' });
+    }
+    if (entry.resource && resource && entry.resource !== resource) {
+      log('[oauth] token FAILED: invalid_target (resource mismatch)');
+      return json(res, 400, { error: 'invalid_target' });
     }
     const computed = createHash('sha256').update(body.get('code_verifier') || '').digest('base64url');
     if (computed !== entry.codeChallenge) {
@@ -333,11 +389,12 @@ export async function handleToken(req, res) {
 
 function mintTokens(clientId, existingRefresh, via) {
   const accessToken = randomBytes(32).toString('hex');
-  accessTokens.set(accessToken, { expires: Date.now() + ACCESS_TTL_S * 1000 });
+  accessTokens.set(accessToken, { expires: Date.now() + ACCESS_TTL_S * 1000, clientId });
   const refreshToken = existingRefresh || randomBytes(32).toString('hex');
   refreshTokens.set(refreshToken, { clientId });
   saveTokens();
   log(`[oauth] tokens ISSUED via ${via} (access + refresh) — client is now authorized`);
+  audit('oauth.token', { phase: 'issued', via, clientId });
   return { accessToken, refreshToken };
 }
 

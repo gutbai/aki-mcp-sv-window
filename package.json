@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node ./scripts/start.js",
-    "test": "node ./test/log.test.js && node ./test/streamable-bridge.test.js && node ./test/oauth.test.js && node ./test/postman-mcp.test.js && node ./test/aki-pmcontrol-copy.test.js"
+    "test": "node ./test/log.test.js && node ./test/windows-rule-installer.test.js && node ./test/streamable-bridge.test.js && node ./test/oauth.test.js && node ./test/postman-mcp.test.js && node ./test/aki-pmcontrol-copy.test.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
