@@ -16,12 +16,14 @@ const rawConsole = {
 let fileLoggingBroken = false;
 let seq = 0;
 
-const REDACT_KEY = /authorization|cookie|set-cookie|client[_-]?secret|access[_-]?token|refresh[_-]?token|passphrase|password|code[_-]?verifier|x-panel-token/i;
+// Headers/fields that can identify the user or grant access never reach disk. `referer` is included because
+// OAuth authorize pages carry client/state/challenge values in its query string.
+const REDACT_KEY = /authorization|cookie|set-cookie|client[_-]?secret|access[_-]?token|refresh[_-]?token|passphrase|password|code[_-]?verifier|x-panel-token|tailscale-user|x-forwarded-for|remoteaddress|referer/i;
 
 function redactString(value) {
   return value
     .replace(/(Bearer\s+)[A-Za-z0-9._~+/=-]+/gi, '$1[REDACTED]')
-    .replace(/(^|[?&])((?:passphrase|client_secret|access_token|refresh_token|code_verifier|x-panel-token|token|password|code|t)=)[^&\s"']+/gi, '$1$2[REDACTED]')
+    .replace(/(^|[?&])((?:passphrase|client_secret|access_token|refresh_token|code_verifier|code_challenge|state|x-panel-token|token|password|code|t)=)[^&\s"']+/gi, '$1$2[REDACTED]')
     .replace(/((?:oauth\s+client\s+secret|client\s+secret|access\s+token|refresh\s+token|passphrase|password)[^:\r\n]{0,120}:\s*)\S+/gi, '$1[REDACTED]');
 }
 
