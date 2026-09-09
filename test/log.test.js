@@ -9,6 +9,8 @@ const got = redactForLog({
   nested: { passphrase: 'abc123', code: '123456789abcdef' },
   raw: 'client_secret=hello&code_verifier=world&foo=bar',
   url: '/?t=panel-secret&target=keep-this',
+  startup: '[start] OAuth Client Secret: super-secret-value',
+  startupPassphrase: '[start] Passphrase (enter it in browser): phrase123',
   error: { code: -32000, message: 'safe' },
 });
 
@@ -21,6 +23,8 @@ assert.match(got.raw, /code_verifier=\[REDACTED\]/);
 assert.equal(got.raw.endsWith('foo=bar'), true);
 assert.match(got.url, /\?t=\[REDACTED\]/);
 assert.match(got.url, /target=keep-this/);
+assert.equal(got.startup, '[start] OAuth Client Secret: [REDACTED]');
+assert.equal(got.startupPassphrase, '[start] Passphrase (enter it in browser): [REDACTED]');
 assert.equal(got.error.code, -32000);
 
 console.log('log redaction tests passed');
