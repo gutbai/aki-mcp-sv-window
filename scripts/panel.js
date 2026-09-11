@@ -129,13 +129,18 @@ function run(command, args, cwd) {
 
 async function pickProjectFolder() {
   if (!IS_WIN) throw new Error('folder picker is currently available on Windows only');
+  // OpenFileDialog uses the modern Explorer shell and keeps its address bar, unlike FolderBrowserDialog's legacy tree.
+  // ValidateNames=false + a placeholder filename lets the current Explorer folder itself be selected.
   const script = [
     'Add-Type -AssemblyName System.Windows.Forms;',
     '[Console]::OutputEncoding = [System.Text.Encoding]::UTF8;',
-    '$dialog = New-Object System.Windows.Forms.FolderBrowserDialog;',
-    "$dialog.Description = 'Select Aki project base folder';",
-    '$dialog.ShowNewFolderButton = $false;',
-    'if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) { [Console]::Write($dialog.SelectedPath) }',
+    '$dialog = New-Object System.Windows.Forms.OpenFileDialog;',
+    "$dialog.Title = 'Select Aki project base folder';",
+    '$dialog.CheckFileExists = $false;',
+    '$dialog.CheckPathExists = $true;',
+    '$dialog.ValidateNames = $false;',
+    "$dialog.FileName = 'Select this folder';",
+    'if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) { [Console]::Write([System.IO.Path]::GetDirectoryName($dialog.FileName)) }',
   ].join(' ');
   const output = await run('powershell.exe', ['-NoProfile', '-STA', '-Command', script], REPO_ROOT);
   const selected = output === '(no output)' ? '' : output.trim();
