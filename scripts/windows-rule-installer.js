@@ -37,7 +37,10 @@ const hasInstaller = (repo) => ['install.ps1', 'install.py'].some((name) => exis
 
 async function ensureRepo() {
   const recorded = existsSync(SOURCE_REPO_FILE) ? readFileSync(SOURCE_REPO_FILE, 'utf8').trim() : null;
-  if (recorded && hasInstaller(recorded)) return recorded;
+  if (recorded && hasInstaller(recorded)) {
+    if (existsSync(path.join(recorded, '.git'))) await run('git.exe', ['-C', recorded, 'pull', '--ff-only']);
+    return recorded;
+  }
 
   if (existsSync(path.join(RULES_CLONE_DIR, '.git'))) {
     await run('git.exe', ['-C', RULES_CLONE_DIR, 'pull', '--ff-only']);

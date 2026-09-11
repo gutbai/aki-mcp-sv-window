@@ -4,6 +4,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 
 ## [Unreleased]
 
+### Added
+- **Aki Project Context browser extension**: stores multiple projects, opens a native Windows folder picker for each base folder, lets one project be marked as the default, and prefills an empty ChatGPT New Chat with `@Aki`, the selected project base folder, and a `Task:` prompt.
+
+### Fixed
+- **Windows rule updater could reinstall a stale local source checkout**: when `.source-repo` already pointed at a valid git checkout, the updater skipped `git pull` and ran its installer immediately. It now fast-forwards that recorded checkout before installing, so Update can move the installed rule corpus to the advertised latest version.
+
 ## [1.15.0] - 2026-09-07
 
 ### Added

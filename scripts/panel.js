@@ -22,6 +22,8 @@ const RULES_DIR = path.join(os.homedir(), '.aki', 'akidevrule');
 const SOURCE_REPO_FILE = path.join(RULES_DIR, '.source-repo');
 const RULES_CLONE_DIR = path.join(os.homedir(), '.aki', 'akidevrule-src');
 const RULES_REPO_URL = 'https://github.com/lacvietanh/akidevrule.git';
+const EXTENSION_ORIGIN = /^chrome-extension:\/\/[a-p]{32}$/;
+const EXTENSION_PICKER_HEADER = 'project-context-v1';
 
 function writeJsonAtomic(file, data) {
   const tmp = `${file}.tmp-${process.pid}-${Date.now()}`;
@@ -123,6 +125,32 @@ function run(command, args, cwd) {
       err ? reject(new Error(stderr || err.message)) : resolve(stdout || stderr || '(no output)'),
     );
   });
+}
+
+async function pickProjectFolder() {
+  if (!IS_WIN) throw new Error('folder picker is currently available on Windows only');
+  const script = [
+    'Add-Type -AssemblyName System.Windows.Forms;',
+    '[Console]::OutputEncoding = [System.Text.Encoding]::UTF8;',
+    '$dialog = New-Object System.Windows.Forms.FolderBrowserDialog;',
+    "$dialog.Description = 'Select Aki project base folder';",
+    '$dialog.ShowNewFolderButton = $false;',
+    'if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) { [Console]::Write($dialog.SelectedPath) }',
+  ].join(' ');
+  const output = await run('powershell.exe', ['-NoProfile', '-STA', '-Command', script], REPO_ROOT);
+  const selected = output === '(no output)' ? '' : output.trim();
+  return selected ? path.normalize(selected) : null;
+}
+
+function extensionCors(req) {
+  const origin = typeof req.headers.origin === 'string' ? req.headers.origin : '';
+  if (!EXTENSION_ORIGIN.test(origin)) return null;
+  return {
+    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, X-Aki-Extension',
+    'Vary': 'Origin',
+  };
 }
 
 // Three states, one button: already cloned locally, cloned by us before, or never seen on this machine.
@@ -239,6 +267,22 @@ export function startPanel({ port, token, origin, ingress, client, passphrase, u
       }
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       return res.end(renderPanel({ origin, ingress, client, passphrase, token, accessToken: getOrIssueAccessToken(), repoRoot: REPO_ROOT, rulesDir: RULES_DIR, userDir: USER_DIR, updateInfo, savedIngress: readIngressConfig() }));
+    }
+
+    if (urlPath === '/api/pick-folder') {
+      const cors = extensionCors(req);
+      if (!cors) return json(res, 403, { error: 'extension origin required' });
+      if (req.method === 'OPTIONS') {
+        res.writeHead(204, cors);
+        return res.end();
+      }
+      if (req.method !== 'POST') return json(res, 405, { error: 'method not allowed' }, cors);
+      if (req.headers['x-aki-extension'] !== EXTENSION_PICKER_HEADER) return json(res, 403, { error: 'invalid extension request' }, cors);
+      try {
+        return json(res, 200, { ok: true, path: await pickProjectFolder() }, cors);
+      } catch (e) {
+        return json(res, 400, { error: e.message }, cors);
+      }
     }
 
     if (req.method === 'GET' && await serveStatic(res, urlPath)) return;
