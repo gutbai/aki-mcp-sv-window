@@ -7,6 +7,13 @@ Thư mục `images/` có 50 bài, đặt tên `batch_17_img001` … `batch_17_im
 
 Với mỗi bài, tìm trong ảnh cảnh vị trí **TÂM** của hình vẽ khớp hình mẫu 1, hình mẫu 2, hình mẫu 3.
 
+## Cách lấy ảnh (quan trọng)
+Ảnh phải được tải qua **raw URL** — xem danh sách đầy đủ trong `IMAGE_URLS.md` cùng thư mục này.
+Dạng URL: `https://raw.githubusercontent.com/gutbai/aki-mcp-sv-window/label-batches/label-batches/<lô>/images/<tên bài>_scene.jpg`
+
+Đừng đọc ảnh qua GitHub Contents API: API đó trả về chuỗi base64 trong JSON nên không xem được ảnh.
+Raw URL trả đúng `image/jpeg` / `image/png`, mở xem trực tiếp được.
+
 ## Quy ước toạ độ
 Tính theo chính file `_scene.jpg`: gốc (0,0) ở góc trên-trái, x tăng sang phải, y tăng xuống dưới.
 Hợp lệ: x trong [0, 533], y trong [0, 353].
