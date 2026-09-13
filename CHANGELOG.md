@@ -6,6 +6,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 
 ### Added
 - **Aki Project Context browser extension**: stores multiple projects, accepts pasted/typed base paths, opens an Explorer-style Windows folder picker with an address bar, lets one project be marked as the default, and prefills an empty ChatGPT New Chat with `@Aki`, the selected project base folder, and a `Task:` prompt.
+- **Per-tab Auto Continue for ChatGPT tasks**: after a newly completed assistant reply, the extension sends a user-editable continuation prompt whenever the reply does not contain `OK BOSS`, repeating until the marker appears or the toggle is switched off. The saved default is `continue. if all task done just return OK BOSS.`; the toggle applies only to the current ChatGPT tab, and a non-empty composer always wins and suppresses auto-send for that reply.
 
 ### Fixed
 - **Windows rule updater could reinstall a stale local source checkout**: when `.source-repo` already pointed at a valid git checkout, the updater skipped `git pull` and ran its installer immediately. It now fast-forwards that recorded checkout before installing, so Update can move the installed rule corpus to the advertised latest version.
