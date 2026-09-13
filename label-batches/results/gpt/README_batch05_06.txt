@@ -1,0 +1,1 @@
+batch_05 and batch_06 RESULT.json are complete. ZIP packaging is handled by a temporary GitHub Actions branch because the connector cannot upload binary ZIP bytes directly.
