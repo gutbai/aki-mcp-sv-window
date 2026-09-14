@@ -9,13 +9,20 @@ Updated: 2026-09-14 (VN time)
   - commit: `4b01cb2be8b9a1ec3289b3c837f7cd90403d3b89`
   - lower-confidence matches are marked in `notes` for img039, img045, img048.
 
-## In progress
-- `batch_22`: **NOT complete; do not treat as submitted**.
-- No `batch_22/RESULT.json` has been committed.
-- Binary image transport was prepared through temporary branch `tmp-gpt-export-batch20-22`.
-- GitHub Actions run: `34769155546`; artifact: `label-batches-20-22` (artifact id `10320859077`).
-- Candidate crops were generated for the batch; the visual pass reached roughly `batch_22_img016` before stopping.
-- Resume at `batch_22_img017`, then verify all 50 and only then create `label-batches/batch_22/RESULT.json`.
+## Batch 22 handoff
+- `batch_22` is **NOT complete; do not treat as benchmark-final**.
+- Partial work is now pushed to `label-batches/batch_22/RESULT_PARTIAL.json`.
+- Partial-result commit: `caf46810972a6659795829cd47cb6b1b7ae32d57`.
+- 45/50 tasks have three coordinates recorded.
+- 5 tasks remain unresolved and have `coords: null`: `img001`, `img010`, `img023`, `img030`, `img042`.
+- `img010` and `img042` use the same scene; candidate-center details are preserved in `RESULT_PARTIAL.json`.
+- Current best estimates that should receive a quick review before final submission are marked in `notes` for `img019`, `img022`, `img025`, `img028`, `img037`, `img039`, `img044`, `img048`.
+- No official `label-batches/batch_22/RESULT.json` has been committed, so a handoff session can safely finish from the partial file without mistaking it for a completed submission.
+
+## Image transport / reproduction
+- Binary images were exported via temporary branch `tmp-gpt-export-batch20-22` and GitHub Actions rather than visually reading base64.
+- GitHub Actions run: `34769155546`.
+- Artifact: `label-batches-20-22` (artifact id `10320859077`).
 
 ## Coordination
-Another session was assigned `batch_27` down through `batch_23`; this session owns `batch_20` through `batch_22` to avoid overlap.
+Another session was assigned `batch_27` down through `batch_23`; this work covers `batch_20` through `batch_22` to avoid overlap.
