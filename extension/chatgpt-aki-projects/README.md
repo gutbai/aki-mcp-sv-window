@@ -26,4 +26,10 @@ Project base folder: D:\path\to\project
 Task: 
 ```
 
-The extension stores only project names/paths in `chrome.storage.local`. The path field is editable, so paths copied from Explorer can be pasted directly (including quoted `Copy as path` values, which are normalized on save). Chrome does not expose an absolute local path from its web folder picker, so **Chọn folder…** calls the loopback-only Aki panel endpoint, which opens an Explorer-style Windows dialog and returns the selected absolute path. The endpoint accepts only `chrome-extension://` origins with the extension request header; Aki MCP remains responsible for filesystem access.
+## Auto Continue
+
+Turn **Auto Continue** on in the popup to keep a task moving automatically. The continuation prompt is editable in **Prompt mặc định** and is saved for future tabs; **Mặc định** restores `continue. if all task done just return OK BOSS.`. After a new assistant reply has stopped changing and ChatGPT is no longer generating, the extension checks the reply. If it contains `OK BOSS`, nothing else is sent. Otherwise it sends the saved continuation prompt.
+
+The cycle repeats after each completed assistant reply until `OK BOSS` appears or Auto Continue is switched off. The extension never overwrites a non-empty composer; typing your own draft takes priority and skips auto-send for that reply. Enabling the toggle does not act on an old already-finished reply; it starts from the next assistant output. Auto Continue is **per ChatGPT tab**, so enabling it in one task does not make other open chats auto-send; the tab keeps its setting until that tab is closed.
+
+The extension stores project names/paths in `chrome.storage.local`; Auto Continue lives only in that ChatGPT tab's session. The path field is editable, so paths copied from Explorer can be pasted directly (including quoted `Copy as path` values, which are normalized on save). Chrome does not expose an absolute local path from its web folder picker, so **Chọn folder…** calls the loopback-only Aki panel endpoint, which opens an Explorer-style Windows dialog and returns the selected absolute path. The endpoint accepts only `chrome-extension://` origins with the extension request header; Aki MCP remains responsible for filesystem access.

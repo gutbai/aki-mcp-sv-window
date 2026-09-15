@@ -3,7 +3,7 @@
   "name": "Aki Project Context",
   "version": "0.1.0",
   "description": "Prefill ChatGPT new chats with the default Aki project base folder.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "activeTab"],
   "host_permissions": ["http://127.0.0.1/*"],
   "action": {
     "default_title": "Aki Project Context",
