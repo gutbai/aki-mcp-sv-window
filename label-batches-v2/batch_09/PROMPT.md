@@ -1,4 +1,4 @@
-# Lô 9/30 — định vị vật thể theo mẫu tham chiếu
+# Lô 9/29 — định vị vật thể theo mẫu tham chiếu
 
 ## Việc cần làm
 Thư mục `images/` có 50 bài, đặt tên `batch_09_img001` … `batch_09_img050`. Mỗi bài gồm 4 file ảnh:
