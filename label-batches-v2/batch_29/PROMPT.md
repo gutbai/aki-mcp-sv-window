@@ -1,7 +1,7 @@
-# Lô 29/29 — định vị vật thể theo mẫu tham chiếu
+# Lô 29/43 — định vị vật thể theo mẫu tham chiếu
 
 ## Việc cần làm
-Thư mục `images/` có 45 bài, đặt tên `batch_29_img001` … `batch_29_img045`. Mỗi bài gồm 4 file ảnh:
+Thư mục `images/` có 50 bài, đặt tên `batch_29_img001` … `batch_29_img050`. Mỗi bài gồm 4 file ảnh:
 - `<tên bài>_scene.jpg` — ảnh cảnh 533x353 pixel: một ảnh chụp thật, bên trên có vài hình vẽ nét màu.
 - `<tên bài>_icon1.png`, `_icon2.png`, `_icon3.png` — ba hình mẫu tham chiếu, pictogram đen trắng.
 
@@ -23,7 +23,7 @@ Hợp lệ: x trong [0, 533], y trong [0, 353].
 - Hình vẽ trong cảnh được tô màu và lớn hơn hình mẫu nhiều lần; hình mẫu chỉ là nét viền đen trắng. So sánh theo DÁNG, đừng theo màu.
 - Ảnh cảnh có nhiều hình vẽ gây nhiễu, chỉ 3 hình khớp 3 mẫu mới tính.
 - Mỗi bài trả đủ 3 toạ độ, đúng thứ tự mẫu 1, 2, 3.
-- Làm hết 45 bài, không bỏ bài nào — nhưng "làm" gồm cả việc ĐÁNH DẤU BỎ QUA (xem dưới).
+- Làm hết 50 bài, không bỏ bài nào — nhưng "làm" gồm cả việc ĐÁNH DẤU BỎ QUA (xem dưới).
 
 ## Không chắc thì ĐÁNH DẤU, đừng đoán bừa
 Đây là quy tắc quan trọng nhất của lô này.

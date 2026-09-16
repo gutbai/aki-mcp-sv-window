@@ -1,6 +1,6 @@
 # Label batches
 
-1445 bài định vị vật thể, chia thành 29 lô, mỗi lô tối đa 50 bài.
+2138 bài định vị vật thể, chia thành 43 lô, mỗi lô tối đa 50 bài.
 
 Mỗi thư mục `batch_XX/` tự chứa đầy đủ: `PROMPT.md` (việc cần làm), `images/` (ảnh), và
 `RESULT_TEMPLATE.json` (mẫu nộp). Làm lô nào thì đọc `PROMPT.md` của lô đó và ghi `RESULT.json`
@@ -36,4 +36,18 @@ vào cùng thư mục.
 | `batch_26` | 50 |
 | `batch_27` | 50 |
 | `batch_28` | 50 |
-| `batch_29` | 45 |
+| `batch_29` | 50 |
+| `batch_30` | 50 |
+| `batch_31` | 50 |
+| `batch_32` | 50 |
+| `batch_33` | 50 |
+| `batch_34` | 50 |
+| `batch_35` | 50 |
+| `batch_36` | 50 |
+| `batch_37` | 50 |
+| `batch_38` | 50 |
+| `batch_39` | 50 |
+| `batch_40` | 50 |
+| `batch_41` | 50 |
+| `batch_42` | 50 |
+| `batch_43` | 38 |

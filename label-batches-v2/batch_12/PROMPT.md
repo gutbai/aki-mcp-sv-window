@@ -1,4 +1,4 @@
-# Lô 12/29 — định vị vật thể theo mẫu tham chiếu
+# Lô 12/43 — định vị vật thể theo mẫu tham chiếu
 
 ## Việc cần làm
 Thư mục `images/` có 50 bài, đặt tên `batch_12_img001` … `batch_12_img050`. Mỗi bài gồm 4 file ảnh:
