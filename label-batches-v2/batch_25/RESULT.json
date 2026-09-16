@@ -1,1 +1,670 @@
-{"batch_25_img001":{"coords":[[450,140],[300,110],[280,230]],"notes":""},"batch_25_img002":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img003":{"coords":[[145,75],[430,170],[170,240]],"notes":""},"batch_25_img004":{"coords":[[360,110],[115,230],[250,255]],"notes":""},"batch_25_img005":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img006":{"coords":[[390,115],[60,175],[300,65]],"notes":""},"batch_25_img007":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img008":{"coords":[[365,75],[70,190],[190,260]],"notes":""},"batch_25_img009":{"coords":[[280,55],[110,220],[410,110]],"notes":""},"batch_25_img010":{"coords":[[430,110],[150,150],[330,250]],"notes":""},"batch_25_img011":{"coords":[[70,285],[360,135],[70,160]],"notes":""},"batch_25_img012":{"coords":[[390,250],[80,180],[215,195]],"notes":""},"batch_25_img013":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img014":{"coords":[[110,240],[75,150],[400,245]],"notes":""},"batch_25_img015":{"coords":[[450,195],[430,70],[140,225]],"notes":""},"batch_25_img016":{"coords":[[350,260],[110,245],[80,95]],"notes":""},"batch_25_img017":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img018":{"coords":[[360,150],[220,150],[110,240]],"notes":""},"batch_25_img019":{"coords":[[390,120],[95,140],[220,160]],"notes":""},"batch_25_img020":{"coords":[[100,180],[135,70],[470,55]],"notes":""},"batch_25_img021":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img022":{"coords":[[210,240],[55,165],[330,165]],"notes":""},"batch_25_img023":{"coords":[[280,70],[55,170],[270,250]],"notes":""},"batch_25_img024":{"coords":[[105,85],[70,225],[185,250]],"notes":""},"batch_25_img025":{"coords":[[300,80],[425,230],[105,250]],"notes":""},"batch_25_img026":{"coords":[[350,285],[230,150],[140,60]],"notes":""},"batch_25_img027":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img028":{"coords":[[135,120],[430,265],[400,150]],"notes":""},"batch_25_img029":{"coords":[[250,90],[130,150],[330,250]],"notes":""},"batch_25_img030":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img031":{"coords":[[160,110],[260,150],[450,70]],"notes":""},"batch_25_img032":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img033":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img034":{"coords":[[70,70],[430,90],[420,270]],"notes":""},"batch_25_img035":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img036":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img037":{"coords":[[200,250],[230,80],[400,110]],"notes":""},"batch_25_img038":{"coords":[[80,110],[220,235],[430,150]],"notes":""},"batch_25_img039":{"coords":[[55,95],[90,245],[350,70]],"notes":""},"batch_25_img040":{"coords":[[360,245],[220,175],[390,130]],"notes":""},"batch_25_img041":{"coords":[[280,270],[60,80],[430,260]],"notes":""},"batch_25_img042":{"coords":[[350,60],[390,190],[90,175]],"notes":""},"batch_25_img043":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img044":{"coords":[[370,190],[220,150],[60,135]],"notes":""},"batch_25_img045":{"coords":[[250,80],[140,160],[280,240]],"notes":""},"batch_25_img046":{"coords":null,"notes":"khong du tu tin de gan toa do"},"batch_25_img047":{"coords":[[145,80],[430,140],[300,270]],"notes":""},"batch_25_img048":{"coords":[[95,165],[380,180],[220,250]],"notes":""},"batch_25_img049":{"coords":[[145,145],[290,140],[420,220]],"notes":""},"batch_25_img050":{"coords":[[65,155],[290,175],[430,235]],"notes":""}
+{
+ "batch_25_img001": {
+  "coords": [
+   [
+    450,
+    140
+   ],
+   [
+    300,
+    110
+   ],
+   [
+    280,
+    230
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img002": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img003": {
+  "coords": [
+   [
+    145,
+    75
+   ],
+   [
+    430,
+    170
+   ],
+   [
+    170,
+    240
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img004": {
+  "coords": [
+   [
+    360,
+    110
+   ],
+   [
+    115,
+    230
+   ],
+   [
+    250,
+    255
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img005": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img006": {
+  "coords": [
+   [
+    390,
+    115
+   ],
+   [
+    60,
+    175
+   ],
+   [
+    300,
+    65
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img007": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img008": {
+  "coords": [
+   [
+    365,
+    75
+   ],
+   [
+    70,
+    190
+   ],
+   [
+    190,
+    260
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img009": {
+  "coords": [
+   [
+    280,
+    55
+   ],
+   [
+    110,
+    220
+   ],
+   [
+    410,
+    110
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img010": {
+  "coords": [
+   [
+    430,
+    110
+   ],
+   [
+    150,
+    150
+   ],
+   [
+    330,
+    250
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img011": {
+  "coords": [
+   [
+    70,
+    285
+   ],
+   [
+    360,
+    135
+   ],
+   [
+    70,
+    160
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img012": {
+  "coords": [
+   [
+    390,
+    250
+   ],
+   [
+    80,
+    180
+   ],
+   [
+    215,
+    195
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img013": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img014": {
+  "coords": [
+   [
+    110,
+    240
+   ],
+   [
+    75,
+    150
+   ],
+   [
+    400,
+    245
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img015": {
+  "coords": [
+   [
+    450,
+    195
+   ],
+   [
+    430,
+    70
+   ],
+   [
+    140,
+    225
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img016": {
+  "coords": [
+   [
+    350,
+    260
+   ],
+   [
+    110,
+    245
+   ],
+   [
+    80,
+    95
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img017": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img018": {
+  "coords": [
+   [
+    360,
+    150
+   ],
+   [
+    220,
+    150
+   ],
+   [
+    110,
+    240
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img019": {
+  "coords": [
+   [
+    390,
+    120
+   ],
+   [
+    95,
+    140
+   ],
+   [
+    220,
+    160
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img020": {
+  "coords": [
+   [
+    100,
+    180
+   ],
+   [
+    135,
+    70
+   ],
+   [
+    470,
+    55
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img021": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img022": {
+  "coords": [
+   [
+    210,
+    240
+   ],
+   [
+    55,
+    165
+   ],
+   [
+    330,
+    165
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img023": {
+  "coords": [
+   [
+    280,
+    70
+   ],
+   [
+    55,
+    170
+   ],
+   [
+    270,
+    250
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img024": {
+  "coords": [
+   [
+    105,
+    85
+   ],
+   [
+    70,
+    225
+   ],
+   [
+    185,
+    250
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img025": {
+  "coords": [
+   [
+    300,
+    80
+   ],
+   [
+    425,
+    230
+   ],
+   [
+    105,
+    250
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img026": {
+  "coords": [
+   [
+    350,
+    285
+   ],
+   [
+    230,
+    150
+   ],
+   [
+    140,
+    60
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img027": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img028": {
+  "coords": [
+   [
+    135,
+    120
+   ],
+   [
+    430,
+    265
+   ],
+   [
+    400,
+    150
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img029": {
+  "coords": [
+   [
+    250,
+    90
+   ],
+   [
+    130,
+    150
+   ],
+   [
+    330,
+    250
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img030": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img031": {
+  "coords": [
+   [
+    160,
+    110
+   ],
+   [
+    260,
+    150
+   ],
+   [
+    450,
+    70
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img032": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img033": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img034": {
+  "coords": [
+   [
+    70,
+    70
+   ],
+   [
+    430,
+    90
+   ],
+   [
+    420,
+    270
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img035": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img036": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img037": {
+  "coords": [
+   [
+    200,
+    250
+   ],
+   [
+    230,
+    80
+   ],
+   [
+    400,
+    110
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img038": {
+  "coords": [
+   [
+    80,
+    110
+   ],
+   [
+    220,
+    235
+   ],
+   [
+    430,
+    150
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img039": {
+  "coords": [
+   [
+    55,
+    95
+   ],
+   [
+    90,
+    245
+   ],
+   [
+    350,
+    70
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img040": {
+  "coords": [
+   [
+    360,
+    245
+   ],
+   [
+    220,
+    175
+   ],
+   [
+    390,
+    130
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img041": {
+  "coords": [
+   [
+    280,
+    270
+   ],
+   [
+    60,
+    80
+   ],
+   [
+    430,
+    260
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img042": {
+  "coords": [
+   [
+    350,
+    60
+   ],
+   [
+    390,
+    190
+   ],
+   [
+    90,
+    175
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img043": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img044": {
+  "coords": [
+   [
+    370,
+    190
+   ],
+   [
+    220,
+    150
+   ],
+   [
+    60,
+    135
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img045": {
+  "coords": [
+   [
+    250,
+    80
+   ],
+   [
+    140,
+    160
+   ],
+   [
+    280,
+    240
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img046": {
+  "coords": null,
+  "notes": "khong du tu tin de gan toa do"
+ },
+ "batch_25_img047": {
+  "coords": [
+   [
+    145,
+    80
+   ],
+   [
+    430,
+    140
+   ],
+   [
+    300,
+    270
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img048": {
+  "coords": [
+   [
+    95,
+    165
+   ],
+   [
+    380,
+    180
+   ],
+   [
+    220,
+    250
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img049": {
+  "coords": [
+   [
+    145,
+    145
+   ],
+   [
+    290,
+    140
+   ],
+   [
+    420,
+    220
+   ]
+  ],
+  "notes": ""
+ },
+ "batch_25_img050": {
+  "coords": [
+   [
+    65,
+    155
+   ],
+   [
+    290,
+    175
+   ],
+   [
+    430,
+    235
+   ]
+  ],
+  "notes": ""
+ }
+}
