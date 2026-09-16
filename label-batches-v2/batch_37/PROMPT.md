@@ -1,5 +1,8 @@
 # Lô 37/43 — định vị vật thể theo mẫu tham chiếu
 
+> **Cụm 5** — phiên này chỉ làm các lô 37–43, KHÔNG đụng lô ngoài khoảng đó.
+> Nhiều phiên chạy song song, mỗi phiên một cụm; làm lấn cụm khác sẽ gây trùng việc và đụng file.
+
 ## Việc cần làm
 Thư mục `images/` có 50 bài, đặt tên `batch_37_img001` … `batch_37_img050`. Mỗi bài gồm 4 file ảnh:
 - `<tên bài>_scene.jpg` — ảnh cảnh 533x353 pixel: một ảnh chụp thật, bên trên có vài hình vẽ nét màu.
@@ -60,3 +63,20 @@ Ghi ra file `RESULT.json` trong chính thư mục lô này, theo mẫu `RESULT_T
 ```
 
 Chỉ JSON hợp lệ, không kèm chữ nào ngoài JSON.
+
+## Xong lô nào PUSH lô đó, đừng để dồn
+Làm xong `RESULT.json` của lô này thì commit và push NGAY, rồi mới sang lô kế tiếp:
+
+```
+git add batch_37/RESULT.json
+git commit -m "result: batch_37"
+git pull --rebase origin label-batches-v2
+git push origin label-batches-v2
+```
+
+Lý do: phiên làm việc có thể bị ngắt giữa chừng, kết quả chưa push coi như mất. Push từng lô thì
+hỏng phiên chỉ mất đúng lô đang làm dở.
+
+`git pull --rebase` trước khi push là bắt buộc — các phiên khác cũng đang push cụm của họ, bỏ bước
+này sẽ bị từ chối vì nhánh đã chạy tiếp. Mỗi phiên chỉ ghi `RESULT.json` trong cụm của mình nên
+không bao giờ sửa cùng file, rebase sẽ không xung đột.
