@@ -1,0 +1,1307 @@
+{
+  "batch_01_img006": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_7d364f4c-4802-49d4-b6d2-b645543b3421_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img007": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_f7fb4d29-6415-40bd-b134-13581ed710bd_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img008": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_7001d83f-66ea-4f9c-a041-725533912f0f_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img037": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_fbdc8877-dac0-47b6-9ce0-e8cc7741fa6e_No_objects_detected.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img038": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_c1dc0059-8910-41cc-80a0-b0032f588bc6_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img039": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_0f712b86-4e7d-4c8c-b51e-f3340a7c9c3f_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img041": {
+    "batch": "retry_01",
+    "source_image": "DEV_42BC589324F63872_f00fbe02-6a94-4c44-9d77-8d95bfa7e8e9_No_objects_detected.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img043": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_4d704511-d930-4410-802a-42d09a5249e3_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_01"
+  },
+  "batch_01_img045": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_415e860f-cb5b-463c-8f46-960436b19ede_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_01"
+  },
+  "batch_02_img002": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_ac449dbf-af75-40c8-b418-8e4886523656_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_02"
+  },
+  "batch_02_img003": {
+    "batch": "retry_01",
+    "source_image": "DEV_200D1736DD578C25_e88db0fe-1c78-4dcc-9566-b6f9d9a99c96_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_02"
+  },
+  "batch_02_img006": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_d33782b3-2272-4173-859f-6c085fa0fc82_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_02"
+  },
+  "batch_02_img020": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_44a04830-cef2-4a06-b1de-43f67b597cd3_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_02"
+  },
+  "batch_02_img023": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_43c50392-01a2-45c7-8caa-fbd5f709b450_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_02"
+  },
+  "batch_02_img024": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_4c63bc13-63e7-4e61-b82d-9aabe87c1fa8_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_02"
+  },
+  "batch_02_img041": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_fafd9e8f-7f0e-4635-8812-a55b2a651000_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_02"
+  },
+  "batch_02_img046": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_53d919b3-88b9-48bc-adf0-15fcabefb8ec_No_objects_detected.png",
+    "from_batch": "batch_02"
+  },
+  "batch_03_img001": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_f5fa5beb-93cc-45bb-88cd-9eaee45ca01b_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_03"
+  },
+  "batch_03_img002": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_b0c31ad9-1547-425e-81ba-ed234ce1ad8c_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_03"
+  },
+  "batch_03_img003": {
+    "batch": "retry_01",
+    "source_image": "DEV_006AFFD7CAD45C36_90bb2e7c-c0d1-461e-bd16-10cdb338fff6_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_03"
+  },
+  "batch_03_img006": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_a59d9064-e921-4208-8660-5af96ddab68f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_03"
+  },
+  "batch_03_img007": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_f8405f74-a649-41f6-b1ea-61a580ee6469_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_03"
+  },
+  "batch_03_img009": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_51bf1ccb-e26a-4034-99e9-a1353ac93b04_No_objects_detected.png",
+    "from_batch": "batch_03"
+  },
+  "batch_03_img028": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_33c6d2e2-c211-471a-9402-3607498cc15e_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_03"
+  },
+  "batch_03_img031": {
+    "batch": "retry_01",
+    "source_image": "DEV_6A8BEB55FC03BD46_9e84fc2d-f90f-4f21-a1ac-b7f1b8b3105f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_03"
+  },
+  "batch_04_img002": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_0ea3d448-dbdd-45dc-9e5f-c461ce6863ba_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img006": {
+    "batch": "retry_01",
+    "source_image": "DEV_AC7E68C8D359CB5C_1218ac31-26e3-4ad2-9872-2cf05ebda9df_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img010": {
+    "batch": "retry_01",
+    "source_image": "DEV_B926BA978DAFBE36_b561cb51-2a2d-4fd1-b394-e26930e589c5_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img018": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_922a9410-02c3-4aa6-94e6-68f33d816b09_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img022": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_4d953908-7e9a-42e7-9a24-7ef158557c10_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img026": {
+    "batch": "retry_01",
+    "source_image": "DEV_42BC589324F63872_330f2690-1425-46ac-a017-1a43704b5f6c_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img027": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_95fef3ee-f6a0-4db7-b64b-ec63e5d52fd9_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img031": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_46403f02-5c68-4c30-87f2-649d23624c1b_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img032": {
+    "batch": "retry_01",
+    "source_image": "DEV_200D1736DD578C25_d89a1df7-b9cf-435d-aabc-9d10eac0fe68_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img041": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_3b4f7b9d-7607-4b1c-b4f8-ea7666eb8f7e_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_04"
+  },
+  "batch_04_img050": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_094bebc0-fb12-4c18-9aa4-0ec0b0c6044c_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_04"
+  },
+  "batch_05_img006": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_67e07ae0-9dd1-4c3c-a544-8771a6199de2_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_05"
+  },
+  "batch_05_img007": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_d2e96e20-feaf-41d0-a22c-9c06a84e3aaa_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_05"
+  },
+  "batch_05_img014": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_6982ec4e-0f27-4557-b940-eaba90eb5b45_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_05"
+  },
+  "batch_05_img021": {
+    "batch": "retry_01",
+    "source_image": "DEV_AC7E68C8D359CB5C_773475c9-ce19-4b1a-9d53-bf276b4537f2_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_05"
+  },
+  "batch_05_img024": {
+    "batch": "retry_01",
+    "source_image": "DEV_6A8BEB55FC03BD46_92b3b620-3b5a-4e6d-befe-96c945d78037_No_objects_detected.png",
+    "from_batch": "batch_05"
+  },
+  "batch_05_img030": {
+    "batch": "retry_01",
+    "source_image": "DEV_6A8BEB55FC03BD46_1fb4ed76-ff8a-4033-b05f-90d3e0c6cee4_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_05"
+  },
+  "batch_05_img040": {
+    "batch": "retry_01",
+    "source_image": "DEV_B926BA978DAFBE36_43448ab0-af88-4a50-b4e1-fb1cb80b9893_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_05"
+  },
+  "batch_05_img049": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_e48a9f3d-58d5-4e31-baa7-62977c1179bc_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_05"
+  },
+  "batch_06_img036": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_8fa7428f-963a-480d-9749-58be2c3c362f_No_objects_detected.png",
+    "from_batch": "batch_06"
+  },
+  "batch_06_img041": {
+    "batch": "retry_01",
+    "source_image": "DEV_6A8BEB55FC03BD46_9f466015-bfb9-4a93-9332-12a848d1ee43_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_06"
+  },
+  "batch_06_img044": {
+    "batch": "retry_01",
+    "source_image": "DEV_3EDA7259D0046C33_db71fe8b-608e-4bcc-be9c-63496224f072_No_objects_detected.png",
+    "from_batch": "batch_06"
+  },
+  "batch_07_img003": {
+    "batch": "retry_01",
+    "source_image": "DEV_42BC589324F63872_48d03bb4-b4e8-4a8d-a5ab-f508fc9cd5d2_No_objects_detected.png",
+    "from_batch": "batch_07"
+  },
+  "batch_08_img022": {
+    "batch": "retry_01",
+    "source_image": "DEV_006AFFD7CAD45C36_ed0bfe52-ad14-4900-8a96-4cc3edc89503_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_08"
+  },
+  "batch_09_img021": {
+    "batch": "retry_01",
+    "source_image": "DEV_42BC589324F63872_693e69dc-ec9d-438d-8dd9-fafabf9fe3d0_No_objects_detected.png",
+    "from_batch": "batch_09"
+  },
+  "batch_09_img036": {
+    "batch": "retry_01",
+    "source_image": "DEV_0CA62F6E971D7529_fa053936-c11a-4467-814f-318a8a61a7ea_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_09"
+  },
+  "batch_10_img002": {
+    "batch": "retry_01",
+    "source_image": "DEV_6A8BEB55FC03BD46_db3f9fd5-5e4c-45c0-9fae-7828367e8629_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img004": {
+    "batch": "retry_01",
+    "source_image": "DEV_D676AEB6E1654DCA_0e84f294-b3c1-4c37-a014-4d1e51ac5fa5_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img005": {
+    "batch": "retry_02",
+    "source_image": "DEV_B926BA978DAFBE36_d91dabfd-980f-44f3-8851-278acbf290c2_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img006": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_665af707-61eb-4a32-90d0-60f5d3eb3f79_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img007": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_29e19ac8-96c0-440a-ace2-680e730a5007_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img008": {
+    "batch": "retry_02",
+    "source_image": "DEV_6A8BEB55FC03BD46_3f1c3d15-2087-42ee-a484-3b9b9d557a10_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img009": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_bb27de84-33a5-4bf4-86d4-69fca933a97d_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img011": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_e2941dd2-2ec9-4109-80a1-9946a90f5217_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img012": {
+    "batch": "retry_02",
+    "source_image": "DEV_006AFFD7CAD45C36_8bcd30b3-e17b-49dd-9136-f001f0fd1fa5_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img013": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_10ff80f1-a543-42b8-a0cf-e851a69ad93c_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img014": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_0cded23b-e18e-46bf-9431-8fc3c02cb13d_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img016": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_1f333b8e-b0e1-42a9-b7d3-1308a9e38f51_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img017": {
+    "batch": "retry_02",
+    "source_image": "DEV_006AFFD7CAD45C36_a98aeced-b1a4-461b-8fd1-2228162c2753_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img018": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_7a890170-5cd0-49e1-a860-4fdc3610170f_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img020": {
+    "batch": "retry_02",
+    "source_image": "DEV_006AFFD7CAD45C36_5c0b30c6-afa0-422a-ac24-53b3d751ec92_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img021": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_c6ff994d-52f5-4c1c-8311-882225530c42_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img022": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_f64b095e-8095-4f21-8b64-9b547e0de967_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img023": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_4d167692-2112-406a-906f-0b3cde9624c2_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img024": {
+    "batch": "retry_02",
+    "source_image": "DEV_B926BA978DAFBE36_93f5ce59-cc6f-49cb-8626-a93c0e35c0a1_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img025": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_18ad73f6-e699-4c02-b0bf-73b406e9d59a_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img026": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_e3ffab4b-476e-4fc7-a8b3-36cdb00e7926_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img027": {
+    "batch": "retry_02",
+    "source_image": "DEV_42BC589324F63872_d32cb369-bf1d-4573-a48b-9c40fbefdc69_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img028": {
+    "batch": "retry_02",
+    "source_image": "DEV_6A8BEB55FC03BD46_931e615d-44f5-47f3-ba12-3cac29656c67_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img029": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_6d75affd-9c45-4f09-a30e-0a0f48baad46_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img030": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_236635f9-6c6c-45b8-ae68-5f6de39a35eb_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img032": {
+    "batch": "retry_02",
+    "source_image": "DEV_6A8BEB55FC03BD46_ad5ee0e4-0f91-450b-93b7-8adbdf7729dd_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img033": {
+    "batch": "retry_02",
+    "source_image": "DEV_6A8BEB55FC03BD46_89c10ec0-9d72-4fe7-adc9-07fce4a9bdb7_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img034": {
+    "batch": "retry_02",
+    "source_image": "DEV_006AFFD7CAD45C36_0275baac-a72d-4b59-948f-df7e6ef897f2_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img036": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_39fc6ccb-65e4-49b1-b64a-b6fee159cc13_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img037": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_297a798f-e79d-48bc-b19d-9ee91e520b05_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img039": {
+    "batch": "retry_02",
+    "source_image": "DEV_42BC589324F63872_8955b40e-fc60-4f9c-a697-ae1ae412f287_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img040": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_e2793361-c631-46a2-bbb2-e780f5ad2e7e_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img041": {
+    "batch": "retry_02",
+    "source_image": "DEV_D676AEB6E1654DCA_1ffeac5c-b118-44fa-a929-728403300cda_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img043": {
+    "batch": "retry_02",
+    "source_image": "DEV_D676AEB6E1654DCA_79aefb86-913e-4ad4-9dcc-3732b338cfea_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img044": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_78a138fd-12fc-4e0d-95f1-d722ca167156_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img045": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_677eecee-2ff8-4d71-a238-4dd53864fa6f_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img046": {
+    "batch": "retry_02",
+    "source_image": "DEV_D676AEB6E1654DCA_e05c22e2-b741-4798-9da3-2471d4d21ae1_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img047": {
+    "batch": "retry_02",
+    "source_image": "DEV_42BC589324F63872_bf686a93-abad-489f-9a15-364c15a723d2_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img048": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_afed3ad0-49bf-4b76-8d8a-5cffab601441_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img049": {
+    "batch": "retry_02",
+    "source_image": "DEV_D676AEB6E1654DCA_84957b79-7026-4628-9223-8be7d47047d2_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_10"
+  },
+  "batch_10_img050": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_7e619b06-bb00-40f7-867f-37f976a4e786_No_objects_detected.png",
+    "from_batch": "batch_10"
+  },
+  "batch_11_img014": {
+    "batch": "retry_02",
+    "source_image": "DEV_AC7E68C8D359CB5C_def342a3-1706-4601-9930-b09d8a60b628_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_11"
+  },
+  "batch_11_img031": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_8acce969-e241-4942-a309-4079d9528334_No_objects_detected.png",
+    "from_batch": "batch_11"
+  },
+  "batch_11_img037": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_23caf3c6-4069-4e8a-96c3-8f172d9b55d4_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_11"
+  },
+  "batch_11_img038": {
+    "batch": "retry_02",
+    "source_image": "DEV_B926BA978DAFBE36_629d11cb-23d8-47b4-acd7-8bc6cd54aa85_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_11"
+  },
+  "batch_11_img041": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_4ac65bf9-14ca-4154-bd6d-9fc74f1a4adc_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_11"
+  },
+  "batch_12_img013": {
+    "batch": "retry_02",
+    "source_image": "DEV_0CA62F6E971D7529_26aea82b-ffb7-430e-943b-75313add9210_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_12"
+  },
+  "batch_12_img047": {
+    "batch": "retry_02",
+    "source_image": "DEV_D44A99E3437BD006_4219a800-ab42-499c-aa90-daa1a6958752_No_objects_detected.png",
+    "from_batch": "batch_12"
+  },
+  "batch_13_img016": {
+    "batch": "retry_02",
+    "source_image": "DEV_B926BA978DAFBE36_cff28a7c-31af-4e28-b06c-e045659758de_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_13"
+  },
+  "batch_13_img037": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_4482942b-2ecd-4bd6-9ea8-bf550dc90127_No_objects_detected.png",
+    "from_batch": "batch_13"
+  },
+  "batch_13_img041": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_2992b9d3-8ad5-43ca-ba5e-07b096394dfc_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_13"
+  },
+  "batch_14_img001": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_e0a68321-d9b9-4ea5-8e52-8c1061612a18_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_14"
+  },
+  "batch_14_img004": {
+    "batch": "retry_02",
+    "source_image": "DEV_B926BA978DAFBE36_0775e5c8-d4eb-4e0c-81ca-ffc47a19df6d_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_14"
+  },
+  "batch_14_img007": {
+    "batch": "retry_02",
+    "source_image": "DEV_3EDA7259D0046C33_6eb6d2da-fdfe-4573-9c4e-ee38a3bc7202_No_objects_detected.png",
+    "from_batch": "batch_14"
+  },
+  "batch_14_img018": {
+    "batch": "retry_02",
+    "source_image": "DEV_D676AEB6E1654DCA_c30cf7ff-2690-418b-9c53-4e997053fead_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_14"
+  },
+  "batch_14_img025": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_59d358da-bd95-441b-9bdb-147f494ecfce_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_14"
+  },
+  "batch_14_img028": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_86a64a19-82cd-4677-ba4b-7e9b5c822e71_No_objects_detected.png",
+    "from_batch": "batch_14"
+  },
+  "batch_14_img036": {
+    "batch": "retry_03",
+    "source_image": "DEV_006AFFD7CAD45C36_1a85449e-3e6f-4c2d-88be-870cf5a2c386_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_14"
+  },
+  "batch_14_img045": {
+    "batch": "retry_03",
+    "source_image": "DEV_200D1736DD578C25_41b40522-6d86-4fe0-8abc-13953f68deb1_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_14"
+  },
+  "batch_15_img004": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_37663505-dead-4b41-a389-b75f8f9c8f42_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_15"
+  },
+  "batch_15_img024": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_c3a2165b-f477-409c-ab29-2e62096f8c13_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_15"
+  },
+  "batch_15_img034": {
+    "batch": "retry_03",
+    "source_image": "DEV_AC7E68C8D359CB5C_0d5364da-6d5c-4dec-ac21-568fe66101fa_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_15"
+  },
+  "batch_15_img039": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_a449caca-c5d1-48bc-9514-8c4c994fd098_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_15"
+  },
+  "batch_16_img036": {
+    "batch": "retry_03",
+    "source_image": "DEV_006AFFD7CAD45C36_30afff43-5b4f-4a03-ad18-d37f8a4dd22a_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_16"
+  },
+  "batch_19_img003": {
+    "batch": "retry_03",
+    "source_image": "DEV_42BC589324F63872_8adb1213-d66d-487f-bccd-02c8b6d14fcf_No_objects_detected.png",
+    "from_batch": "batch_19"
+  },
+  "batch_20_img009": {
+    "batch": "retry_03",
+    "source_image": "DEV_D676AEB6E1654DCA_10f3a608-983c-45c0-ab7a-8ef5f6fba60a_No_objects_detected.png",
+    "from_batch": "batch_20"
+  },
+  "batch_21_img006": {
+    "batch": "retry_03",
+    "source_image": "DEV_42BC589324F63872_06b035b8-f044-44d7-9a48-9ae61530c09d_No_objects_detected.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img010": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_13d78e61-e403-4803-ad97-bbff24b46890_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img014": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_03b21532-47d0-4150-a8d0-7d9d765457ee_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img019": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_da1d6320-576d-4f7d-9a7b-e5c7dc83f8d7_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img026": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_84f02acd-3ba4-40ca-930d-82de8f2effd6_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img027": {
+    "batch": "retry_03",
+    "source_image": "DEV_42BC589324F63872_6264a1ff-7b5d-444a-ad95-012dc9cc62dd_No_objects_detected.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img029": {
+    "batch": "retry_03",
+    "source_image": "DEV_D676AEB6E1654DCA_f5cb2b4d-06ce-4c39-b28e-c0b2a016bf4e_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img032": {
+    "batch": "retry_03",
+    "source_image": "DEV_0CA62F6E971D7529_a9f0bf52-2947-4ddd-bbb7-1cc370543c1d_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img034": {
+    "batch": "retry_03",
+    "source_image": "DEV_AC7E68C8D359CB5C_2cc7a169-49ff-4189-9a6e-d3a7587a3b11_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img037": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_583b96ca-e706-4717-a411-53b7d938ac20_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img039": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_e372aaa5-a20b-44a5-9f5a-98c400ae7bc5_No_objects_detected.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img040": {
+    "batch": "retry_03",
+    "source_image": "DEV_B926BA978DAFBE36_b02f2c2d-35a3-482e-b3b0-5486ddf9c77c_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img045": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_d9103610-13e3-4c82-b1d4-5fdedcdd266f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img048": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_b3e82392-ad85-40f3-888f-4b816f482086_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_21_img050": {
+    "batch": "retry_03",
+    "source_image": "DEV_006AFFD7CAD45C36_ab4b6534-e706-408f-9d1a-a5a7c4901c19_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_21"
+  },
+  "batch_22_img002": {
+    "batch": "retry_03",
+    "source_image": "DEV_B926BA978DAFBE36_3d245edf-6819-4a92-a2bc-2f877366fb6f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img003": {
+    "batch": "retry_03",
+    "source_image": "DEV_200D1736DD578C25_fd7eb39a-b809-4d7e-a863-3c7173ae1d77_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img005": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_5f41a7d0-3153-4e06-9f87-ba329f95ee93_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img008": {
+    "batch": "retry_03",
+    "source_image": "DEV_B926BA978DAFBE36_e863517c-b0c3-44c0-8931-9e4b2469fab2_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img011": {
+    "batch": "retry_03",
+    "source_image": "DEV_42BC589324F63872_8840a1e8-75cf-4999-8582-5e13cb54870e_No_objects_detected.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img013": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_dc3debd7-82ab-41ec-9e8e-81322c76c301_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img015": {
+    "batch": "retry_03",
+    "source_image": "DEV_006AFFD7CAD45C36_1b8ce450-8cdb-47e6-aee4-8fd827329a1c_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img029": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_454b4362-e6ca-4449-8de6-423edcec8743_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img040": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_c63ca1b1-a57e-437c-8247-5a50c5c9cae6_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img044": {
+    "batch": "retry_03",
+    "source_image": "DEV_AC7E68C8D359CB5C_62f628b0-d961-4c45-933d-8a839a64a94a_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_22"
+  },
+  "batch_22_img050": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_68fc47e2-1567-4edf-abee-1e1f81be9d2a_No_objects_detected.png",
+    "from_batch": "batch_22"
+  },
+  "batch_23_img001": {
+    "batch": "retry_03",
+    "source_image": "DEV_6A8BEB55FC03BD46_42781808-f2ae-4a34-90f8-18bc25e4cf62_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img007": {
+    "batch": "retry_03",
+    "source_image": "DEV_6A8BEB55FC03BD46_823ff3ed-8b9e-4a97-b5c0-922534af1a53_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img008": {
+    "batch": "retry_03",
+    "source_image": "DEV_AC7E68C8D359CB5C_32b17b34-546b-4545-ab46-efc9259dbe4d_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img015": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_d9ca174a-49c4-4270-bd4e-0f6f93ccb23f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img018": {
+    "batch": "retry_03",
+    "source_image": "DEV_6A8BEB55FC03BD46_9beadd2b-b040-4a9a-97a1-bfc98b1a0f17_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img020": {
+    "batch": "retry_03",
+    "source_image": "DEV_006AFFD7CAD45C36_4bca3d94-75ea-4cf5-a429-0ec624a46330_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img021": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_d0dd64f8-3453-4056-8d09-3c64f34bb0ed_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img025": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_a87d08ea-9c67-40dc-aa3f-3a40b8e32259_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img031": {
+    "batch": "retry_03",
+    "source_image": "DEV_200D1736DD578C25_80f75f2d-744e-4da9-a215-ccb25cecdd00_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img038": {
+    "batch": "retry_03",
+    "source_image": "DEV_006AFFD7CAD45C36_d34c0b79-056c-4001-bfd3-6e6cb03361e7_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_23_img044": {
+    "batch": "retry_03",
+    "source_image": "DEV_75ABF754585640E7_6bd4be49-21e7-4d84-9d0c-757650c08fa2_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_23"
+  },
+  "batch_24_img001": {
+    "batch": "retry_03",
+    "source_image": "DEV_6A8BEB55FC03BD46_9ee02b89-c218-42e5-92b3-d764ba084c9a_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img006": {
+    "batch": "retry_03",
+    "source_image": "DEV_3EDA7259D0046C33_6cc94eac-2cbb-4fd5-888e-0ab21874d3fb_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img007": {
+    "batch": "retry_03",
+    "source_image": "DEV_6A8BEB55FC03BD46_e8066163-3814-49f8-874a-ac0f45b0e69b_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img009": {
+    "batch": "retry_03",
+    "source_image": "DEV_42BC589324F63872_c5dd2e0d-a3b8-49ae-b310-ea8a1863f2eb_No_objects_detected.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img011": {
+    "batch": "retry_03",
+    "source_image": "DEV_0CA62F6E971D7529_2e1ae813-cdc2-4b3e-879b-b6f9416105b2_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img016": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_134c18bf-95af-4c60-93c8-1321682f1c43_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img018": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_b2fd21ba-1d53-4e99-960b-5631bedbd0fb_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img019": {
+    "batch": "retry_04",
+    "source_image": "DEV_0CA62F6E971D7529_a7f1e7c1-978c-4366-af67-d3d214dc62d4_No_objects_detected.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img021": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_eb22fc15-cbbe-4485-83e2-af7dfbee7f82_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img025": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_93322fff-a183-4f47-9990-6e0229247834_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img026": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_2ac2f865-125b-4587-b3a3-17a036ebca14_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img028": {
+    "batch": "retry_04",
+    "source_image": "DEV_B926BA978DAFBE36_ba37a208-e59b-435c-a41d-25714e2ec2a5_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img030": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_8af8b04a-2230-4916-8788-5640435da0a9_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img033": {
+    "batch": "retry_04",
+    "source_image": "DEV_75ABF754585640E7_d49d16cf-1a60-47c5-be41-9f862315b68f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img037": {
+    "batch": "retry_04",
+    "source_image": "DEV_42BC589324F63872_89646f14-85a6-42c8-a113-d8588cb5eced_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img041": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_99b85027-0a47-4911-85ba-d4c24c766d43_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img044": {
+    "batch": "retry_04",
+    "source_image": "DEV_AC7E68C8D359CB5C_7390d6d3-55b0-4c59-abce-b8808db6547f_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_24"
+  },
+  "batch_24_img049": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_e8591d46-34fb-4d7d-aa9e-f3ec9b9faaba_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_24"
+  },
+  "batch_25_img002": {
+    "batch": "retry_04",
+    "source_image": "DEV_42BC589324F63872_dd562db7-007a-48ba-99d4-f4ffcfb1f6cf_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img005": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_599bbb91-1424-4614-a51f-2330ad5961d3_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img007": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_786f7843-b7d6-4dec-9356-3fab2d28fa63_No_objects_detected.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img013": {
+    "batch": "retry_04",
+    "source_image": "DEV_0CA62F6E971D7529_7817ac8b-b4a5-4404-96ff-1fdaec9c290a_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img017": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_9ca5b0de-68ca-4238-8bf1-2fe404418688_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img021": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_d09a79e1-4575-4584-96f8-b6b2b97df996_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img030": {
+    "batch": "retry_04",
+    "source_image": "DEV_6A8BEB55FC03BD46_55b0220f-c805-4faf-8ebb-cecddebdec0a_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img032": {
+    "batch": "retry_04",
+    "source_image": "DEV_0CA62F6E971D7529_373619b4-f6f3-4c81-9b49-623b5fc3f522_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img033": {
+    "batch": "retry_04",
+    "source_image": "DEV_200D1736DD578C25_d0b55ced-834b-4fd2-97d6-d7367f44a8cb_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img035": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_6ae440fc-3f1e-447f-b455-b82a2482677f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img036": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_bc3ce2fd-863c-4900-a7be-f53aa3f92675_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img043": {
+    "batch": "retry_04",
+    "source_image": "DEV_AC7E68C8D359CB5C_7c5bc343-2d2a-408d-92e4-206fbe2ecc22_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_25"
+  },
+  "batch_25_img046": {
+    "batch": "retry_04",
+    "source_image": "DEV_6A8BEB55FC03BD46_85359436-ca86-4d0d-be06-0eb53b07ce26_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_25"
+  },
+  "batch_26_img018": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_1f9094dd-29a9-4453-afdb-857eb2c2ead5_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_26"
+  },
+  "batch_26_img030": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_35fb460b-3e81-4ad1-b794-401dc560d9cc_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_26"
+  },
+  "batch_26_img044": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_62de0b03-d4cb-4ca9-9653-1051f0db6a25_No_objects_detected.png",
+    "from_batch": "batch_26"
+  },
+  "batch_26_img050": {
+    "batch": "retry_04",
+    "source_image": "DEV_B926BA978DAFBE36_bfaa9ccc-7127-4726-9ae0-ca124b571dd5_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_26"
+  },
+  "batch_27_img007": {
+    "batch": "retry_04",
+    "source_image": "DEV_B926BA978DAFBE36_1c50e861-27d0-4e67-b394-0b1dd82a7a93_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_27"
+  },
+  "batch_27_img008": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_3b8c4c45-2492-4a68-8b07-5ad99d88058e_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_27"
+  },
+  "batch_27_img024": {
+    "batch": "retry_04",
+    "source_image": "DEV_006AFFD7CAD45C36_8c71bb7b-c8e7-431b-89df-26635bd6f941_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_27"
+  },
+  "batch_28_img031": {
+    "batch": "retry_04",
+    "source_image": "DEV_6A8BEB55FC03BD46_a03b0c18-8eeb-4828-83ab-8e00ff064cc7_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_28"
+  },
+  "batch_28_img037": {
+    "batch": "retry_04",
+    "source_image": "DEV_0CA62F6E971D7529_c45f184e-ab15-42b0-a307-04baabc29601_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_28"
+  },
+  "batch_29_img039": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_492d8afd-ce37-4261-b8df-7d5002a0e612_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_29"
+  },
+  "batch_29_img040": {
+    "batch": "retry_04",
+    "source_image": "DEV_6A8BEB55FC03BD46_3f1cbb58-aa4b-4660-8796-797a4524b699_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_29"
+  },
+  "batch_30_img044": {
+    "batch": "retry_04",
+    "source_image": "DEV_6A8BEB55FC03BD46_e537d0c8-98b3-44c8-8aed-09e991760d58_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_30"
+  },
+  "batch_32_img035": {
+    "batch": "retry_04",
+    "source_image": "DEV_0CA62F6E971D7529_b6309e40-d293-4217-bb77-8fa7ceb28bc1_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_32"
+  },
+  "batch_34_img010": {
+    "batch": "retry_04",
+    "source_image": "DEV_42BC589324F63872_419fe989-28ad-4ea0-b0b2-a7e5957acfef_No_objects_detected.png",
+    "from_batch": "batch_34"
+  },
+  "batch_34_img013": {
+    "batch": "retry_04",
+    "source_image": "DEV_D676AEB6E1654DCA_73cfc032-c8dc-4fc4-ad65-c0a65cdb7bd5_No_objects_detected.png",
+    "from_batch": "batch_34"
+  },
+  "batch_34_img014": {
+    "batch": "retry_04",
+    "source_image": "DEV_B926BA978DAFBE36_d50eaf0a-e0c4-406f-856d-b90732e92afd_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_34"
+  },
+  "batch_34_img016": {
+    "batch": "retry_04",
+    "source_image": "DEV_0CA62F6E971D7529_dcdfbf2c-d447-4fbc-8cb8-35272e3545cd_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_34"
+  },
+  "batch_34_img017": {
+    "batch": "retry_04",
+    "source_image": "DEV_6A8BEB55FC03BD46_11deac86-406f-49cb-abb7-b31fe7930a0f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_34"
+  },
+  "batch_34_img018": {
+    "batch": "retry_04",
+    "source_image": "DEV_AC7E68C8D359CB5C_5928308b-9a76-4128-acab-23b8ccb4dd16_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_34"
+  },
+  "batch_34_img039": {
+    "batch": "retry_04",
+    "source_image": "DEV_B926BA978DAFBE36_dcd561cc-af30-4124-96fe-6ab9f94e79ad_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_34"
+  },
+  "batch_34_img049": {
+    "batch": "retry_04",
+    "source_image": "DEV_0CA62F6E971D7529_e153f8f9-2429-4472-8ef6-1787d51ee54c_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_34"
+  },
+  "batch_35_img011": {
+    "batch": "retry_04",
+    "source_image": "DEV_42BC589324F63872_2112a380-4ea7-4a9b-b10d-ba72d7b815f7_No_objects_detected.png",
+    "from_batch": "batch_35"
+  },
+  "batch_35_img019": {
+    "batch": "retry_04",
+    "source_image": "DEV_D44A99E3437BD006_dac24347-fbf1-471f-84d7-a5ba0fca9760_No_objects_detected.png",
+    "from_batch": "batch_35"
+  },
+  "batch_36_img033": {
+    "batch": "retry_04",
+    "source_image": "DEV_3EDA7259D0046C33_af27e50b-78f2-4f62-9b92-036d662bbdfa_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_36"
+  },
+  "batch_38_img004": {
+    "batch": "retry_04",
+    "source_image": "DEV_42BC589324F63872_05d4ddec-0fc2-4f20-9e51-65afb7a70376_No_objects_detected.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img006": {
+    "batch": "retry_04",
+    "source_image": "DEV_AC7E68C8D359CB5C_8ccdcac1-6810-4802-ac60-4fee363fb4a4_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img009": {
+    "batch": "retry_04",
+    "source_image": "DEV_B926BA978DAFBE36_b1de3c70-998f-4826-adbd-1c529692708b_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img013": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_46236eb9-4897-4a90-b65e-53555ee6823d_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img016": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_067d8d09-e112-4efc-8042-8e5ae5274f0e_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img018": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_8b70970b-efc5-4562-b8a8-0604edcdd164_No_objects_detected.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img024": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_b1da8d4a-90b1-46bf-9f5b-68b7270490c3_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img026": {
+    "batch": "retry_05",
+    "source_image": "DEV_6A8BEB55FC03BD46_64624429-caf0-46a2-8248-1f2f644cc3f4_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img027": {
+    "batch": "retry_05",
+    "source_image": "DEV_AC7E68C8D359CB5C_d8a5df54-ee2b-460e-ba7b-d46a6553d32f_No_objects_detected.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img030": {
+    "batch": "retry_05",
+    "source_image": "DEV_200D1736DD578C25_8f1e9a3c-5371-43ed-bd93-2ce54938d098_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img031": {
+    "batch": "retry_05",
+    "source_image": "DEV_6A8BEB55FC03BD46_d69c1c7f-ed61-449d-9e90-730f643cf72d_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img032": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_743ebc9d-1174-4bd6-a78c-c84ee3a1d4c6_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img034": {
+    "batch": "retry_05",
+    "source_image": "DEV_D676AEB6E1654DCA_8b545fc1-3dc9-479f-8551-e6fd90471663_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img039": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_1f0266b6-26c4-42a0-8213-29251121b3ca_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img041": {
+    "batch": "retry_05",
+    "source_image": "DEV_200D1736DD578C25_c8d58fa2-ea27-4626-9e84-0694d6bfcaf7_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img045": {
+    "batch": "retry_05",
+    "source_image": "DEV_006AFFD7CAD45C36_456a34b2-e51e-4ff8-b71e-a3e637627353_No_objects_detected.png",
+    "from_batch": "batch_38"
+  },
+  "batch_38_img049": {
+    "batch": "retry_05",
+    "source_image": "DEV_B926BA978DAFBE36_1dcf8152-01b4-4435-ba66-412299483b1d_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_38"
+  },
+  "batch_40_img007": {
+    "batch": "retry_05",
+    "source_image": "DEV_AC7E68C8D359CB5C_34361c2d-9fd3-4df8-b6b4-223ab4ebe342_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_40"
+  },
+  "batch_40_img008": {
+    "batch": "retry_05",
+    "source_image": "DEV_D44A99E3437BD006_6b60a8fe-898f-4a43-8f67-e97a4248760c_No_objects_detected.png",
+    "from_batch": "batch_40"
+  },
+  "batch_40_img016": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_66ac52e9-0f9f-4624-b66a-e3c615083efb_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_40"
+  },
+  "batch_40_img021": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_b4c93abe-5889-432d-af30-f592615cf7b8_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_40"
+  },
+  "batch_40_img029": {
+    "batch": "retry_05",
+    "source_image": "DEV_B926BA978DAFBE36_90c8d0ff-f463-459d-b9f7-97f02605cff6_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_40"
+  },
+  "batch_41_img003": {
+    "batch": "retry_05",
+    "source_image": "DEV_6A8BEB55FC03BD46_b5487fe1-370b-45f4-b101-fc680c807ac0_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img005": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_42af7cbb-7ad4-4ce7-993d-83bd8bb762bd_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img006": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_542acab2-55c0-4192-b445-2030132803f0_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img008": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_2003cd07-ef75-42fd-977d-bee7bff83fb4_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img018": {
+    "batch": "retry_05",
+    "source_image": "DEV_6A8BEB55FC03BD46_fa993115-6d33-42e4-92eb-fddd9354bb2d_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img023": {
+    "batch": "retry_05",
+    "source_image": "DEV_200D1736DD578C25_a84d5f55-162c-4dfa-9971-70dd992f859e_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img025": {
+    "batch": "retry_05",
+    "source_image": "DEV_42BC589324F63872_e42980ff-dd50-4883-ad63-c16d925549c0_No_objects_detected.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img026": {
+    "batch": "retry_05",
+    "source_image": "DEV_AC7E68C8D359CB5C_c913ca82-3801-4b3f-a1c7-ef2d75fb3d96_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img030": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_78ce7fe9-5c41-4230-851f-5838c9ecd74f_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img031": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_add62a23-39b6-4e67-b1ed-1ec7c0430d2e_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img036": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_caf8b67b-4dae-48af-af31-d564da2c4cc0_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img038": {
+    "batch": "retry_05",
+    "source_image": "DEV_42BC589324F63872_ee776e85-1f92-4ada-88e1-9703b9af4045_No_objects_detected.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img039": {
+    "batch": "retry_05",
+    "source_image": "DEV_D676AEB6E1654DCA_35360bde-ad89-4a9d-ae57-4726e175bf40_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_41"
+  },
+  "batch_41_img041": {
+    "batch": "retry_05",
+    "source_image": "DEV_0CA62F6E971D7529_89fbdf71-8290-4e0d-8ee8-97cea2eb288c_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_41"
+  },
+  "batch_42_img005": {
+    "batch": "retry_05",
+    "source_image": "DEV_D676AEB6E1654DCA_a98380c5-dcde-4a39-b898-750119adc31e_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_42"
+  },
+  "batch_42_img014": {
+    "batch": "retry_05",
+    "source_image": "DEV_6A8BEB55FC03BD46_60de1f26-4ab4-4994-974d-d4ca2f695eb2_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_42"
+  },
+  "batch_42_img018": {
+    "batch": "retry_05",
+    "source_image": "DEV_D676AEB6E1654DCA_5a40dec6-9cdc-426a-8d31-f11a08e460be_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_42"
+  },
+  "batch_42_img019": {
+    "batch": "retry_05",
+    "source_image": "DEV_6A8BEB55FC03BD46_d58a4dae-641b-4e80-a605-0b36529c5f74_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_42"
+  },
+  "batch_42_img020": {
+    "batch": "retry_05",
+    "source_image": "DEV_42BC589324F63872_38a912ae-8bb1-4817-8c47-541a9bc22dbc_Only_1_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_42"
+  },
+  "batch_42_img023": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_36d6cd68-27f3-4b34-82c6-a0dd999ef4bd_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_42"
+  },
+  "batch_42_img035": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_bf7d6078-fe0f-4600-8c32-af4c542f9d60_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_42"
+  },
+  "batch_42_img043": {
+    "batch": "retry_05",
+    "source_image": "DEV_AC7E68C8D359CB5C_c46601a2-dcae-45c8-a396-e6fed2fcab60_Only_2_valid_objects_found__expected_3_.png",
+    "from_batch": "batch_42"
+  },
+  "batch_43_img014": {
+    "batch": "retry_05",
+    "source_image": "DEV_B926BA978DAFBE36_c341ecb4-0750-4d5f-a32c-bed87f432dc0_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_43"
+  },
+  "batch_43_img017": {
+    "batch": "retry_05",
+    "source_image": "DEV_D676AEB6E1654DCA_d9f3cddb-0311-47c3-a912-b6de6beef54a_No_objects_detected.png",
+    "from_batch": "batch_43"
+  },
+  "batch_43_img018": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_1d28d8d7-babb-4554-ad5f-89503a83cf47_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_43"
+  },
+  "batch_43_img026": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_7e5b7936-a997-4fa4-baeb-f8adb92d4da6_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_43"
+  },
+  "batch_43_img027": {
+    "batch": "retry_05",
+    "source_image": "DEV_42BC589324F63872_100adea7-c4a3-4e12-8d5d-94c2905eb0c6_No_objects_detected.png",
+    "from_batch": "batch_43"
+  },
+  "batch_43_img031": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_36b0129d-7e1d-4fcd-bee2-32a8efc36521_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_43"
+  },
+  "batch_43_img033": {
+    "batch": "retry_05",
+    "source_image": "DEV_3EDA7259D0046C33_d46ed23c-6d9f-487c-84b2-4f96cf38f320_HTTP_500____success__false__error___YOLO_service_error__YOLO_service_returned_st.png",
+    "from_batch": "batch_43"
+  },
+  "batch_43_img036": {
+    "batch": "retry_05",
+    "source_image": "DEV_42BC589324F63872_805b7c23-b80d-438b-be33-8fc677ee7197_No_objects_detected.png",
+    "from_batch": "batch_43"
+  }
+}
