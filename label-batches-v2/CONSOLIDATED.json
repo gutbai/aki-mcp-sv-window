@@ -103,20 +103,44 @@
   "source": "RESULT.json"
  },
  "batch_01_img007": {
-  "coords": null,
-  "notes": "mau 3 khong phan biet chac chan voi hinh nhieu",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    230,
+    220
+   ],
+   [
+    294,
+    106
+   ],
+   [
+    130,
+    210
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img008": {
-  "coords": null,
-  "notes": "khong chac thu tu cac hinh xoay trong canh",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    92,
+    108
+   ],
+   [
+    153,
+    211
+   ],
+   [
+    393,
+    85
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img009": {
   "coords": [
@@ -629,28 +653,64 @@
   "source": "RESULT.json"
  },
  "batch_01_img037": {
-  "coords": null,
-  "notes": "hinh ve lan nen, khong xac dinh chac du 3 mau",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    405,
+    262
+   ],
+   [
+    420,
+    130
+   ],
+   [
+    220,
+    112
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img038": {
-  "coords": null,
-  "notes": "khong phan biet chac mau 1 va mau 3",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    350,
+    110
+   ],
+   [
+    320,
+    242
+   ],
+   [
+    72,
+    132
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img039": {
-  "coords": null,
-  "notes": "khong xac dinh chac hinh tau trong canh",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    151,
+    62
+   ],
+   [
+    401,
+    193
+   ],
+   [
+    72,
+    227
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img040": {
   "coords": [
@@ -672,12 +732,24 @@
   "source": "RESULT.json"
  },
  "batch_01_img041": {
-  "coords": null,
-  "notes": "mau 2 va mau 3 khong nhin ro de xac dinh chac",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    112,
+    176
+   ],
+   [
+    360,
+    124
+   ],
+   [
+    222,
+    211
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img042": {
   "coords": [
@@ -699,12 +771,24 @@
   "source": "RESULT.json"
  },
  "batch_01_img043": {
-  "coords": null,
-  "notes": "nen qua nhieu mau, khong xac dinh chac mau 1 va 2",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    91,
+    126
+   ],
+   [
+    359,
+    220
+   ],
+   [
+    302,
+    74
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img044": {
   "coords": [
@@ -726,12 +810,24 @@
   "source": "RESULT.json"
  },
  "batch_01_img045": {
-  "coords": null,
-  "notes": "cac hinh o phia tren bi lan nen, khong chac thu tu",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    69,
+    226
+   ],
+   [
+    389,
+    56
+   ],
+   [
+    264,
+    119
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_01_img046": {
   "coords": [
@@ -848,20 +944,44 @@
   "source": "RESULT.json"
  },
  "batch_02_img002": {
-  "coords": null,
-  "notes": "hai hinh mau dang banh rang/den pin bi lan voi vat nhieu",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    412,
+    111
+   ],
+   [
+    348,
+    204
+   ],
+   [
+    246,
+    195
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_02_img003": {
-  "coords": null,
-  "notes": "khong chac mau chai thu 2 trong canh",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    405,
+    242
+   ],
+   [
+    411,
+    72
+   ],
+   [
+    111,
+    92
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_02_img004": {
   "coords": [
@@ -1146,12 +1266,24 @@
   "source": "RESULT.json"
  },
  "batch_02_img020": {
-  "coords": null,
-  "notes": "khong thay ro hinh tron P khop mau 1",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    310,
+    142
+   ],
+   [
+    204,
+    171
+   ],
+   [
+    335,
+    226
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_02_img021": {
   "coords": [
@@ -1192,20 +1324,44 @@
   "source": "RESULT.json"
  },
  "batch_02_img023": {
-  "coords": null,
-  "notes": "khong chac thu tu ba hinh mau xoay",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    166,
+    155
+   ],
+   [
+    165,
+    58
+   ],
+   [
+    410,
+    66
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_02_img024": {
-  "coords": null,
-  "notes": "nen nhieu net mau, khong phan biet chac cac mau",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    235,
+    98
+   ],
+   [
+    53,
+    126
+   ],
+   [
+    124,
+    265
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_02_img025": {
   "coords": [
@@ -1512,12 +1668,24 @@
   "source": "RESULT.json"
  },
  "batch_02_img041": {
-  "coords": null,
-  "notes": "hinh mau 1 lan nen, khong xac dinh chac",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    404,
+    191
+   ],
+   [
+    338,
+    159
+   ],
+   [
+    183,
+    153
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_02_img042": {
   "coords": [
@@ -1680,28 +1848,64 @@
   "source": "RESULT.json"
  },
  "batch_03_img001": {
-  "coords": null,
-  "notes": "khong xac dinh chac mau 2 va mau 3",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    188,
+    248
+   ],
+   [
+    165,
+    61
+   ],
+   [
+    405,
+    104
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img002": {
-  "coords": null,
-  "notes": "nhieu hinh tron gan giong nhau, khong chac thu tu",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    300,
+    194
+   ],
+   [
+    85,
+    96
+   ],
+   [
+    266,
+    76
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img003": {
-  "coords": null,
-  "notes": "khong phan biet chac mau 1 va mau 2",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    225,
+    265
+   ],
+   [
+    125,
+    84
+   ],
+   [
+    105,
+    208
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img004": {
   "coords": [
@@ -1742,20 +1946,44 @@
   "source": "RESULT.json"
  },
  "batch_03_img006": {
-  "coords": null,
-  "notes": "khong chac hinh xe cuu thuong va mau 1",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    205,
+    168
+   ],
+   [
+    411,
+    261
+   ],
+   [
+    73,
+    214
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img007": {
-  "coords": null,
-  "notes": "mau 2 khong phan biet chac trong canh",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    77,
+    215
+   ],
+   [
+    366,
+    170
+   ],
+   [
+    250,
+    174
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img008": {
   "coords": [
@@ -1777,12 +2005,24 @@
   "source": "RESULT.json"
  },
  "batch_03_img009": {
-  "coords": null,
-  "notes": "khong thay ro hinh tram xang khop mau 3",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    350,
+    105
+   ],
+   [
+    275,
+    245
+   ],
+   [
+    115,
+    255
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img010": {
   "coords": [
@@ -2127,12 +2367,24 @@
   "source": "RESULT.json"
  },
  "batch_03_img028": {
-  "coords": null,
-  "notes": "khong thay ro mau 1 tach biet voi hai mau con lai",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    285,
+    80
+   ],
+   [
+    410,
+    165
+   ],
+   [
+    66,
+    112
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img029": {
   "coords": [
@@ -2173,12 +2425,24 @@
   "source": "RESULT.json"
  },
  "batch_03_img031": {
-  "coords": null,
-  "notes": "mau 1 va mau 2 khong phan biet chac",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    236,
+    205
+   ],
+   [
+    92,
+    210
+   ],
+   [
+    422,
+    91
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_03_img032": {
   "coords": [
@@ -2561,12 +2825,24 @@
   "source": "RESULT.json"
  },
  "batch_04_img002": {
-  "coords": null,
-  "notes": "khong phan biet chac 3 mau trong canh",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    330,
+    67
+   ],
+   [
+    133,
+    210
+   ],
+   [
+    210,
+    128
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img003": {
   "coords": [
@@ -2691,12 +2967,24 @@
   "source": "RESULT.json"
  },
  "batch_04_img010": {
-  "coords": null,
-  "notes": "khong xac dinh chac mau 2 va mau 3",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    397,
+    128
+   ],
+   [
+    95,
+    135
+   ],
+   [
+    267,
+    135
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img011": {
   "coords": [
@@ -2832,12 +3120,24 @@
   "source": "RESULT.json"
  },
  "batch_04_img018": {
-  "coords": null,
-  "notes": "khong phan biet chac globe elevator va eye",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    370,
+    60
+   ],
+   [
+    67,
+    56
+   ],
+   [
+    137,
+    214
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img019": {
   "coords": [
@@ -2951,20 +3251,44 @@
   "source": "RESULT.json"
  },
  "batch_04_img026": {
-  "coords": null,
-  "notes": "mau 1 va mau 2 khong xac dinh chac",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    382,
+    250
+   ],
+   [
+    225,
+    184
+   ],
+   [
+    105,
+    249
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img027": {
-  "coords": null,
-  "notes": "khong thay chac mau 1",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    248,
+    243
+   ],
+   [
+    256,
+    128
+   ],
+   [
+    369,
+    244
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img028": {
   "coords": [
@@ -3024,20 +3348,44 @@
   "source": "RESULT.json"
  },
  "batch_04_img031": {
-  "coords": null,
-  "notes": "mau 2 va mau 3 khong phan biet chac",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    425,
+    165
+   ],
+   [
+    250,
+    166
+   ],
+   [
+    383,
+    251
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img032": {
-  "coords": null,
-  "notes": "khong xac dinh chac bitcoin va wheel",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    305,
+    131
+   ],
+   [
+    99,
+    183
+   ],
+   [
+    204,
+    231
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img033": {
   "coords": [
@@ -3192,12 +3540,24 @@
   "source": "RESULT.json"
  },
  "batch_04_img041": {
-  "coords": null,
-  "notes": "khong thay chac mau umbrella",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    284,
+    207
+   ],
+   [
+    445,
+    206
+   ],
+   [
+    172,
+    62
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_04_img042": {
   "coords": [
@@ -3352,12 +3712,24 @@
   "source": "RESULT.json"
  },
  "batch_04_img050": {
-  "coords": null,
-  "notes": "khong phan biet chac sunrise envelope va cat",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    407,
+    199
+   ],
+   [
+    184,
+    114
+   ],
+   [
+    286,
+    78
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img001": {
   "coords": null,
@@ -3444,20 +3816,44 @@
   "source": "RESULT.json"
  },
  "batch_05_img006": {
-  "coords": null,
-  "notes": "khong phan biet chac truck sun va lungs",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    439,
+    70
+   ],
+   [
+    104,
+    220
+   ],
+   [
+    397,
+    218
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img007": {
-  "coords": null,
-  "notes": "khong xac dinh chac home va clock",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    394,
+    271
+   ],
+   [
+    244,
+    111
+   ],
+   [
+    394,
+    103
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img008": {
   "coords": [
@@ -3574,12 +3970,24 @@
   "source": "RESULT.json"
  },
  "batch_05_img014": {
-  "coords": null,
-  "notes": "khong thay chac mau garage",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    316,
+    156
+   ],
+   [
+    62,
+    100
+   ],
+   [
+    254,
+    56
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img015": {
   "coords": [
@@ -3696,12 +4104,24 @@
   "source": "RESULT.json"
  },
  "batch_05_img021": {
-  "coords": null,
-  "notes": "khong phan biet chac axle va chart",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    143,
+    131
+   ],
+   [
+    442,
+    160
+   ],
+   [
+    199,
+    244
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img022": {
   "coords": [
@@ -3845,12 +4265,24 @@
   "source": "RESULT.json"
  },
  "batch_05_img030": {
-  "coords": null,
-  "notes": "hai hinh heart/face khong phan biet chac",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    174,
+    59
+   ],
+   [
+    359,
+    174
+   ],
+   [
+    311,
+    72
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img031": {
   "coords": [
@@ -4024,12 +4456,24 @@
   "source": "RESULT.json"
  },
  "batch_05_img040": {
-  "coords": null,
-  "notes": "nen roi, khong phan biet chac camper va pinwheel",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    213,
+    201
+   ],
+   [
+    357,
+    78
+   ],
+   [
+    205,
+    103
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img041": {
   "coords": [
@@ -4173,12 +4617,24 @@
   "source": "RESULT.json"
  },
  "batch_05_img049": {
-  "coords": null,
-  "notes": "khong phan biet chac bone swirl va arrow",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    416,
+    222
+   ],
+   [
+    171,
+    209
+   ],
+   [
+    444,
+    57
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_05_img050": {
   "coords": [
@@ -4995,12 +5451,24 @@
   "source": "RESULT.json"
  },
  "batch_06_img044": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn icon2 (dao/nĩa) do mục tiêu hòa vào nền tối/xám; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    177,
+    140
+   ],
+   [
+    421,
+    254
+   ],
+   [
+    418,
+    155
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_06_img045": {
   "coords": [
@@ -6455,12 +6923,24 @@
   "source": "RESULT.json"
  },
  "batch_08_img022": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; icon3 bị chìm vào nền, bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    275,
+    64
+   ],
+   [
+    122,
+    153
+   ],
+   [
+    423,
+    257
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_08_img023": {
   "coords": [
@@ -7375,12 +7855,24 @@
   "source": "RESULT.json"
  },
  "batch_09_img021": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    377,
+    180
+   ],
+   [
+    267,
+    159
+   ],
+   [
+    85,
+    220
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_09_img022": {
   "coords": [
@@ -7942,12 +8434,24 @@
   "source": "RESULT.json"
  },
  "batch_10_img002": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.728, margin=0.405; icon2 score=-2.992, margin=0.333; icon3 score=-3.625, margin=-0.260",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    275,
+    175
+   ],
+   [
+    401,
+    78
+   ],
+   [
+    72,
+    145
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img003": {
   "coords": [
@@ -7969,12 +8473,24 @@
   "source": "RESULT.json"
  },
  "batch_10_img004": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.759, margin=-0.630; icon3 score=-2.503, margin=-0.011",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    430,
+    169
+   ],
+   [
+    210,
+    105
+   ],
+   [
+    322,
+    245
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img005": {
   "coords": null,
@@ -7985,36 +8501,84 @@
   "source": "RESULT.json"
  },
  "batch_10_img006": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.742, margin=-0.362; icon3 score=-3.070, margin=0.004",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    68,
+    247
+   ],
+   [
+    215,
+    260
+   ],
+   [
+    370,
+    205
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img007": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon2 score=-3.107, margin=0.128",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    60,
+    200
+   ],
+   [
+    240,
+    225
+   ],
+   [
+    275,
+    70
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img008": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon2 score=-2.854, margin=0.023",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    315,
+    200
+   ],
+   [
+    180,
+    165
+   ],
+   [
+    340,
+    50
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img009": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon3 score=-3.238, margin=-1.438",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    365,
+    60
+   ],
+   [
+    250,
+    170
+   ],
+   [
+    250,
+    80
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img010": {
   "coords": [
@@ -8036,36 +8600,84 @@
   "source": "RESULT.json"
  },
  "batch_10_img011": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon2 score=-2.983, margin=-0.439",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    120,
+    145
+   ],
+   [
+    330,
+    210
+   ],
+   [
+    220,
+    190
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img012": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon3 score=-3.664, margin=-0.332",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    240,
+    195
+   ],
+   [
+    420,
+    55
+   ],
+   [
+    300,
+    60
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img013": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.877, margin=0.568; icon2 score=-3.585, margin=-0.038",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    225,
+    225
+   ],
+   [
+    315,
+    135
+   ],
+   [
+    110,
+    205
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img014": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.861, margin=0.877; icon2 score=-2.497, margin=-0.060; icon3 score=-3.457, margin=-0.678",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    230,
+    150
+   ],
+   [
+    110,
+    180
+   ],
+   [
+    320,
+    70
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img015": {
   "coords": null,
@@ -8076,28 +8688,64 @@
   "source": "RESULT.json"
  },
  "batch_10_img016": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-4.094, margin=-0.706; icon2 score=-2.930, margin=0.067",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    250,
+    260
+   ],
+   [
+    165,
+    85
+   ],
+   [
+    75,
+    210
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img017": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.002, margin=0.305; icon2 score=-3.125, margin=0.015; icon3 score=-3.347, margin=-0.219",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    95,
+    170
+   ],
+   [
+    410,
+    55
+   ],
+   [
+    430,
+    275
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img018": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.736, margin=0.641",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    80,
+    165
+   ],
+   [
+    430,
+    140
+   ],
+   [
+    355,
+    270
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img019": {
   "coords": [
@@ -8135,76 +8783,184 @@
   "source": "RESULT.json"
  },
  "batch_10_img022": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon3 score=-2.974, margin=-0.210",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    60,
+    95
+   ],
+   [
+    300,
+    250
+   ],
+   [
+    115,
+    245
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img023": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.110, margin=-0.317; icon3 score=-2.667, margin=0.392",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    100,
+    130
+   ],
+   [
+    230,
+    220
+   ],
+   [
+    95,
+    250
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img024": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon3 score=-2.867, margin=0.133",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    235,
+    135
+   ],
+   [
+    365,
+    95
+   ],
+   [
+    375,
+    250
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img025": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon2 score=-2.605, margin=0.073",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    355,
+    175
+   ],
+   [
+    160,
+    50
+   ],
+   [
+    145,
+    205
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img026": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.487, margin=0.177; icon2 score=-3.448, margin=-0.024; icon3 score=-3.135, margin=-0.016",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    115,
+    250
+   ],
+   [
+    410,
+    200
+   ],
+   [
+    215,
+    110
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img027": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.109, margin=0.051; icon3 score=-2.741, margin=0.507",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    155,
+    55
+   ],
+   [
+    175,
+    255
+   ],
+   [
+    365,
+    120
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img028": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.350, margin=-0.168; icon3 score=-2.720, margin=0.463",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    285,
+    200
+   ],
+   [
+    95,
+    130
+   ],
+   [
+    315,
+    50
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img029": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.042, margin=0.397; icon3 score=-2.771, margin=0.274",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    75,
+    75
+   ],
+   [
+    290,
+    190
+   ],
+   [
+    175,
+    125
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img030": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.091, margin=-0.494",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    430,
+    65
+   ],
+   [
+    165,
+    90
+   ],
+   [
+    220,
+    240
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img031": {
   "coords": null,
@@ -8215,28 +8971,64 @@
   "source": "RESULT.json"
  },
  "batch_10_img032": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.889, margin=0.390; icon2 score=-2.719, margin=0.418; icon3 score=-2.645, margin=0.529",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    155,
+    260
+   ],
+   [
+    310,
+    60
+   ],
+   [
+    420,
+    150
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img033": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.836, margin=0.086; icon2 score=-3.601, margin=-0.524",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    85,
+    125
+   ],
+   [
+    285,
+    160
+   ],
+   [
+    330,
+    255
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img034": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon2 score=-2.360, margin=0.040",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    390,
+    200
+   ],
+   [
+    215,
+    205
+   ],
+   [
+    85,
+    160
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img035": {
   "coords": [
@@ -8258,20 +9050,44 @@
   "source": "RESULT.json"
  },
  "batch_10_img036": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon2 score=-2.952, margin=-0.796",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    300,
+    80
+   ],
+   [
+    55,
+    150
+   ],
+   [
+    370,
+    170
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img037": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.233, margin=-0.108; icon2 score=-4.593, margin=-0.963; icon3 score=-2.613, margin=1.141",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    270,
+    130
+   ],
+   [
+    70,
+    85
+   ],
+   [
+    105,
+    200
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img038": {
   "coords": [
@@ -8293,28 +9109,64 @@
   "source": "RESULT.json"
  },
  "batch_10_img039": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.770, margin=0.850; icon2 score=-3.657, margin=0.106; icon3 score=-3.023, margin=0.433",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    105,
+    185
+   ],
+   [
+    340,
+    145
+   ],
+   [
+    195,
+    80
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img040": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-1.817, margin=0.124; icon3 score=-3.213, margin=0.077",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    430,
+    105
+   ],
+   [
+    150,
+    105
+   ],
+   [
+    355,
+    210
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img041": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon2 score=-2.108, margin=0.099",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    330,
+    65
+   ],
+   [
+    65,
+    65
+   ],
+   [
+    95,
+    190
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img042": {
   "coords": [
@@ -8336,20 +9188,44 @@
   "source": "RESULT.json"
  },
  "batch_10_img043": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-3.463, margin=-0.260",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    390,
+    100
+   ],
+   [
+    80,
+    210
+   ],
+   [
+    365,
+    250
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img044": {
-  "coords": null,
-  "notes": "Low-confidence visual match: icon1 score=-2.785, margin=-0.171; icon2 score=-3.232, margin=0.271; icon3 score=-3.113, margin=-0.153",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    230,
+    120
+   ],
+   [
+    310,
+    250
+   ],
+   [
+    350,
+    70
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_10_img045": {
   "coords": null,
@@ -11541,12 +12417,24 @@
   "source": "RESULT.json"
  },
  "batch_14_img025": {
-  "coords": null,
-  "notes": "khong chac vi tri icon3",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    233,
+    167
+   ],
+   [
+    101,
+    214
+   ],
+   [
+    383,
+    140
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_14_img026": {
   "coords": [
@@ -12048,12 +12936,24 @@
   "source": "RESULT.json"
  },
  "batch_15_img004": {
-  "coords": null,
-  "notes": "khong chac phan biet du 3 icon",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    365,
+    265
+   ],
+   [
+    405,
+    112
+   ],
+   [
+    230,
+    105
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_15_img005": {
   "coords": [
@@ -12417,12 +13317,24 @@
   "source": "RESULT.json"
  },
  "batch_15_img024": {
-  "coords": null,
-  "notes": "khong chac phan biet du 3 icon",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    400,
+    190
+   ],
+   [
+    273,
+    91
+   ],
+   [
+    73,
+    255
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_15_img025": {
   "coords": [
@@ -12680,12 +13592,24 @@
   "source": "RESULT.json"
  },
  "batch_15_img039": {
-  "coords": null,
-  "notes": "khong chac phan biet icon2 va icon3",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    358,
+    186
+   ],
+   [
+    107,
+    210
+   ],
+   [
+    190,
+    65
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_15_img040": {
   "coords": [
@@ -15774,12 +16698,24 @@
   "source": "RESULT.json"
  },
  "batch_19_img003": {
-  "coords": null,
-  "notes": "khong chac vi tri icon3",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    435,
+    140
+   ],
+   [
+    270,
+    135
+   ],
+   [
+    280,
+    230
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_19_img004": {
   "coords": [
@@ -16827,12 +17763,24 @@
   "source": "RESULT.json"
  },
  "batch_20_img009": {
-  "coords": null,
-  "notes": "khong chac vi tri icon2",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    66,
+    202
+   ],
+   [
+    366,
+    190
+   ],
+   [
+    190,
+    110
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_20_img010": {
   "coords": [
@@ -17709,12 +18657,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img006": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    61,
+    210
+   ],
+   [
+    220,
+    214
+   ],
+   [
+    430,
+    210
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img007": {
   "coords": [
@@ -17774,12 +18734,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img010": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    330,
+    110
+   ],
+   [
+    160,
+    220
+   ],
+   [
+    180,
+    110
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img011": {
   "coords": [
@@ -17828,12 +18800,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img014": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    185,
+    190
+   ],
+   [
+    420,
+    215
+   ],
+   [
+    355,
+    80
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img015": {
   "coords": [
@@ -17912,12 +18896,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img019": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    52,
+    148
+   ],
+   [
+    430,
+    265
+   ],
+   [
+    295,
+    65
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img020": {
   "coords": [
@@ -18034,20 +19030,44 @@
   "source": "RESULT.json"
  },
  "batch_21_img026": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    350,
+    180
+   ],
+   [
+    300,
+    275
+   ],
+   [
+    180,
+    90
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img027": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    55,
+    250
+   ],
+   [
+    190,
+    180
+   ],
+   [
+    350,
+    255
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img028": {
   "coords": [
@@ -18069,12 +19089,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img029": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    180,
+    255
+   ],
+   [
+    60,
+    75
+   ],
+   [
+    285,
+    180
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img030": {
   "coords": [
@@ -18115,12 +19147,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img032": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    350,
+    120
+   ],
+   [
+    215,
+    245
+   ],
+   [
+    450,
+    240
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img033": {
   "coords": [
@@ -18142,12 +19186,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img034": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    120,
+    240
+   ],
+   [
+    215,
+    105
+   ],
+   [
+    330,
+    75
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img035": {
   "coords": [
@@ -18188,12 +19244,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img037": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    270,
+    135
+   ],
+   [
+    360,
+    155
+   ],
+   [
+    175,
+    120
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img038": {
   "coords": [
@@ -18215,20 +19283,44 @@
   "source": "RESULT.json"
  },
  "batch_21_img039": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    415,
+    80
+   ],
+   [
+    180,
+    60
+   ],
+   [
+    85,
+    180
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img040": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    50,
+    185
+   ],
+   [
+    220,
+    100
+   ],
+   [
+    370,
+    120
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img041": {
   "coords": [
@@ -18307,12 +19399,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img045": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    110,
+    220
+   ],
+   [
+    350,
+    180
+   ],
+   [
+    210,
+    125
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img046": {
   "coords": [
@@ -18342,12 +19446,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img048": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    430,
+    175
+   ],
+   [
+    130,
+    205
+   ],
+   [
+    175,
+    100
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_21_img049": {
   "coords": [
@@ -18369,12 +19485,24 @@
   "source": "RESULT.json"
  },
  "batch_21_img050": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    290,
+    130
+   ],
+   [
+    315,
+    260
+   ],
+   [
+    90,
+    140
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img001": {
   "coords": [
@@ -18396,20 +19524,44 @@
   "source": "RESULT.json"
  },
  "batch_22_img002": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    55,
+    250
+   ],
+   [
+    250,
+    230
+   ],
+   [
+    355,
+    170
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img003": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    205,
+    260
+   ],
+   [
+    320,
+    145
+   ],
+   [
+    410,
+    260
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img004": {
   "coords": [
@@ -18431,12 +19583,24 @@
   "source": "RESULT.json"
  },
  "batch_22_img005": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    290,
+    275
+   ],
+   [
+    420,
+    275
+   ],
+   [
+    310,
+    90
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img006": {
   "coords": [
@@ -18477,12 +19641,24 @@
   "source": "RESULT.json"
  },
  "batch_22_img008": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    350,
+    240
+   ],
+   [
+    340,
+    145
+   ],
+   [
+    200,
+    75
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img009": {
   "coords": [
@@ -18523,12 +19699,24 @@
   "source": "RESULT.json"
  },
  "batch_22_img011": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    145,
+    250
+   ],
+   [
+    265,
+    275
+   ],
+   [
+    210,
+    140
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img012": {
   "coords": [
@@ -18550,12 +19738,24 @@
   "source": "RESULT.json"
  },
  "batch_22_img013": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    350,
+    240
+   ],
+   [
+    175,
+    95
+   ],
+   [
+    390,
+    70
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img014": {
   "coords": [
@@ -18577,12 +19777,24 @@
   "source": "RESULT.json"
  },
  "batch_22_img015": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    190,
+    250
+   ],
+   [
+    100,
+    225
+   ],
+   [
+    325,
+    130
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img016": {
   "coords": [
@@ -19030,12 +20242,24 @@
   "source": "RESULT.json"
  },
  "batch_22_img040": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    140,
+    110
+   ],
+   [
+    75,
+    220
+   ],
+   [
+    380,
+    245
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img041": {
   "coords": [
@@ -19095,12 +20319,24 @@
   "source": "RESULT.json"
  },
  "batch_22_img044": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    60,
+    210
+   ],
+   [
+    420,
+    255
+   ],
+   [
+    410,
+    110
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_22_img045": {
   "coords": [
@@ -19198,20 +20434,44 @@
   "source": "RESULT.json"
  },
  "batch_22_img050": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    400,
+    220
+   ],
+   [
+    300,
+    120
+   ],
+   [
+    300,
+    245
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img001": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    405,
+    130
+   ],
+   [
+    45,
+    215
+   ],
+   [
+    225,
+    110
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img002": {
   "coords": [
@@ -19317,12 +20577,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img008": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    430,
+    220
+   ],
+   [
+    250,
+    230
+   ],
+   [
+    60,
+    110
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img009": {
   "coords": [
@@ -19428,12 +20700,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img015": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    420,
+    105
+   ],
+   [
+    280,
+    110
+   ],
+   [
+    60,
+    60
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img016": {
   "coords": [
@@ -19474,12 +20758,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img018": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    425,
+    220
+   ],
+   [
+    300,
+    205
+   ],
+   [
+    110,
+    70
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img019": {
   "coords": [
@@ -19501,12 +20797,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img020": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    430,
+    165
+   ],
+   [
+    110,
+    140
+   ],
+   [
+    120,
+    260
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img021": {
   "coords": null,
@@ -19574,12 +20882,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img025": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    390,
+    210
+   ],
+   [
+    105,
+    95
+   ],
+   [
+    250,
+    165
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img026": {
   "coords": [
@@ -19677,12 +20997,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img031": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    55,
+    210
+   ],
+   [
+    230,
+    145
+   ],
+   [
+    380,
+    220
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img032": {
   "coords": [
@@ -19799,12 +21131,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img038": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    235,
+    60
+   ],
+   [
+    105,
+    125
+   ],
+   [
+    220,
+    180
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img039": {
   "coords": [
@@ -19902,12 +21246,24 @@
   "source": "RESULT.json"
  },
  "batch_23_img044": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    335,
+    205
+   ],
+   [
+    370,
+    80
+   ],
+   [
+    160,
+    65
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_23_img045": {
   "coords": [
@@ -20024,12 +21380,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img001": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    420,
+    180
+   ],
+   [
+    320,
+    110
+   ],
+   [
+    55,
+    90
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img002": {
   "coords": [
@@ -20116,12 +21484,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img007": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    55,
+    255
+   ],
+   [
+    285,
+    60
+   ],
+   [
+    205,
+    185
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img008": {
   "coords": [
@@ -20143,12 +21523,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img009": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    430,
+    210
+   ],
+   [
+    95,
+    260
+   ],
+   [
+    210,
+    125
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img010": {
   "coords": [
@@ -20170,12 +21562,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img011": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    70,
+    260
+   ],
+   [
+    390,
+    75
+   ],
+   [
+    225,
+    250
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img012": {
   "coords": [
@@ -20281,20 +21685,44 @@
   "source": "RESULT.json"
  },
  "batch_24_img018": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    339,
+    167
+   ],
+   [
+    100,
+    96
+   ],
+   [
+    188,
+    258
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img019": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    404,
+    258
+   ],
+   [
+    250,
+    254
+   ],
+   [
+    129,
+    246
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img020": {
   "coords": [
@@ -20389,12 +21817,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img026": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    113,
+    258
+   ],
+   [
+    292,
+    125
+   ],
+   [
+    71,
+    92
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img027": {
   "coords": [
@@ -20416,12 +21856,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img028": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    163,
+    254
+   ],
+   [
+    292,
+    179
+   ],
+   [
+    400,
+    163
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img029": {
   "coords": [
@@ -20443,12 +21895,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img030": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    325,
+    225
+   ],
+   [
+    267,
+    83
+   ],
+   [
+    183,
+    221
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img031": {
   "coords": [
@@ -20554,12 +22018,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img037": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    208,
+    233
+   ],
+   [
+    325,
+    188
+   ],
+   [
+    138,
+    71
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img038": {
   "coords": [
@@ -20619,12 +22095,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img041": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    350,
+    183
+   ],
+   [
+    167,
+    179
+   ],
+   [
+    75,
+    138
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img042": {
   "coords": [
@@ -20665,12 +22153,24 @@
   "source": "RESULT.json"
  },
  "batch_24_img044": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    250,
+    150
+   ],
+   [
+    379,
+    246
+   ],
+   [
+    133,
+    188
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_24_img045": {
   "coords": [
@@ -21101,12 +22601,24 @@
   "source": "RESULT.json"
  },
  "batch_25_img021": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    138,
+    254
+   ],
+   [
+    358,
+    246
+   ],
+   [
+    50,
+    75
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_25_img022": {
   "coords": [
@@ -21250,12 +22762,24 @@
   "source": "RESULT.json"
  },
  "batch_25_img030": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    229,
+    229
+   ],
+   [
+    438,
+    221
+   ],
+   [
+    321,
+    150
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_25_img031": {
   "coords": [
@@ -21277,12 +22801,24 @@
   "source": "RESULT.json"
  },
  "batch_25_img032": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    158,
+    275
+   ],
+   [
+    188,
+    104
+   ],
+   [
+    375,
+    167
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_25_img033": {
   "coords": null,
@@ -21312,20 +22848,44 @@
   "source": "RESULT.json"
  },
  "batch_25_img035": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    242,
+    58
+   ],
+   [
+    60,
+    175
+   ],
+   [
+    171,
+    183
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_25_img036": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    304,
+    146
+   ],
+   [
+    446,
+    117
+   ],
+   [
+    75,
+    92
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_25_img037": {
   "coords": [
@@ -21442,12 +23002,24 @@
   "source": "RESULT.json"
  },
  "batch_25_img043": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    279,
+    271
+   ],
+   [
+    96,
+    117
+   ],
+   [
+    196,
+    104
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_25_img044": {
   "coords": [
@@ -21488,12 +23060,24 @@
   "source": "RESULT.json"
  },
  "batch_25_img046": {
-  "coords": null,
-  "notes": "khong du tu tin de gan toa do",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    233,
+    271
+   ],
+   [
+    433,
+    129
+   ],
+   [
+    325,
+    175
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_25_img047": {
   "coords": [
@@ -22367,12 +23951,24 @@
   "source": "RESULT.json"
  },
  "batch_26_img044": {
-  "coords": null,
-  "notes": "Không xác định chắc đủ ba biểu tượng do nhiều hình nền có dáng tương tự.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    312,
+    271
+   ],
+   [
+    425,
+    146
+   ],
+   [
+    258,
+    129
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_26_img045": {
   "coords": [
@@ -24068,12 +25664,24 @@
   "source": "RESULT.json"
  },
  "batch_28_img037": {
-  "coords": null,
-  "notes": "Không xác định chắc icon1 trong cảnh.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    175,
+    117
+   ],
+   [
+    417,
+    150
+   ],
+   [
+    250,
+    238
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_28_img038": {
   "coords": [
@@ -25045,12 +26653,24 @@
   "source": "RESULT.json"
  },
  "batch_29_img039": {
-  "coords": null,
-  "notes": "Không xác định chắc icon3 trong cảnh.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    129,
+    67
+   ],
+   [
+    171,
+    167
+   ],
+   [
+    83,
+    258
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_29_img040": {
   "coords": null,
@@ -31416,12 +33036,24 @@
   "source": "RESULT.json"
  },
  "batch_36_img033": {
-  "coords": null,
-  "notes": "Could not confidently recover all annotated centers.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    275,
+    75
+   ],
+   [
+    392,
+    183
+   ],
+   [
+    242,
+    258
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_36_img034": {
   "coords": [
@@ -32781,12 +34413,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img006": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    408,
+    271
+   ],
+   [
+    292,
+    217
+   ],
+   [
+    154,
+    104
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img007": {
   "coords": [
@@ -32938,12 +34582,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img016": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    121,
+    71
+   ],
+   [
+    292,
+    183
+   ],
+   [
+    233,
+    54
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img017": {
   "coords": [
@@ -33149,12 +34805,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img030": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    433,
+    96
+   ],
+   [
+    88,
+    104
+   ],
+   [
+    267,
+    71
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img031": {
   "coords": null,
@@ -33165,12 +34833,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img032": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    138,
+    233
+   ],
+   [
+    196,
+    75
+   ],
+   [
+    54,
+    67
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img033": {
   "coords": [
@@ -33192,12 +34872,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img034": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    383,
+    108
+   ],
+   [
+    179,
+    88
+   ],
+   [
+    75,
+    213
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img035": {
   "coords": [
@@ -33276,12 +34968,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img039": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    408,
+    79
+   ],
+   [
+    304,
+    263
+   ],
+   [
+    208,
+    146
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img040": {
   "coords": null,
@@ -33292,12 +34996,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img041": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    442,
+    254
+   ],
+   [
+    325,
+    171
+   ],
+   [
+    138,
+    104
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img042": {
   "coords": [
@@ -33357,12 +35073,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img045": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    92,
+    229
+   ],
+   [
+    242,
+    100
+   ],
+   [
+    217,
+    238
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img046": {
   "coords": [
@@ -33422,12 +35150,24 @@
   "source": "RESULT.json"
  },
  "batch_38_img049": {
-  "coords": null,
-  "notes": "Uncertain visual match; left blank rather than guess.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    79,
+    75
+   ],
+   [
+    433,
+    246
+   ],
+   [
+    308,
+    242
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_38_img050": {
   "coords": [
@@ -35332,12 +37072,24 @@
   "source": "RESULT.json"
  },
  "batch_41_img003": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    83,
+    188
+   ],
+   [
+    417,
+    75
+   ],
+   [
+    304,
+    254
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_41_img004": {
   "coords": [
@@ -35367,12 +37119,24 @@
   "source": "RESULT.json"
  },
  "batch_41_img006": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    388,
+    75
+   ],
+   [
+    304,
+    217
+   ],
+   [
+    433,
+    242
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_41_img007": {
   "coords": [
@@ -35573,12 +37337,24 @@
   "source": "RESULT.json"
  },
  "batch_41_img018": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    296,
+    258
+   ],
+   [
+    192,
+    154
+   ],
+   [
+    79,
+    108
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_41_img019": {
   "coords": [
@@ -35684,12 +37460,24 @@
   "source": "RESULT.json"
  },
  "batch_41_img025": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    433,
+    263
+   ],
+   [
+    292,
+    58
+   ],
+   [
+    150,
+    133
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_41_img026": {
   "coords": null,
@@ -35884,12 +37672,24 @@
   "source": "RESULT.json"
  },
  "batch_41_img039": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    329,
+    254
+   ],
+   [
+    133,
+    163
+   ],
+   [
+    433,
+    58
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_41_img040": {
   "coords": [
@@ -36326,12 +38126,24 @@
   "source": "RESULT.json"
  },
  "batch_42_img014": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    358,
+    58
+   ],
+   [
+    88,
+    54
+   ],
+   [
+    417,
+    213
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_42_img015": {
   "coords": [
@@ -36391,12 +38203,24 @@
   "source": "RESULT.json"
  },
  "batch_42_img018": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    83,
+    79
+   ],
+   [
+    217,
+    167
+   ],
+   [
+    392,
+    254
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_42_img019": {
   "coords": null,
@@ -36453,12 +38277,24 @@
   "source": "RESULT.json"
  },
  "batch_42_img023": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    358,
+    250
+   ],
+   [
+    242,
+    75
+   ],
+   [
+    121,
+    79
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_42_img024": {
   "coords": [
@@ -36811,12 +38647,24 @@
   "source": "RESULT.json"
  },
  "batch_42_img043": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    67,
+    263
+   ],
+   [
+    417,
+    200
+   ],
+   [
+    188,
+    258
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_42_img044": {
   "coords": [
@@ -37253,12 +39101,24 @@
   "source": "RESULT.json"
  },
  "batch_43_img018": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    417,
+    146
+   ],
+   [
+    233,
+    204
+   ],
+   [
+    79,
+    129
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_43_img019": {
   "coords": [
@@ -37402,12 +39262,24 @@
   "source": "RESULT.json"
  },
  "batch_43_img027": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    433,
+    229
+   ],
+   [
+    158,
+    238
+   ],
+   [
+    192,
+    125
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_43_img028": {
   "coords": [
@@ -37467,12 +39339,24 @@
   "source": "RESULT.json"
  },
  "batch_43_img031": {
-  "coords": null,
-  "notes": "Không xác định chắc chắn đủ cả 3 pictogram trong cảnh; bỏ trống thay vì đoán.",
-  "flags": [
-   "skipped_by_ai"
+  "coords": [
+   [
+    92,
+    62
+   ],
+   [
+    317,
+    246
+   ],
+   [
+    338,
+    71
+   ]
   ],
-  "source": "RESULT.json"
+  "notes": "",
+  "flags": [
+   "from_retry"
+  ]
  },
  "batch_43_img032": {
   "coords": [
